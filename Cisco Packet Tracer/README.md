@@ -43,3 +43,8 @@ Submit your **`.pkt`** file plus a brief write-up (`PDF`/`MD`) with:
 - Routes advertised and visible? `show ip route`
 - No IP overlaps or ACL blocks?
 
+## Lab Index
+
+<!-- AUTO-LIST:START -->
+_(No .pkt files found yet.)_
+<!-- AUTO-LIST:END -->

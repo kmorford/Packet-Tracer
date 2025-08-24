@@ -39,3 +39,8 @@ Introductory IoT topologies using Packet Tracer’s sensors, actuators, and even
 - Missing credentials/keys between devices
 - Event conditions never satisfied (test with forced values)
 
+## Lab Index
+
+<!-- AUTO-LIST:START -->
+_(No .pkt files found yet.)_
+<!-- AUTO-LIST:END -->

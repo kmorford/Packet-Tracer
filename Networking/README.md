@@ -43,3 +43,8 @@ Layer-2/Layer-3 fundamentals: addressing, VLANs, routing, and services.
 - Trunk verify: `show interfaces trunk`
 - Routing verify: `show ip route`, `show ip ospf neighbor`
 
+## Lab Index
+
+<!-- AUTO-LIST:START -->
+_(No .pkt files found yet.)_
+<!-- AUTO-LIST:END -->
