@@ -1,11 +1,9 @@
-# Packet Tracer — Labs Hub
-
-Welcome. Use the sections below to access lab sets.
+# Packet Tracer — Site Home
 
 ## Sections
-- [Cisco Packet Tracer](./Cisco%20Packet%20Tracer/README.md)
-- [Networking](./Networking/README.md)
-- [IoT](./IoT/README.md)
+- [Cisco Packet Tracer](./Cisco%20Packet%20Tracer/)
+- [Networking](./Networking/)
+- [IoT](./IoT/)
 
 ---
 
