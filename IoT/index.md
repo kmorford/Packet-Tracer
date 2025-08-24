@@ -1,8 +1,6 @@
 # IoT
 
 ## Pages
-
-## Pages
 - [Add IoT Devices in PT](./add-iot-devices-in-pt.html)
 - [Connect IoT Devices to a Registration Server](./connect-iot-devices-to-a-registration-server.html)
 - [Connect to a Home Gateway and Monitor Network](./connect-to-a-home-gateway-and-monitor-network.html)
