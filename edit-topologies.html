@@ -283,8 +283,16 @@ ul
 </head>
 
 <body lang=EN-US style='word-wrap:break-word'>
-<!-- NAVBAR-INJECT START -->
-<!-- Injected by inject_nav.py -->
+	<!-- home-snippet.html -->
+<style>
+  .homebar{position:sticky;top:0;z-index:9999;background:#0b0f10cc;border-bottom:1px solid #16332a;padding:.5rem .75rem;font:600 14px ui-monospace,Menlo,Consolas,monospace;color:#8ff0c9}
+  .homebar a{color:#00ff88;text-decoration:none}
+  .homebar a:hover{text-shadow:0 0 6px rgba(0,255,136,.45)}
+</style>
+<div class="homebar">← <a href="index.html">Home</a></div>
+
+<!-- NAVBAR-INJECT START 
+<!-- Injected by inject_nav.py 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="{base}/index.html">Packet Tracer Labs</a>
