@@ -14,15 +14,16 @@ Layer-2/Layer-3 fundamentals: addressing, VLANs, routing, and services.
 
 ---
 
-## Lab Index
+## Pages
 
-| # | Lab Title | Topics / Skills | File |
-|---|-----------|------------------|------|
-| 1 | Addressing & VLSM | Subnet design, addressing plan, gateway assignment | [Lab1_VLSM_Design.pkt](./Lab1_VLSM_Design.pkt) |
-| 2 | DHCP & DNS | DHCP pools, exclusions, DNS records, client tests | [Lab2_DHCP_DNS.pkt](./Lab2_DHCP_DNS.pkt) |
-| 3 | VLAN Topology | Access/trunk config, port mapping, endpoint tests | [Lab3_VLAN_Topology.pkt](./Lab3_VLAN_Topology.pkt) |
-| 4 | Inter-VLAN Routing | SVIs, R-on-a-S, helper addresses | [Lab4_InterVLAN.pkt](./Lab4_InterVLAN.pkt) |
-| 5 | OSPF Fundamentals | OSPF process/area, neighbors, route verification | [Lab5_OSPF_Fundamentals.pkt](./Lab5_OSPF_Fundamentals.pkt) |
+- [Connect Devices using Wireless Technologies](./Connect%20Devices%20using%20Wireless%20Technologies/)
+- [Create Realistic Structured Cabling in the Physical Workspace and Cabling Devices in a Rack](./Create%20Realistic%20Structured%20Cabling%20in%20the%20Physical%20Workspace%20and%20Cabling%20Devices%20in%20a%20Rack/)
+- [Edit Topologies](./Edit%20Topologies/)
+- [Examine Packets in the Small Office](./Examine%20Packets%20in%20the%20Small%20Office/)
+- [Explore Device Configuration Using the CLI](./Explore%20Device%20Configuration%20Using%20the%20CLI/)
+- [Manage and Configure your Network using a Network Controller](./Manage%20and%20Configure%20your%20Network%20using%20a%20Network%20Controller/)
+- [Monitor Your Network Using a Network Controller](./Monitor%20Your%20Network%20Using%20a%20Network%20Controller/)
+
 
 ---
 

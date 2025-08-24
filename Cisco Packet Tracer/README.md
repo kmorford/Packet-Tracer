@@ -11,8 +11,11 @@ Core Packet Tracer activities used throughout the course.
 - Basic CLI familiarity (enable, config t, interface, vlan, ip address)
 
 ---
+## Pages
 
+- [Create a Simple Network](./create-simple-network.html)
 
+---
 
 ## Deliverables (Default)
 Submit your **`.pkt`** file plus a brief write-up (`PDF`/`MD`) with:
@@ -31,8 +34,3 @@ Submit your **`.pkt`** file plus a brief write-up (`PDF`/`MD`) with:
 - Routes advertised and visible? `show ip route`
 - No IP overlaps or ACL blocks?
 
-## Lab Index
-
-<!-- AUTO-LIST:START -->
-_(No .pkt files found yet.)_
-<!-- AUTO-LIST:END -->
