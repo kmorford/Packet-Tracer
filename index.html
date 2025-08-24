@@ -1,65 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Packet Tracer Labs</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Packet Tracer</title>
+  <meta name="color-scheme" content="dark">
   <style>
-    body {
-      background-color: #0d0d0d;
-      color: #00ff99;
-      font-family: "Courier New", monospace;
-      margin: 2rem;
+    :root{
+      --bg:#0b0f10;
+      --panel:#0f1517;
+      --ink:#e6fff2;
+      --muted:#8ff0c9;
+      --accent:#00ff88;
+      --accent2:#00ccff;
+      --grid:#162024;
     }
-    h1, h2 {
-      color: #00ffcc;
-      text-shadow: 0 0 5px #00ff99;
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: radial-gradient(1200px 800px at 10% 0%, #0e1719 0%, var(--bg) 40%) no-repeat, var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      letter-spacing: .2px;
     }
-    a {
-      color: #00ff99;
-      text-decoration: none;
+    header{
+      border-bottom: 1px solid #16332a;
+      background: linear-gradient(180deg, #0f1718, #0b0f10);
+      position:sticky; top:0; z-index:10;
     }
-    a:hover {
-      color: #ff0066;
-      text-shadow: 0 0 5px #ff0066;
+    .wrap{max-width:980px; margin:auto; padding:1.25rem;}
+    .title{
+      display:flex; align-items:center; gap:.75rem; font-weight:800; font-size:1.25rem; letter-spacing:.5px;
     }
-    ol {
-      margin-left: 2rem;
-    }
-    .nav {
-      margin-bottom: 2rem;
-    }
+    .dot{width:10px;height:10px;border-radius:50%;
+      background: conic-gradient(from 0deg, var(--accent), var(--accent2), var(--accent))}
+    h1{font-size:1.5rem; margin:1rem 0 .5rem}
+    h2{font-size:1.15rem; margin:1.25rem 0 .5rem; color: var(--muted); text-transform: uppercase; letter-spacing:.12em}
+    ol{counter-reset: item; margin:0 0 1rem 1.25rem; padding:0}
+    ol>li{counter-increment:item; margin:.5rem 0; padding:.5rem .75rem; background:var(--panel); border:1px solid #16332a; border-radius:.6rem}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{color:#b9ffe6; text-shadow:0 0 6px rgba(0,255,136,.45)}
+    footer{border-top:1px solid #16332a; color:#9ce8cc; font-size:.9rem}
+    .muted{color:#9ce8cc}
+    .subtitle{color:#77d9b7}
   </style>
 </head>
 <body>
-  <div class="nav">
-    <h1>💻 Packet Tracer Labs</h1>
-    <p>Choose a section:</p>
-  </div>
+  <header>
+    <div class="wrap title">
+      <span class="dot"></span>
+      <span>PACKET TRACER</span>
+    </div>
+  </header>
 
-  <h2>1. Cisco Packet Tracer Starting Out</h2>
-  <ol>
-    <li><a href="Create_a_Simple_Network.htm">Create a Simple Network</a></li>
-  </ol>
+  <main class="wrap">
+    <h1 class="subtitle">Home</h1>
+    <p class="muted">Dark theme • ordered lists • links use hyphenated, lowercase filenames.</p>
 
-  <h2>2. IoT</h2>
-  <ol>
-    <li><a href="Add_IoT_Devices_in_PT.html">Add IoT Devices in PT</a></li>
-    <li><a href="Connect_and_Control_Devices_Using_a_Registration_Server.html">Connect & Control Devices Using a Registration Server</a></li>
-    <li><a href="Connect_Devices_to_a_Home_Gateway_and_Monitor_Network.html">Connect Devices to a Home Gateway</a></li>
-    <li><a href="Create_Your_Own_IoT_Thing.html">Create Your Own IoT Thing</a></li>
-    <li><a href="Modify_an_Existing_Script_for_an_IoT_Thing.html">Modify an Existing IoT Script</a></li>
-    <li><a href="Modify_and_Monitor_Environmental_Controls_in_Packet_Tracer.html">Modify & Monitor Environmental Controls</a></li>
-  </ol>
+    <section>
+      <h2>1. Cisco Packet Tracer Starting Out</h2>
+      <ol>
+        <li><a href="create-a-simple-network.html">Create a Simple Network</a></li>
+      </ol>
+    </section>
 
-  <h2>3. Networking</h2>
-  <ol>
-    <li><a href="Connect_Devices_using_Wireless_Technologies.html">Connect Devices using Wireless Tech</a></li>
-    <li><a href="Create_Realistic_Structured_Cabling_in_the_Physical_Workspace_and_Cabling_Devices_in_a_Rack.html">Structured Cabling & Racks</a></li>
-    <li><a href="Edit_Topologies.html">Edit Topologies</a></li>
-    <li><a href="Examine_Packets_in_the_Small_Office.html">Examine Packets in a Small Office</a></li>
-    <li><a href="Explore_Device_Configuration_Using_the_CLI.html">Explore Device Config via CLI</a></li>
-    <li><a href="Manage_and_Configure_Your_Network_Using_a_Network_Controller.html">Manage & Configure Network Controller</a></li>
-    <li><a href="Monitor_Your_Network_Using_a_Network_Controller.html">Monitor Network Controller</a></li>
-  </ol>
+    <section>
+      <h2>2. IoT</h2>
+      <ol>
+        <li><a href="add-iot-devices-in-pt.html">Add IoT Devices in PT</a></li>
+        <li><a href="connect-iot-devices-to-a-registration-server.html">Connect IoT Devices to a Registration Server</a></li>
+        <li><a href="connect-to-a-home-gateway-and-monitor-network.html">Connect to a Home Gateway & Monitor Network</a></li>
+        <li><a href="create-your-own-iot-thing.html">Create Your Own IoT Thing</a></li>
+        <li><a href="modify-an-existing-script-for-an-iot-thing.html">Modify an Existing Script for an IoT Thing</a></li>
+        <li><a href="modify-and-monitor-environmental-controls-in-packet-tracer.html">Modify & Monitor Environmental Controls in PT</a></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>3. Networking</h2>
+      <ol>
+        <li><a href="connect-devices-using-wireless-technologies.html">Connect Devices Using Wireless Technologies</a></li>
+        <li><a href="create-realistic-structured-cabling-in-the-physical-workspace-and-cabling-devices-in-a-rack.html">Structured Cabling & Racks</a></li>
+        <li><a href="edit-topologies.html">Edit Topologies</a></li>
+        <li><a href="examine-packets-in-the-small-office.html">Examine Packets in the Small Office</a></li>
+        <li><a href="explore-device-configuration-using-the-cli.html">Explore Device Configuration Using the CLI</a></li>
+        <li><a href="manage-and-configure-your-network-using-a-network-controller.html">Manage & Configure Using a Network Controller</a></li>
+        <li><a href="monitor-your-network-using-a-network-controller.html">Monitor Your Network Using a Network Controller</a></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>© <span id="y"></span> Packet Tracer • dark hacker theme</p>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
