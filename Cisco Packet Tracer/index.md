@@ -13,7 +13,7 @@ Core Packet Tracer activities used throughout the course.
 ---
 ## Pages
 
-- [Create a Simple Network](Packet Tracer/Cisco Packet Tracer/create simple network.html)
+- [Create a Simple Network](././create-simple-network.html)
 
 ---
 
