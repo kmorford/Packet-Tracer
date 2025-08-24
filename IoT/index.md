@@ -14,7 +14,7 @@ Introductory IoT topologies using Packet Tracer’s sensors, actuators, and even
 ---
 
 ## Pages
-- [Add IoT Devices in PT](Packet Tracer/IoT/add iot devices in pt.html)
+- [Add IoT Devices in PT](./add-iot-devices-in-pt.html)
 - [Connect IoT Devices to a Registration Server](Packet-Tracer/IoT/connect-iot-devices-to-a-registration-server.html)
 - [Connect to a Home Gateway and Monitor Network](Packet-Tracer/IoT/connect-to-a-home-gateway-and-monitor-network.html)
 - [Create Your Own IoT Thing](Packet-Tracer/IoT/create-your-own-iot-thing.html)
