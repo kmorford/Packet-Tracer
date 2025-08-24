@@ -1,0 +1,719 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Packet Tracer – Connect to a Home Gateway and Monitor Network</title>
+<style>
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Webdings;
+	panose-1:5 3 1 2 1 5 9 6 7 3;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial",sans-serif;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h4
+	{mso-style-link:"Heading 4 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	page-break-after:avoid;
+	font-size:3.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:normal;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	font-size:8.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.PageHead, li.PageHead, div.PageHead
+	{mso-style-name:"Page Head";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:115%;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.AnswerLineL50, li.AnswerLineL50, div.AnswerLineL50
+	{mso-style-name:"Answer Line L50";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;
+	font-style:italic;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+p.ConfigWindow, li.ConfigWindow, div.ConfigWindow
+	{mso-style-name:"Config Window";
+	margin:0in;
+	font-size:3.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-style:italic;}
+p.SubStepAlpha, li.SubStepAlpha, div.SubStepAlpha
+	{mso-style-name:"SubStep Alpha";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.BodyTextL50, li.BodyTextL50, div.BodyTextL50
+	{mso-style-name:"Body Text L50";
+	mso-style-link:"Body Text L50 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.BodyTextL25, li.BodyTextL25, div.BodyTextL25
+	{mso-style-name:"Body Text L25";
+	mso-style-link:"Body Text L25 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.SubStepNum, li.SubStepNum, div.SubStepNum
+	{mso-style-name:"SubStep Num";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.BodyTextL25Bold, li.BodyTextL25Bold, div.BodyTextL25Bold
+	{mso-style-name:"Body Text L25 Bold";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-link:"Heading 4";
+	font-family:"Times New Roman",serif;
+	color:white;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:SimSun;
+	font-weight:bold;}
+span.BodyTextL25Char
+	{mso-style-name:"Body Text L25 Char";
+	mso-style-link:"Body Text L25";}
+span.BodyTextL50Char
+	{mso-style-name:"Body Text L50 Char";
+	mso-style-link:"Body Text L50";}
+span.AnswerGray
+	{mso-style-name:"Answer Gray";
+	font-family:"Arial",sans-serif;
+	border:none;
+	font-weight:bold;}
+span.DnTbold
+	{mso-style-name:"DnT bold";
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+span.DnTnobold
+	{mso-style-name:"DnT no bold";}
+.MsoChpDefault
+	{font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:76.3pt .75in .9in .75in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+
+
+/* Add css for textarea */
+
+.AnswerGray{
+	padding: 0.2rem;
+}
+
+.question-action-container{
+	margin-top: 6pt;
+    margin-right: 0in;
+    margin-bottom: 6pt;
+    margin-left: 0.5in;
+}
+
+.show-answer, .hide-answer {
+    padding: 0.5rem 1rem;
+    background-color: #00bceb;
+    color: #fff;
+	border: 0px;
+	cursor: pointer;
+}
+
+.global-action-container {
+	display: flex;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.global-action-container .btn__action {
+	margin: 10px;
+}
+.btn__container button.btn__action:not(.is-full-width) {
+	width: calc(50% - .5%);
+}
+.btn-text {
+	border: 0px;
+	padding: 0.5rem 1rem;
+	background-color: #6abf4b;
+	color: #fff;
+	border-radius: 0;
+	cursor: pointer;
+}
+p.BodyTextL50Answer,
+                                li.BodyTextL50Answer,
+                                div.BodyTextL50Answer {
+                                    mso-style-name: "Body Text L50 Answer";
+                                    mso-style-link: "Body Text L50 Answer Char";
+                                    margin-top: 6.0pt;
+                                    margin-left: .5in;
+                                    margin-bottom: 6.0pt;
+                                    margin-right: .5in;
+                                    background: #D9D9D9;
+                                    font-size: 10.0pt;
+                                    font-family: "Arial", sans-serif;
+                                    font-weight: bold;
+                                }
+
+.hidden{
+	display: none;
+}
+.dark-theme {
+    color: #fff;
+  }
+  .dark-theme .dark-color {
+    color: #fff !important;
+  }
+  .dark-theme p.ConfigWindow,
+  .dark-theme li.ConfigWindow,
+  .dark-theme div.ConfigWindow {
+    mso-style-name: "Config Window";
+    color: #212328;
+  }
+  .dark-theme h4 {
+    color: #212328;
+  }
+  .dark-theme .MsoTitle span {
+    color: #fff !important;
+  }
+  .dark-theme textarea {
+    background-color: #212328;
+    color: #fff;
+  }
+  .dark-theme .BodyTextL25Answer {
+    background-color: #000;
+    color: #fff;
+  }
+  .dark-theme .BodyTextL50Answer {
+    background-color: #000;
+    color: #fff;
+  }
+  .dark-theme .BodyTextL25Answer > span {
+    padding: 4px;
+  }
+  .dark-theme .BodyTextL25Answer span {
+    color: #fff;
+  }
+  .dark-theme table tbody tr td {
+    color: #fff !important;
+  }
+  .dark-theme table .TableHeading {
+    color: #000;
+  }
+                               
+
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoTitle>Packet Tracer – Connect to a Home Gateway and Monitor Network</p>
+
+<h1>Objectives</h1>
+
+<p class=BodyTextL25Bold>Part 1: Connect a Home Gateway to the Network</p>
+
+<p class=BodyTextL25Bold>Part 2: Add End User Devices to the Network</p>
+
+<p class=BodyTextL25Bold>Part 3: Connect IoT Devices to the Network</p>
+
+<p class=BodyTextL25Bold>Part 4: Add Bluetooth Devices</p>
+
+<h1>Background / Scenario</h1>
+
+<p class=BodyTextL25>In this activity, you will add a home gateway and several
+IoT devices to an existing home network and monitor those devices through the
+home gateway.</p>
+
+<p class=BodyTextL25><b>Note</b>: This activity is scored. Be sure you change
+the <b>Display Name</b> when directed to do so or the scoring will not be
+accurate. Click <b>Check Results</b> at any time to view your progress. </p>
+
+<h1>Instructions</h1>
+
+<h2 style='margin-left:0in;text-indent:0in'>Part 1: Connect a Home Gateway to
+the Network</h2>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 1: Add a Home Gateway.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>In the <strong><span style='font-family:"Arial",sans-serif'>Device-Type
+Selection</span></strong> box, click <b>Network Devices</b>, and then <b>Wireless
+Devices</b>.</p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click <b>Home Gateway</b>, and then click in the <b>Logical</b>
+workspace to add the device.</p>
+
+<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click <span class=DnTbold>Home Gateway0</span>, and then the <span
+class=DnTbold>Config</span> tab. Change the Display Name to <span
+class=DnTbold>Home Gateway</span>.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 2: Connect the Home Gateway to
+the cable modem.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>In the <strong><span style='font-family:"Arial",sans-serif'>Device-Type
+Selection</span></strong> box, click <b>Connections</b>, and then <b>Copper Straight-Through</b>
+cable.</p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click the <span class=DnTbold>Cable Modem</span> and connect one end of
+the cable to <span class=DnTbold>Port 1</span>. </p>
+
+<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click the <span class=DnTbold>Home Gateway</span> and connect the other
+end of the cable to the <b>Internet</b> port.</p>
+
+<h2 style='margin-left:0in;text-indent:0in'>Part 2: Add End User Devices to the
+Network</h2>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 1: Add a wireless tablet to
+the workspace.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>In the <strong><span style='font-family:"Arial",sans-serif'>Device-Type
+Selection</span></strong> box, click <b>End Devices</b>, and then <b>Tablet</b>.
+Add the <b>Tablet</b> to the workspace.</p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click <b>Tablet PC0</b>, and then the <b>Config</b> tab. Change the
+Display Name to <span class=DnTbold>Tablet</span>.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 2: Connect the tablet to the
+Home Gateway network.</h3>
+
+<p class=BodyTextL25>Notice that the <b>Tablet</b> is already connected to the
+cellular network. The blue wireless signal is connected to the <b>Internet</b>
+cloud where the cellular provider is located. </p>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>To connect <span class=DnTbold>Tablet</span> to the home wireless
+network, click the <b>Wireless0</b> Interface on the left panel in the <b>Config</b>
+tab.</p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Change the SSID from <b>Default</b> to <b>HomeGateway</b>. The <b>Tablet</b>
+will connect to the home Wi-Fi network. It may take a minute or two for IP
+addressing to change to an address from the 192.168.25.x network. You can click
+<b>Fast Forward Time</b> (Alt+D) to speed up the process.</p>
+
+<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Notice now that <b>Tablet</b> has two wireless connections: cellular and
+Wi-Fi. This is common for cellular enabled tablets and smartphones.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 3: Access the home gateway
+from the tablet.</h3>
+
+<p class=BodyTextL25>From the Tablet, click the <b>Desktop</b> tab &gt; <b>IoT
+Monitor</b>. Note the IoT Server Address is the IP address of the <b>Home
+Gateway</b>, and <b>admin</b> is used for both the username and password. Click
+<b>Login</b>.</p>
+
+<p class=BodyTextL25><b>Note</b>: This verifies you can access the Home Gateway
+IoT Server. Note that no devices appear in the <b>Home Gateway IoT Server -
+Devices</b> list yet.</p>
+
+<h2 style='margin-left:0in;text-indent:0in'>Part 3: Connect IoT Devices to the
+Network</h2>
+
+<p class=BodyTextL25>In this part, you will add three new IoT devices to the
+network and register them to the Home Gateway server.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 1: Add IoT device to the wired
+network.</h3>
+
+<p class=BodyTextL25>In this step, you will connect a new IoT device to the
+wired network.</p>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>In the <b>Device-Type Selection</b> box, click <b>End Devices</b> &gt; <b>Home</b>,
+and then click<b> </b>the <b>Lamp</b> and add it to the workspace.</p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click the <b>Lamp </b>device, and then click <span class=DnTbold>Advanced</span>
+to reveal more tabs.</p>
+
+<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click <span class=DnTbold>I/O Config</span> to change the Network
+Adapter to <span class=DnTbold>PT-IOT-NM-1CFE</span>.</p>
+
+<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click the <b>Config</b> tab and rename the device as <span
+class=DnTbold>Lamp</span>. </p>
+
+<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>In the left panel, click <b>FastEthernet0</b>, and then select the <b>DHCP</b>
+radio button so that the lamp will receive an IPv4 address from the Home
+Gateway.</p>
+
+<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click <span class=DnTbold>Connections</span> &gt; <span class=DnTbold>Copper
+Straight-Thru</span> and connect the <b>Fastethernet0</b> port of the <span
+class=DnTbold>Lamp</span> to one of the available Ethernet ports on <span
+class=DnTbold>Home Gateway</span>.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 2: Add IoT devices to <span
+class=DnTnobold>HomeGateway</span> wireless network.</h3>
+
+<p class=BodyTextL25>In this step, you will connect two new IoT devices to the
+wireless network.</p>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>In the <b>Device-Type Selection</b> box, click <b>End Devices</b> &gt; <b>Home</b>.
+Add a <b>Fan </b>and a<b> Door</b> to the workspace.</p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Change the display name of the fan to <span class=DnTbold>Fan</span>.</p>
+
+<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Change the display name of the door to <b>Door</b>.</p>
+
+<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>In the <b>Wireless0</b> configuration for each device, notice that the
+SSID is already set to <b>HomeGateway</b> and that each device received an IP
+address from the 192.168.25.x network. You may need to click <b>Fast Forward
+Time</b> to speed up the process.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 3: Configure IoT devices to
+register with the Home Gateway server.</h3>
+
+<p class=BodyTextL25>For each of the three IoT devices, click the <b>Config</b>
+tab, then <b>Settings</b> in the left panel, if necessary. Scroll down to the <b>IoT
+Server </b>options list and click <b>Home Gateway</b>.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 4: Verify that the devices are
+now registered with the Home Gateway server.</h3>
+
+<p class=BodyTextL25>From the <b>Tablet</b>, click the <b>Desktop</b> tab &gt; <b>IoT
+Monitor</b>, and then click <b>Login</b>. You should see entries for all three
+of the new IoT devices. Expand the entries to see details for the devices. Try
+controlling the devices and look at the results in the workspace.</p>
+
+<p class=BodyTextL25><b>Note</b>: It may take a minute or two for the three
+devices to register with the server and be listed in the <b>IoT Monitor</b>.</p>
+
+<h2 style='margin-left:0in;text-indent:0in'>Part 4: Add Bluetooth Devices</h2>
+
+<p class=BodyTextL25>In this part, you will add a Bluetooth speaker to the
+wireless network. You will connect a portable music player to the speaker.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 1: Add a Bluetooth speaker to
+the wireless network.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>In the <b>Device-Type Selection</b> box, click <b>End Devices</b> &gt; <b>Home</b>.
+Add a <b>Bluetooth Speaker</b> device to the workspace. </p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Notice the speaker automatically connected to the <b>Home Gateway</b>.
+After a few minutes, the speaker will be configured with an IP address from the
+192.168.25.x network.</p>
+
+<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Change the Display Name of the speaker to <b>Speaker</b>.</p>
+
+<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>In the <b>Config</b> tab for the speaker, click <b>Bluetooth</b> in the
+left panel, and then turn <b>Port Status</b> to <b>On</b>.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 2: Add a portable media player
+to the wireless network</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>In the <b>Device-Type Selection</b> box, click <b>End Devices</b> &gt; <b>Home</b>.
+Add a <b>Portable Music Player</b> to the workspace. </p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Notice the music player automatically connected to the <b>Home Gateway</b>.
+After a few minutes, it will be configured with an IP address from the
+192.168.25.x network.</p>
+
+<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Change the Display Name to <b>Music Player</b>.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 3: Pair the music player to
+Speaker.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Turn Bluetooth <b>Port Status</b> to <b>On</b>.</p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click <b>Discover</b> under Discoverable Devices, click <b>Speaker</b>,
+click <b>Pair</b>, and then click <b>Yes</b>.</p>
+
+<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Hold down the Alt key and click <b>Music Player</b>. (<b>Hint</b>: Make
+sure the speakers for your physical computer are on.)</p>
+
+<h4>Question:</h4>
+
+<p class=BodyTextL50 style='margin-top:0in'>What happens?</p>
+
+<!-- <p class=AnswerLineL50>Type your answers here.</p> -->
+<div class="question-container">
+	<div class=AnswerLineL50>
+		<fieldset style="width:50%;font-size:10px;font-style:normal;color:gray;"><legend>Answer Area</legend><textarea rows="3" name="answerArea" placeholder="Type your answer here." style="border:none;width:100%;"></textarea></fieldset>
+	</div>
+	
+	<p class=BodyTextL50Answer><span class=AnswerGray><span style='
+	border:none'><span style='border:none'>The screen of the Music Player lights up
+and the Speaker is playing sound.</span></span></span></p>
+	
+	<div class="question-action-container">
+		<button class="MetroBtn show-answer">Show Answer</button>
+		<button class="MetroBtn hide-answer">Hide Answer</button>
+	</div>
+	</div>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>The screen of the Music Player lights up
+and the Speaker is playing sound.</span></span></span></p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 4: Explore the network.</h3>
+
+<p class=BodyTextL25>Feel free to add more wired and wireless devices to the
+network. For IoT devices, hold down the Alt key and click the devices to
+interact with them. With the Alt key depressed, you can turn on the <b>Music
+Player</b>, open the <b>Door</b>, and turn on the <b>Lamp</b> and <b>Fan</b>. Don’t
+forget that you can also control the IoT devices from the IoT Monitor app on
+the Smartphone or Tablet. </p>
+
+<p class=ConfigWindow>End of document</p>
+
+
+
+<div class="global-action-container btn__container">
+	<button class="show-all-answers btn-text btn__action">Show All Answers</button>
+	<button class="hide-all-answers btn-text btn__action hidden">Hide All Answers</button>
+	<button class="clear-all-responces btn-text btn__action">Clear My Responses</button>
+</div>
+
+<div id="footerDIV"><span><br><hr><span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span><br></span></div>
+
+
+</div>
+
+
+
+<script>
+
+	window.addEventListener('load',function(){
+		console.log('loaded');
+		document.querySelectorAll(".AnswerGray").forEach(function(ele){
+			ele.classList.add("hidden");
+		})
+		document.querySelectorAll(".hide-answer").forEach(function(ele){
+			ele.classList.add("hidden");
+		})
+		document.querySelectorAll(".show-answer").forEach(function(ele){
+			ele.addEventListener("click",function(e){
+				e.currentTarget.nextElementSibling.classList.remove("hidden");
+				e.currentTarget.closest('.question-container').querySelectorAll(".AnswerGray").forEach(function(ele){
+					ele.classList.remove("hidden");
+				})
+				ele.classList.add("hidden");
+			})
+		})
+		document.querySelectorAll(".hide-answer").forEach(function(ele){	
+			ele.addEventListener("click",function(e){
+				e.currentTarget.previousElementSibling.classList.remove("hidden");
+				e.currentTarget.closest('.question-container').querySelectorAll(".AnswerGray").forEach(function(ele){
+					ele.classList.add("hidden");
+				})
+				ele.classList.add("hidden");
+			})
+		})
+		var event = new Event('click', {
+			bubbles: true,
+			cancelable: true,
+		});
+		document.querySelectorAll(".show-all-answers").forEach(function(ele){	
+			ele.addEventListener("click",function(e){
+				e.currentTarget.nextElementSibling.classList.remove("hidden");
+				 ele.classList.add('hidden');
+				document.querySelectorAll(".show-answer").forEach(function(ele){
+					ele.dispatchEvent(event);
+				})
+			})
+		})
+
+		document.querySelectorAll(".hide-all-answers").forEach(function(ele){	
+			ele.addEventListener("click",function(e){
+				e.currentTarget.previousElementSibling.classList.remove("hidden");
+				 ele.classList.add('hidden');
+				document.querySelectorAll(".hide-answer").forEach(function(ele){
+					ele.dispatchEvent(event);
+				})
+			})
+		})
+
+		document.querySelectorAll(".clear-all-responces").forEach(function(ele){	
+			ele.addEventListener("click",function(e){
+				document.querySelectorAll("textArea").forEach(function(ele){
+					ele.value = "";
+				})
+			})
+		})
+
+		
+		
+	})
+	</script>
+</body>
+
+</html>
