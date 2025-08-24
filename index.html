@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Packet Tracer — FA 2025</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #005792;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+    }
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: .3rem;
+      margin-top: 2rem;
+    }
+    ul {
+      margin: .5rem 0 1.5rem 1.2rem;
+    }
+    code {
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      background: #eee;
+      font-size: .9rem;
+    }
+    a {
+      color: #005792;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Packet Tracer — Fall 2025</h1>
+    <p>Networking Labs, Templates, and IoT Scenarios</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Quick Start</h2>
+      <ol>
+        <li>Install <strong>Cisco Packet Tracer</strong> (latest version).</li>
+        <li>Clone or download this repo:<br>
+          <code>git clone https://github.com/kmorford/Packet-Tracer.git</code>
+        </li>
+        <li>Open <code>.pkt</code> files and follow the embedded instructions.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Repository Map</h2>
+      <ul>
+        <li><a href="Cisco%20Packet%20Tracer/">Cisco Packet Tracer</a> — core labs & device configs</li>
+        <li><a href="Networking/">Networking</a> — VLANs, routing, services</li>
+        <li><a href="IoT/">IoT</a> — sensors, actuators, and event-driven labs</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Learning Outcomes</h2>
+      <ul>
+        <li>Design & configure small to medium networks in Packet Tracer.</li>
+        <li>Implement IP addressing plans (VLSM), VLANs, trunking, and routing.</li>
+        <li>Configure routing protocols (RIPv2, OSPF).</li>
+        <li>Deploy services (DHCP, DNS) and validate connectivity.</li>
+        <li>Build and test simple IoT topologies.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Submission Guidelines</h2>
+      <p>Unless directed otherwise, submit:</p>
+      <ol>
+        <li>Your completed <code>.pkt</code> file.</li>
+        <li>A short write-up (<code>.pdf</code> or <code>.md</code>) including:</li>
+        <ul>
+          <li>IP/VLAN plan table</li>
+          <li>Config snippets (<code>show run</code>, <code>show ip route</code>, etc.)</li>
+          <li>Verification output (<code>ping</code>, <code>tracert</code>)</li>
+          <li>2–3 problems encountered + fixes</li>
+        </ul>
+      </ol>
+      <p><strong>File naming:</strong> <code>LastName_FirstName_LabNN</code></p>
+    </section>
+
+    <section>
+      <h2>Troubleshooting Checklist</h2>
+      <ul>
+        <li>Are interfaces up? (<code>show ip int br</code>)</li>
+        <li>Correct VLANs and trunking?</li>
+        <li>Default gateway set?</li>
+        <li>Routing protocols advertising networks?</li>
+        <li>Any ACL/security blocking traffic?</li>
+        <li>No IP overlaps?</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Maintained for instructional use — pull updates frequently.<br>
+    Cisco Packet Tracer is © Cisco Systems.</p>
+    <p>Last updated: August 2025</p>
+  </footer>
+</body>
+</html>
