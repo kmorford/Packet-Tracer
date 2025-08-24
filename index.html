@@ -1,104 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Packet Tracer labs repository: networking, VLANs, routing, IoT scenarios, submission guidelines, troubleshooting checklist."/>
   <title>Packet Tracer — Fall 2025</title>
   <style>
+    :root {
+      --brand:#005792;
+      --bg:#f4f4f4;
+      --card:#fff;
+      --border:#ddd;
+      --mono:Consolas,Menlo,monospace;
+    }
+    * { box-sizing:border-box; }
     body {
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
+      line-height:1.55;
+      margin:0;
+      background:var(--bg);
+      color:#222;
     }
+    a { color:var(--brand); text-decoration:none; }
+    a:focus, a:hover { text-decoration:underline; }
     header {
-      background: #005792;
-      color: #fff;
-      padding: 1.5rem;
-      text-align: center;
+      background:var(--brand);
+      color:#fff;
+      padding:1.5rem 1rem 1.25rem;
+      text-align:center;
     }
     header h1 {
-      margin: 0;
-      font-size: 2rem;
+      margin:.2rem 0 .4rem;
+      font-size:2rem;
+    }
+    nav[aria-label="Sections"] ul {
+      list-style:none;
+      padding:0;
+      margin:.75rem 0 0;
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem .5rem;
+      justify-content:center;
+    }
+    nav[aria-label="Sections"] a {
+      background:rgba(255,255,255,.15);
+      padding:.4rem .75rem;
+      border-radius:1rem;
+      font-size:.9rem;
+      backdrop-filter: blur(2px);
     }
     main {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
+      max-width:900px;
+      margin:auto;
+      padding:2rem 1.25rem 3rem;
+    }
+    section {
+      background:var(--card);
+      padding:1.25rem 1.25rem 1.4rem;
+      margin:0 0 1.4rem;
+      border:1px solid var(--border);
+      border-radius:8px;
+      box-shadow:0 1px 2px rgba(0,0,0,.04);
     }
     h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: .3rem;
-      margin-top: 2rem;
+      margin:0 0 .9rem;
+      font-size:1.25rem;
+      border-bottom:2px solid var(--border);
+      padding-bottom:.35rem;
+      line-height:1.2;
     }
-    ul, ol {
-      margin: .5rem 0 1.5rem 1.2rem;
-    }
+    ol, ul { margin:.4rem 0 1.1rem 1.2rem; }
+    ol li + li, ul li + li { margin-top:.3rem; }
     code {
-      background: #eee;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: Consolas, monospace;
+      background:#eee;
+      padding:2px 6px;
+      border-radius:4px;
+      font-family:var(--mono);
+      font-size:.9rem;
+    }
+    pre {
+      background:#1e1e1e;
+      color:#eee;
+      padding:.9rem 1rem;
+      overflow-x:auto;
+      border-radius:6px;
+      font-family:var(--mono);
+      font-size:.85rem;
+      margin:.6rem 0 1.1rem;
     }
     footer {
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      background: #eee;
-      font-size: .9rem;
+      text-align:center;
+      padding:1.25rem .75rem 2rem;
+      background:#eee;
+      font-size:.85rem;
     }
-    a {
-      color: #005792;
-      text-decoration: none;
+    .sr-only {
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0 0 0 0);
+      white-space:nowrap;
+      border:0;
     }
-    a:hover {
-      text-decoration: underline;
+    .skip-link {
+      position:absolute;
+      left:-999px;
+      top:0;
+      background:var(--brand);
+      color:#fff;
+      padding:.6rem 1rem;
+      border-radius:0 0 6px 0;
+      text-decoration:none;
+      font-size:.9rem;
+    }
+    .skip-link:focus {
+      left:0;
+      z-index:1000;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background:#121416; color:#ddd; }
+      section { background:#1f2326; border-color:#2e3438; }
+      header { background:#046ab5; }
+      code { background:#2b3035; color:#e3e3e3; }
+      pre { background:#15191c; }
+      footer { background:#1f2326; }
+      a { color:#4cb3ff; }
     }
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
   <header>
     <h1>Packet Tracer — Fall 2025</h1>
     <p>Networking Labs, Templates, and IoT Scenarios</p>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="Cisco%20Packet%20Tracer/">Cisco Labs</a></li>
+        <li><a href="Networking/">Networking</a></li>
+        <li><a href="IoT/">IoT</a></li>
+        <li><a href="index.md">Markdown Index</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Quick Start</h2>
+  <main id="main">
+    <section aria-labelledby="qs">
+      <h2 id="qs">Quick Start</h2>
       <ol>
         <li>Install <strong>Cisco Packet Tracer</strong> (latest version).</li>
-        <li>Clone or download this repo:<br>
-          <code>git clone https://github.com/kmorford/Packet-Tracer.git</code>
-        </li>
-        <li>Open <code>.pkt</code> files and follow the embedded instructions.</li>
+        <li>Clone repository:</li>
+      </ol>
+      <pre><code>git clone https://github.com/kmorford/Packet-Tracer.git
+cd Packet-Tracer
+</code></pre>
+      <ol start="3">
+        <li>Open .pkt files and follow embedded instructions.</li>
       </ol>
     </section>
 
-    <section>
-      <h2>Repository Map</h2>
+    <section aria-labelledby="map">
+      <h2 id="map">Repository Map</h2>
       <ul>
         <li><a href="Cisco%20Packet%20Tracer/">Cisco Packet Tracer</a> — core labs & device configs</li>
         <li><a href="Networking/">Networking</a> — VLANs, routing, services</li>
-        <li><a href="IoT/">IoT</a> — sensors, actuators, and event-driven labs</li>
+        <li><a href="IoT/">IoT</a> — sensors, actuators, event-driven labs</li>
       </ul>
     </section>
 
-    <section>
-      <h2>Learning Outcomes</h2>
+    <section aria-labelledby="outcomes">
+      <h2 id="outcomes">Learning Outcomes</h2>
       <ul>
-        <li>Design & configure small to medium networks in Packet Tracer.</li>
-        <li>Implement IP addressing plans (VLSM), VLANs, trunking, and routing.</li>
+        <li>Design and configure small/medium networks.</li>
+        <li>Implement IP plans (VLSM), VLANs, trunking, routing.</li>
         <li>Configure routing protocols (RIPv2, OSPF).</li>
         <li>Deploy services (DHCP, DNS) and validate connectivity.</li>
         <li>Build and test simple IoT topologies.</li>
       </ul>
     </section>
 
-    <section>
-      <h2>Submission Guidelines</h2>
+    <section aria-labelledby="submit">
+      <h2 id="submit">Submission Guidelines</h2>
       <p>Unless directed otherwise, submit:</p>
       <ol>
         <li>Your completed <code>.pkt</code> file.</li>
@@ -108,30 +192,29 @@
             <li>IP/VLAN plan table</li>
             <li>Config snippets (<code>show run</code>, <code>show ip route</code>, etc.)</li>
             <li>Verification output (<code>ping</code>, <code>tracert</code>)</li>
-            <li>2–3 problems encountered + fixes</li>
+            <li>2–3 issues encountered and fixes</li>
           </ul>
         </li>
       </ol>
       <p><strong>File naming:</strong> <code>LastName_FirstName_LabNN</code></p>
     </section>
 
-    <section>
-      <h2>Troubleshooting Checklist</h2>
+    <section aria-labelledby="trouble">
+      <h2 id="trouble">Troubleshooting Checklist</h2>
       <ul>
-        <li>Are interfaces up? (<code>show ip int br</code>)</li>
-        <li>Correct VLANs and trunking?</li>
+        <li>Interfaces up? (<code>show ip int br</code>)</li>
+        <li>Correct VLAN membership and trunking?</li>
         <li>Default gateway set?</li>
         <li>Routing protocols advertising networks?</li>
-        <li>Any ACL/security blocking traffic?</li>
-        <li>No IP overlaps?</li>
+        <li>ACL / security blocking traffic?</li>
+        <li>No overlapping IP ranges?</li>
       </ul>
     </section>
   </main>
 
   <footer>
-    <p>Maintained for instructional use — pull updates frequently.<br>
-    Cisco Packet Tracer is © Cisco Systems.</p>
-    <p>Last updated: August 2025</p>
+    <p>Maintained for instructional use — pull updates frequently. Cisco Packet Tracer is © Cisco Systems.</p>
+    <p>Last updated: <time datetime="2025-08-01">August 1, 2025</time></p>
   </footer>
 </body>
 </html>

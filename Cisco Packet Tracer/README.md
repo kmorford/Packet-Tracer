@@ -12,19 +12,7 @@ Core Packet Tracer activities used throughout the course.
 
 ---
 
-## Lab Index
 
-> Replace `LabN_Name.pkt` with your actual files. Keep the table short and scannable.
-
-| # | Lab Title | Topics / Skills | File |
-|---|-----------|------------------|------|
-| 1 | Basic Device Setup | Initial config, hostnames, passwords, banner, interface status | [Lab1_BasicSetup.pkt](./Lab1_BasicSetup.pkt) |
-| 2 | VLANs & Trunking | Access/trunk ports, VLAN database, verification | [Lab2_VLAN_Trunking.pkt](./Lab2_VLAN_Trunking.pkt) |
-| 3 | Inter-VLAN Routing | SVI vs. router-on-a-stick, gateway, connectivity tests | [Lab3_InterVLAN_Routing.pkt](./Lab3_InterVLAN_Routing.pkt) |
-| 4 | RIPv2 | Network advertising, no auto-summary, route verification | [Lab4_RIPv2.pkt](./Lab4_RIPv2.pkt) |
-| 5 | Single-Area OSPF | OSPF process, network statements, DR/BDR basics | [Lab5_OSPF_SingleArea.pkt](./Lab5_OSPF_SingleArea.pkt) |
-
----
 
 ## Deliverables (Default)
 Submit your **`.pkt`** file plus a brief write-up (`PDF`/`MD`) with:
