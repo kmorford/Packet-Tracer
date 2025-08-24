@@ -2,51 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Packet Tracer Labs</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #00ff99;
+      font-family: "Courier New", monospace;
+      margin: 2rem;
+    }
+    h1, h2 {
+      color: #00ffcc;
+      text-shadow: 0 0 5px #00ff99;
+    }
+    a {
+      color: #00ff99;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #ff0066;
+      text-shadow: 0 0 5px #ff0066;
+    }
+    ol {
+      margin-left: 2rem;
+    }
+    .nav {
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/Packet-Tracer/index.html">Packet Tracer Labs</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="/Packet-Tracer/Cisco-Packet-Tracer/index.html">Cisco Labs</a></li>
-          <li class="nav-item"><a class="nav-link" href="/Packet-Tracer/Networking/index.html">Networking</a></li>
-          <li class="nav-item"><a class="nav-link" href="/Packet-Tracer/IoT/index.html">IoT</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-  <div class="container mt-4">
-    <h1>Welcome to Packet Tracer Labs</h1>
-    <p>Select a section from the navigation bar above, or jump directly to activities below.</p>
-    <h2>Quick Links</h2>
-    <ul>
-      <li><a href="/Packet-Tracer/Cisco-Packet-Tracer/Create-a-Simple-Network.html">Create a Simple Network</a></li>
-      <li><a href="/Packet-Tracer/Networking/connect-devices-using-wireless-technologies.html">Connect Devices using Wireless Technologies</a></li>
-      <li><a href="/Packet-Tracer/Networking/create-realistic-structured-cabling-in-the-physical-workspace-and-cabling-devices-in-a-rack.html">Create Realistic Structured Cabling</a></li>
-      <li><a href="/Packet-Tracer/Networking/examine-packets-in-the-small-office.html">Examine Packets in the Small Office</a></li>
-      <li><a href="/Packet-Tracer/Networking/explore-device-configuration-using-the-cli.html">Explore Device Configuration using CLI</a></li>
-      <li><a href="/Packet-Tracer/Networking/edit-topologies.html">Edit Topologies</a></li>
-      <li><a href="/Packet-Tracer/Networking/manage-and-configure-your-network-using-a-network-controller.html">Manage and Configure Network using Controller</a></li>
-      <li><a href="/Packet-Tracer/Networking/monitor-your-network-using-a-network-controller.html">Monitor Network using Controller</a></li>
-      <li><a href="/Packet-Tracer/IoT/add-iot-devices-in-pt.html">Add IoT Devices in PT</a></li>
-      <li><a href="/Packet-Tracer/IoT/connect-iot-devices-to-a-registration-server.html">Connect IoT Devices to a Registration Server</a></li>
-      <li><a href="/Packet-Tracer/IoT/connect-to-a-home-gateway-and-monitor-network.html">Connect to a Home Gateway and Monitor Network</a></li>
-      <li><a href="/Packet-Tracer/IoT/create-your-own-iot-thing.html">Create Your Own IoT Thing</a></li>
-      <li><a href="/Packet-Tracer/IoT/modify-an-existing-script-for-an-iot-thing.html">Modify an Existing Script for an IoT Thing</a></li>
-      <li><a href="/Packet-Tracer/IoT/modify-and-monitor-environmental-controls-in-packet-tracer.html">Modify and Monitor Environmental Controls</a></li>
-    </ul>
+  <div class="nav">
+    <h1>💻 Packet Tracer Labs</h1>
+    <p>Choose a section:</p>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <h2>1. Cisco Packet Tracer Starting Out</h2>
+  <ol>
+    <li><a href="Create_a_Simple_Network.htm">Create a Simple Network</a></li>
+  </ol>
+
+  <h2>2. IoT</h2>
+  <ol>
+    <li><a href="Add_IoT_Devices_in_PT.html">Add IoT Devices in PT</a></li>
+    <li><a href="Connect_and_Control_Devices_Using_a_Registration_Server.html">Connect & Control Devices Using a Registration Server</a></li>
+    <li><a href="Connect_Devices_to_a_Home_Gateway_and_Monitor_Network.html">Connect Devices to a Home Gateway</a></li>
+    <li><a href="Create_Your_Own_IoT_Thing.html">Create Your Own IoT Thing</a></li>
+    <li><a href="Modify_an_Existing_Script_for_an_IoT_Thing.html">Modify an Existing IoT Script</a></li>
+    <li><a href="Modify_and_Monitor_Environmental_Controls_in_Packet_Tracer.html">Modify & Monitor Environmental Controls</a></li>
+  </ol>
+
+  <h2>3. Networking</h2>
+  <ol>
+    <li><a href="Connect_Devices_using_Wireless_Technologies.html">Connect Devices using Wireless Tech</a></li>
+    <li><a href="Create_Realistic_Structured_Cabling_in_the_Physical_Workspace_and_Cabling_Devices_in_a_Rack.html">Structured Cabling & Racks</a></li>
+    <li><a href="Edit_Topologies.html">Edit Topologies</a></li>
+    <li><a href="Examine_Packets_in_the_Small_Office.html">Examine Packets in a Small Office</a></li>
+    <li><a href="Explore_Device_Configuration_Using_the_CLI.html">Explore Device Config via CLI</a></li>
+    <li><a href="Manage_and_Configure_Your_Network_Using_a_Network_Controller.html">Manage & Configure Network Controller</a></li>
+    <li><a href="Monitor_Your_Network_Using_a_Network_Controller.html">Monitor Network Controller</a></li>
+  </ol>
 </body>
 </html>
