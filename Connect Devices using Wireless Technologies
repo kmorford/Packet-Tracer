@@ -1,0 +1,546 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Packet Tracer - Connect Devices using Wireless Technologies</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Webdings;
+	panose-1:5 3 1 2 1 5 9 6 7 3;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial",sans-serif;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	font-size:8.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.PageHead, li.PageHead, div.PageHead
+	{mso-style-name:"Page Head";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:115%;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+p.Bulletlevel1, li.Bulletlevel1, div.Bulletlevel1
+	{mso-style-name:"Bullet level 1";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.ConfigWindow, li.ConfigWindow, div.ConfigWindow
+	{mso-style-name:"Config Window";
+	margin:0in;
+	font-size:3.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-style:italic;}
+p.SubStepAlpha, li.SubStepAlpha, div.SubStepAlpha
+	{mso-style-name:"SubStep Alpha";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.BodyTextL50, li.BodyTextL50, div.BodyTextL50
+	{mso-style-name:"Body Text L50";
+	mso-style-link:"Body Text L50 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.BodyTextL25, li.BodyTextL25, div.BodyTextL25
+	{mso-style-name:"Body Text L25";
+	mso-style-link:"Body Text L25 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.SubStepNum, li.SubStepNum, div.SubStepNum
+	{mso-style-name:"SubStep Num";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.BodyTextL25Bold, li.BodyTextL25Bold, div.BodyTextL25Bold
+	{mso-style-name:"Body Text L25 Bold";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:SimSun;
+	font-weight:bold;}
+span.BodyTextL25Char
+	{mso-style-name:"Body Text L25 Char";
+	mso-style-link:"Body Text L25";}
+span.BodyTextL50Char
+	{mso-style-name:"Body Text L50 Char";
+	mso-style-link:"Body Text L50";}
+.MsoChpDefault
+	{font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:76.3pt .75in .9in .75in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+	.dark-theme {
+        color: #fff;
+      }
+      .dark-theme .dark-color {
+        color: #fff !important;
+      }
+      .dark-theme p.ConfigWindow,
+      .dark-theme li.ConfigWindow,
+      .dark-theme div.ConfigWindow {
+        mso-style-name: "Config Window";
+        color: #212328;
+      }
+      .dark-theme h4 {
+        color: #212328;
+      }
+      .dark-theme .MsoTitle span {
+        color: #fff !important;
+      }
+      .dark-theme textarea {
+        background-color: #212328;
+        color: #fff;
+      }
+      .dark-theme .BodyTextL25Answer {
+        background-color: #000;
+        color: #fff;
+      }
+      .dark-theme .BodyTextL25Answer > span {
+        padding: 4px;
+      }
+      .dark-theme .BodyTextL25Answer span {
+        color: #fff;
+      }
+      .dark-theme table tbody tr td {
+        color: #fff !important;
+      }
+      .dark-theme table .TableHeading {
+        color: #000;
+      }
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoTitle>Packet Tracer - Connect Devices using Wireless Technologies </p>
+
+<h1>Objectives</h1>
+
+<p class=BodyTextL25Bold>Part 1: Connect a Laptop to the Office WLAN</p>
+
+<p class=BodyTextL25Bold>Part 2: Connect Devices with Bluetooth Technology</p>
+
+<p class=BodyTextL25Bold>Part 3: Tether a Laptop to Use a Cellular Network via
+the Smartphone</p>
+
+<h1>Background</h1>
+
+<p class=BodyTextL25>In this Packet Tracer activity, you will use different
+wireless technologies to connect end devices in an office. The activity is
+performed in the Packet Tracer Physical Mode only.</p>
+
+<h1>Required Resources</h1>
+
+<p class=Bulletlevel1><span style='font-size:7.0pt;font-family:Webdings'>=<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span>Latest Packet Tracer
+version</p>
+
+<h1>Instructions</h1>
+
+<h2 style='margin-left:0in;text-indent:0in'>Part 1: Connect a Laptop to the
+Office WLAN</h2>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 1: Install a wireless module
+to a Laptop.</h3>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click the </span>Laptop<span
+style='font-weight:normal'> to open the configuration window.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Under the </span>Physical<span
+style='font-weight:normal'> tab, power off the </span>Laptop<span
+style='font-weight:normal'> by clicking the power button.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Remove the Ethernet module </span>PT-LAPTOP-NM-1CFE<span
+style='font-weight:normal'> from the laptop by dragging it from the </span>Laptop<span
+style='font-weight:normal'> to the list on the left.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Insert the wireless module </span>WPC300N
+<span style='font-weight:normal'>by dragging it from the list on the left to
+the</span> Laptop<span style='font-weight:normal'>.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Power on the </span>Laptop<span
+style='font-weight:normal'>.</span></p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 2: Connect Laptop to the
+office WLAN.</h3>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click the </span>Desktop<span
+style='font-weight:normal'> tab and select the </span>PC Wireless<span
+style='font-weight:normal'> tool.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click the </span>Connect<span
+style='font-weight:normal'> tab and wait until the </span>Employee SSID WLAN<span
+style='font-weight:normal'> is displayed. Note that you may have to click </span>Refresh<span
+style='font-weight:normal'>.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click the </span>Employee<span
+style='font-weight:normal'> </span>SSID<span style='font-weight:normal'> to
+select it. Click </span>Connect<span style='font-weight:normal'>.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Enter </span>Cisco123<span
+style='font-weight:normal'> as the pre-shared key and click </span>Connect<span
+style='font-weight:normal'>.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>After connecting to the wireless
+network, close the </span>PC Wireless<span style='font-weight:normal'> window.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click the </span>Config<span
+style='font-weight:normal'> tab and select </span>Wireless0<span
+style='font-weight:normal'> in the left pane to verify in the </span>IP
+Configuration<span style='font-weight:normal'> section</span> <span
+style='font-weight:normal'>that the </span>Laptop<span style='font-weight:normal'>
+has been assigned an IP address.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Open the </span>Web Browser<span
+style='font-weight:normal'> from the </span>Desktop<span style='font-weight:
+normal'>. Navigate to </span>office.srv<span style='font-weight:normal'> to
+verify that the </span>Laptop<span style='font-weight:normal'> has
+connectivity.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>h.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Close the </span>Laptop<span
+style='font-weight:normal'> window.</span></p>
+
+<h2 style='margin-left:0in;text-indent:0in'>Part 2: Connect Devices with
+Bluetooth Technology</h2>
+
+<p class=BodyTextL25>In this part, you will connect a Bluetooth speaker to a tablet
+installed with a music player via Bluetooth.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 1: Enable Bluetooth ports on
+devices.</h3>
+
+<p class=BodyTextL25 style='margin-left:.75in;text-indent:-.25in'>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the <b>Bluetooth
+</b>Speaker. </p>
+
+<p class=BodyTextL25 style='margin-left:.75in;text-indent:-.25in'>b.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the <b>Config</b>
+tab. </p>
+
+<p class=BodyTextL25 style='margin-left:.75in;text-indent:-.25in'>c.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>Bluetooth</b>
+on the left pane and check that the Port Status is <b>On</b>. Note that the
+speaker is not paired with the <b>Office Tablet</b>.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 2: Connect Bluetooth devices.</h3>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Open the </span>Office Tablet<span
+style='font-weight:normal'>. </span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click the </span>Config tab<span
+style='font-weight:normal'>. </span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click </span>Bluetooth<span
+style='font-weight:normal'> in the left pane and check the </span>On<span
+style='font-weight:normal'> box for Port Status.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click </span>Discover<span
+style='font-weight:normal'> and the </span>Bluetooth Speaker<span
+style='font-weight:normal'> device should be discovered.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Select the </span>Bluetooth
+Speaker<span style='font-weight:normal'> in the </span>Devices<span
+style='font-weight:normal'> list and click </span>Pair<span style='font-weight:
+normal'>. The status should change to “Paired, Connected”. If prompted for
+permission to connect, click </span>Yes<span style='font-weight:normal'>.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>To test the Bluetooth
+connection, click the </span>Desktop<span style='font-weight:normal'> tab and select
+</span>Music Player<span style='font-weight:normal'>. Click </span>Play/Stop<span
+style='font-weight:normal'> to start the music. </span>Note<span
+style='font-weight:normal'>: Make sure your speaker is on.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click </span>Play/Stop<span
+style='font-weight:normal'> again to stop the sound.</span></p>
+
+<h2 style='margin-left:0in;text-indent:0in'>Part 3: Tether a Laptop to Use a Cellular
+Network via the Smartphone</h2>
+
+<p class=BodyTextL25>In this part, you will tether a laptop to a smartphone via
+Bluetooth. The laptop will use the cellular network to access a website.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 1: Enable Bluetooth on the Laptop.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click the <b>User-Laptop</b>. Select the <b>Config</b> tab.</p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click <b>Bluetooth</b> on the left panel. Click <b>On</b> for the Port
+Status.</p>
+
+<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Leave the <b>User-Laptop</b> Bluetooth window open.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 2: Connect a smartphone to the
+Cellular network and enable Bluetooth.</h3>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click the </span>Smartphone<span
+style='font-weight:normal'> to open the configuration window.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click the </span>Config<span
+style='font-weight:normal'> tab. Check the </span>On<span style='font-weight:
+normal'> box for the Cellular Tethering setting in the </span>Global Settings<span
+style='font-weight:normal'>.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click the </span>3G/4G Cell1 <span
+style='font-weight:normal'>interface. Verify that the </span>Smartphone<span
+style='font-weight:normal'> has an IP address from the cellular network.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Click </span>Bluetooth<span
+style='font-weight:normal'> in the left pane and check the </span>On<span
+style='font-weight:normal'> box for the Port status on the </span>Smartphone<span
+style='font-weight:normal'>.</span></p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 3: Connect Bluetooth devices
+and tethering to laptop</h3>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>On the Bluetooth configuration
+for the </span>Smartphone<span style='font-weight:normal'>, click </span>Discover<span
+style='font-weight:normal'> to search for nearby Bluetooth enabled-devices.</span></p>
+
+<p class=BodyTextL50><b>Note</b>: If <b>Smartphone</b> does not appear after a
+while, move <b>Smartphone</b> closer to <b>User-Laptop</b> and click <b>Discover</b>
+again.</p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Select</span> User-Laptop<span
+style='font-weight:normal'> and click </span>Pair<span style='font-weight:normal'>.
+A pop-up window appears and asks for permission. Click </span>Yes<span
+style='font-weight:normal'>. The two devices are connected via Bluetooth.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>Return to the </span>User-Laptop<span
+style='font-weight:normal'>. In the Bluetooth panel of the </span>Config<span
+style='font-weight:normal'> tab, highlight </span>Smartphone<span
+style='font-weight:normal'> and click </span>Tether<span style='font-weight:
+normal'>.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>At the bottom pane of the
+Bluetooth configuration, notice that </span>User-Laptop<span style='font-weight:
+normal'> has now obtained an IP address.</span></p>
+
+<p class=BodyTextL25Bold style='margin-left:.5in;text-indent:-.25in'><span
+style='font-weight:normal'>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-weight:normal'>To test connectivity, navigate
+to </span>office.srv<span style='font-weight:normal'>. Click </span>Desktop<span
+style='font-weight:normal'> &gt; </span>Web Browser<span style='font-weight:
+normal'>. Enter </span>office.srv<span style='font-weight:normal'> in the URL
+field. You can fast forward time to speed up the process.</span></p>
+
+<p class=ConfigWindow>End of document</p>
+
+<div id="footerDIV"><span><br><hr><span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span><br></span></div>
+
+</div>
+
+</body>
+
+</html>
