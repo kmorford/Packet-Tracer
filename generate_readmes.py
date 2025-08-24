@@ -52,15 +52,33 @@ def ensure_folder_readme(folder: Path):
         if new_text != text:
             readme.write_text(new_text, encoding="utf-8")
             print(f"Updated: {readme}")
+        else:
+            print(f"No changes: {readme}")
     else:
-        content = f"# {folder.name}\n\n## Lab Index\n\n{MARKER_START}\n{auto_list}\n{MARKER_END}\n"
+        content = (
+            f"# {folder.name}\n\n"
+            f"## Lab Index\n\n"
+            f"{MARKER_START}\n{auto_list}\n{MARKER_END}\n"
+        )
         readme.write_text(content, encoding="utf-8")
         print(f"Created: {readme}")
 
 def write_root_index(repo_root: Path):
-    index_md = r_
+    index_md = repo_root / "index.md"
+    content = ROOT_INDEX_TEMPLATE.format(today=datetime.date.today().isoformat())
+    index_md.write_text(content, encoding="utf-8")
+    print("Wrote: index.md")
 
-        readme.write_text(content, encoding="utf-8")
-        print(f"Created: {readme}")
+def main():
+    repo_root = Path(__file__).resolve().parent
+    write_root_index(repo_root)
 
-def write_root_index(repo
+    for rel in TARGET_DIRS:
+        folder = repo_root / rel
+        if folder.exists():
+            ensure_folder_readme(folder)
+        else:
+            print(f"Skip (not found): {folder}")
+
+if __name__ == "__main__":
+    main()
