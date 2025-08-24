@@ -1,4 +1,4 @@
-# Cisco Packet Tracer Labs
+# Cisco Packet Tracer 
 
 Core Packet Tracer activities used throughout the course.
 
@@ -13,7 +13,7 @@ Core Packet Tracer activities used throughout the course.
 ---
 ## Pages
 
-- [Create a Simple Network](././create-simple-network.html)
+- [Create a Simple Network](./Create-a-Simple-Network.html)
 
 ---
 
