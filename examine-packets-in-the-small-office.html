@@ -1,452 +1,156 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="style.css">
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Packet Tracer - Examine Packets in the Small Office</title>
-<style>
- /* Font Definitions */
- @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
-@font-face
-	{font-family:SimSun;
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-@font-face
-	{font-family:Webdings;
-	panose-1:5 3 1 2 1 5 9 6 7 3;}
-@font-face
-	{font-family:Tahoma;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
-@font-face
-	{font-family:"\@SimSun";
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-h1
-	{mso-style-link:"Heading 1 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	text-indent:-.25in;
-	page-break-after:avoid;
-	font-size:13.0pt;
-	font-family:"Arial",sans-serif;}
-h2
-	{mso-style-link:"Heading 2 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
-h3
-	{mso-style-link:"Heading 3 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoFooter, li.MsoFooter, div.MsoFooter
-	{mso-style-link:"Footer Char";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:0in;
-	font-size:8.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoTitle, li.MsoTitle, div.MsoTitle
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading1Char
-	{mso-style-name:"Heading 1 Char";
-	mso-style-link:"Heading 1";
-	font-weight:bold;}
-span.Heading2Char
-	{mso-style-name:"Heading 2 Char";
-	mso-style-link:"Heading 2";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-p.PageHead, li.PageHead, div.PageHead
-	{mso-style-name:"Page Head";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	border:none;
-	padding:0in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.FooterChar
-	{mso-style-name:"Footer Char";
-	mso-style-link:Footer;}
-p.SubStepAlpha, li.SubStepAlpha, div.SubStepAlpha
-	{mso-style-name:"SubStep Alpha";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25, li.BodyTextL25, div.BodyTextL25
-	{mso-style-name:"Body Text L25";
-	mso-style-link:"Body Text L25 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.SubStepNum, li.SubStepNum, div.SubStepNum
-	{mso-style-name:"SubStep Num";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.75in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25Bold, li.BodyTextL25Bold, div.BodyTextL25Bold
-	{mso-style-name:"Body Text L25 Bold";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading3Char
-	{mso-style-name:"Heading 3 Char";
-	mso-style-link:"Heading 3";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-span.TitleChar
-	{mso-style-name:"Title Char";
-	mso-style-link:Title;
-	font-family:SimSun;
-	font-weight:bold;}
-span.BodyTextL25Char
-	{mso-style-name:"Body Text L25 Char";
-	mso-style-link:"Body Text L25";}
-.MsoChpDefault
-	{font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
- /* Page Definitions */
- @page WordSection1
-	{size:8.5in 11.0in;
-	margin:76.3pt .75in .9in .75in;}
-div.WordSection1
-	{page:WordSection1;}
- /* List Definitions */
- ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
-	.dark-theme {
-        color: #fff;
-      }
-      .dark-theme .dark-color {
-        color: #fff !important;
-      }
-      .dark-theme p.ConfigWindow,
-      .dark-theme li.ConfigWindow,
-      .dark-theme div.ConfigWindow {
-        mso-style-name: "Config Window";
-        color: #212328;
-      }
-      .dark-theme h4 {
-        color: #212328;
-      }
-      .dark-theme .MsoTitle span {
-        color: #fff !important;
-      }
-      .dark-theme textarea {
-        background-color: #212328;
-        color: #fff;
-      }
-      .dark-theme .BodyTextL25Answer {
-        background-color: #000;
-        color: #fff;
-      }
-      .dark-theme .BodyTextL25Answer > span {
-        padding: 4px;
-      }
-      .dark-theme .BodyTextL25Answer span {
-        color: #fff;
-      }
-      .dark-theme table tbody tr td {
-        color: #fff !important;
-      }
-      .dark-theme table .TableHeading {
-        color: #000;
-      }
-</style>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>Packet Tracer - Examine Packets in the Small Office</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Packet Tracer lab: examine packets in the small office using Simulation mode (simple and complex PDUs).">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --header-bg:#0b0f10cc;
+      --accent:#00ff88;
+      --font:Arial,Helvetica,sans-serif;
+      --border:#d9e1e6;
+      --panel:#ffffff;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font:14px/1.5 var(--font);
+      color:#222;
+      background:#f7f9fa;
+      -webkit-font-smoothing:antialiased;
+    }
+    header.site-header{
+      position:sticky;top:0;z-index:1000;
+      background:var(--header-bg);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid #16332a;
+      padding:.7rem 1rem .85rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:1.5rem;
+      align-items:center;
+    }
+    header.site-header h1{margin:0;font-size:1.25rem;font-weight:600;line-height:1.1;}
+    header.site-header a{color:#fff;text-decoration:none;}
+    header.site-header nav a{
+      color:var(--accent);
+      text-decoration:none;
+      margin:0 .45rem;
+      font-weight:500;
+      white-space:nowrap;
+    }
+    header.site-header nav a:hover{text-shadow:0 0 6px rgba(0,255,136,.45);}
+    main{
+      max-width:960px;
+      margin:0 auto;
+      padding:1.45rem 1rem 3rem;
+      background:transparent;
+    }
+    h1,h2,h3{font-weight:600;line-height:1.25;margin:1.15rem 0 .55rem;}
+    h1{font-size:1.4rem;}
+    h2{font-size:1.2rem;}
+    h3{font-size:1.05rem;}
+    p{margin:.6rem 0;}
+    /* Indentation classes retained */
+    .BodyTextL25,.BodyTextL25Bold{margin-left:.25in;font-size:.9rem;}
+    .BodyTextL25Bold{font-weight:700;}
+    .SubStepAlpha{margin-left:.5in;text-indent:-.25in;font-size:.9rem;}
+    #footerDIV{
+      font:12px var(--font);
+      margin-top:2.5rem;
+      padding-top:1rem;
+      border-top:1px solid var(--border);
+    }
+    @media (prefers-color-scheme: dark){
+      body{background:#121416;color:#e4e8ea;}
+      header.site-header{background:#0b0f10f2;}
+      #footerDIV{border-color:#2d3338;}
+    }
+  </style>
 </head>
+<body>
+  <header class="site-header">
+    <h1><a href="/Packet-Tracer/index.html" style="color:white; text-decoration:none;">🏠 Packet Tracer</a></h1>
+    <nav>
+      <a href="/Packet-Tracer/index.html">Home</a> |
+      <a href="/Packet-Tracer/Cisco%20Packet%20Tracer/index.html">Cisco Labs</a> |
+      <a href="/Packet-Tracer/Networking/index.html">Networking</a> |
+      <a href="/Packet-Tracer/IoT/index.html">IoT</a>
+    </nav>
+  </header>
 
-<body lang=EN-US style='word-wrap:break-word'>
-	<!-- home-snippet.html -->
-<style>
-  .homebar{position:sticky;top:0;z-index:9999;background:#0b0f10cc;border-bottom:1px solid #16332a;padding:.5rem .75rem;font:600 14px ui-monospace,Menlo,Consolas,monospace;color:#8ff0c9}
-  .homebar a{color:#00ff88;text-decoration:none}
-  .homebar a:hover{text-shadow:0 0 6px rgba(0,255,136,.45)}
-</style>
-<div class="homebar">← <a href="index.html">Home</a></div>
+  <main>
+    <p class="BodyTextL25Bold" style="margin-left:0;font-size:1.55rem;">Packet Tracer - Examine Packets in the Small Office</p>
 
-<!-- NAVBAR-INJECT START 
-<!-- Injected by inject_nav.py 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{base}/index.html">Packet Tracer Labs</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="{base}/index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Cisco-Packet-Tracer/index.html">Cisco Labs</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Networking/index.html">Networking</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/IoT/index.html">IoT</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- NAVBAR-INJECT END -->
+    <h1>Objectives</h1>
+    <p class="BodyTextL25Bold">Part 1: Create a Simple PDU in Simulation Mode</p>
+    <p class="BodyTextL25Bold">Part 2: View Contents of PDUs</p>
+    <p class="BodyTextL25Bold">Part 3: Create a Complex PDU in Simulation Mode</p>
 
+    <h1>Background / Scenario</h1>
+    <p class="BodyTextL25">In this Packet Tracer activity, you will use Simulation mode to create PDUs to explore network functionality.</p>
+    <p class="BodyTextL25"><b>Note</b>: Simulation mode does not work in Physical mode; therefore, Physical mode is locked.</p>
 
-<div class=WordSection1>
+    <h1>Instructions</h1>
 
-<p class=MsoTitle>Packet Tracer - Examine Packets in the Small Office </p>
+    <h2>Part 1: Create a Simple PDU in Simulation Mode</h2>
 
-<h1>Objectives</h1>
+    <h3>Step 1: Enter the Office network.</h3>
+    <p class="BodyTextL25">Click <b>Office</b> to view the logical network for the Office.</p>
 
-<p class=BodyTextL25Bold>Part 1: Create a Simple PDU in Simulation Mode</p>
+    <h3>Step 2: Enter Simulation mode.</h3>
+    <p class="BodyTextL25">Click the <b>Simulation</b> mode icon in the bottom-right corner. This pauses all network traffic that occurs in <b>Realtime</b> mode.</p>
+    <p class="BodyTextL25"><b>Note</b>: If an “Intercity is locked” pop-up appears, click <b>Okay</b>.</p>
 
-<p class=BodyTextL25Bold>Part 2: View Contents of PDUs</p>
+    <h3>Step 3: Create a simple PDU (ping Office-Admin to Printer0).</h3>
+    <p class="SubStepAlpha">a. Click <b>Add Simple PDU</b> (closed envelope icon).</p>
+    <p class="SubStepAlpha">b. Click <b>Office-Admin</b> (source) then <b>Printer0</b> (destination).</p>
 
-<p class=BodyTextL25Bold>Part 3: Create a Complex PDU in Simulation Mode</p>
+    <h3>Step 4: Observe traffic.</h3>
+    <p class="SubStepAlpha">a. In <b>Play Controls</b>, click <b>Capture/Forward</b>.</p>
+    <p class="SubStepAlpha">b. Click repeatedly to advance packet hops; watch the <b>Event List</b>.</p>
+    <p class="SubStepAlpha">c. Continue until the return ICMP reaches <b>Office-Admin</b>. If “Buffer Full” appears, you have many events.</p>
+    <p class="SubStepAlpha">d. When <b>Buffer Full</b> appears, click <b>View Previous Events</b>. If you clicked <b>Clear Event List</b>, use <b>Reset Simulation</b> and repeat.</p>
 
-<h1>Background / Scenario</h1>
+    <h2>Part 2: View Contents of PDUs</h2>
 
-<p class=BodyTextL25>In this Packet Tracer activity, you will use the
-Simulation mode to create PDUs to explore network functionality.</p>
+    <h3>Step 1: Use the Event List.</h3>
+    <p class="BodyTextL25">Inspect the first ICMP PDU from the PC.</p>
+    <p class="SubStepAlpha">a. In <b>Event List</b>, widen the panel if needed.</p>
+    <p class="SubStepAlpha">b. Click the first <b>ICMP</b> entry (Type column) to open <b>PDU Information at Device: Office-Admin</b>.</p>
+    <p class="SubStepAlpha">c. Review the <b>OSI Model</b> tab (outbound Layer 3, source/destination IPv4).</p>
+    <p class="SubStepAlpha">d. Click <b>Outbound PDU Details</b> for protocol headers.</p>
+    <p class="SubStepAlpha">e. Close the window.</p>
+    <p class="SubStepAlpha">f. Explore other PDUs similarly.</p>
 
-<p class=BodyTextL25><b>Note</b>: Simulation mode does not work in Physical
-mode; therefore, Physical mode is locked.</p>
+    <h3>Step 2: Delete the simple PDU.</h3>
+    <p class="BodyTextL25">Double-click <b>Delete</b> in the Event Simulation pane to remove the simple PDU and clear events.</p>
 
-<h1>Instructions</h1>
+    <h2>Part 3: Create a Complex PDU in Simulation Mode</h2>
 
-<h2 style='margin-left:0in;text-indent:0in'>Part 1: Create a Simple PDU in
-Simulation Mode</h2>
+    <h3>Step 1: Add the complex PDU (Office-Admin to Printer0).</h3>
+    <p class="SubStepAlpha">a. Click <b>Add Complex PDU</b> (open envelope).</p>
+    <p class="SubStepAlpha">b. Click <b>Office-Admin</b> (source) — the <b>Create Complex PDU</b> window opens.</p>
+    <p class="SubStepAlpha">c. Click <b>Printer0</b> (destination) — destination IP fills in.</p>
 
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Enter the Office network.</h3>
+    <h3>Step 2: Configure periodic pings (5 s).</h3>
+    <p class="SubStepAlpha">a. Confirm <b>PING</b> application selected.</p>
+    <p class="SubStepAlpha">b. Enter <b>1234</b> in <b>Sequence Number</b>.</p>
+    <p class="SubStepAlpha">c. Select <b>Periodic</b>, set <b>Interval</b> to <b>5</b> seconds.</p>
+    <p class="SubStepAlpha">d. Click <b>Create PDU</b> (first ICMP appears in Event List).</p>
 
-<p class=BodyTextL25>Click <b>Office</b> to view the logical network for the
-Office.</p>
+    <h3>Step 3: Observe periodic traffic.</h3>
+    <p class="SubStepAlpha">a. Click <b>Play</b>; watch new PDUs every 5 seconds.</p>
+    <p class="SubStepAlpha">b. Adjust animation speed with the slider.</p>
+    <p class="SubStepAlpha">c. Click <b>Play</b> again to pause simulation.</p>
+    <p class="SubStepAlpha">d. To delete, double-click <b>Delete</b> in Event Simulation pane.</p>
 
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Enter Simulation mode.</h3>
-
-<p class=BodyTextL25>Click the <b>Simulation</b> mode icon in the bottom-right
-corner of the Packet Tracer window to open the Simulation panel. This pauses
-all network traffic that occurs in <b>Realtime</b> mode. </p>
-
-<p class=BodyTextL25><b>Note</b>: A pop-up window will open stating “Intercity
-is locked.” Click on the <b>okay</b> tab in the window to close it. You will
-need to do this before continuing. You can center the Packet Tracer by scrolling
-the bar at the bottom of the Packet Tracer activity area.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 3: Create a simple PDU that
-sends a ping from Office-Admin to Printer0.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Add Simple PDU</b> in the top toolbar. It looks like a closed
-envelope. The curser will change to an envelope with a plus sign when you move
-the cursor into the Packet Tracer activity area.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Office-Admin</b> first so that it will become the source of the
-ping, and then click <b>Printer0</b> so that it will become the destination. </p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 4: Observe traffic moving
-through the network.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Play Controls</b> area of the <b>Simulation Panel</b>,
-directly below the <b>Reset Simulation</b> button, click <b>Capture/Forward</b>,
-which is the button directly to the right of the <b>Play</b> button.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Observe the traffic move through the network each time the button is
-clicked. Notice also that each time <b>Capture/Forward</b> is clicked, sent
-packets are displayed in the <b>Event List</b> in the <b>Simulation Panel</b>. </p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Continue clicking <b>Capture/Forward</b> until the return ICMP packet
-makes it back to <b>Office-Admin</b>. Continue clicking on the Capture/Forward
-button quickly several times until you get a pop-up window that states” Buffer
-Full-Cisco packet Tracer.”</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>When the <b>Buffer Full</b> message pops up, click <b>View Previous
-Events</b>. If you accidentally click <b>Clear Event List</b>, click <b>Reset
-Simulation</b> and return to the beginning of this step. </p>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 2: View Contents of PDUs</h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Use the event list to see
-PDU information.</h3>
-
-<p class=BodyTextL25>View the information of the first ICMP PDU packet from the
-PC. </p>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Event List</b> window, find the <b>Type</b> column. You may
-need to expand the width of the <b>Simulation Panel</b>. To do so, click and
-drag the vertical bar on the left of the window.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Type</b> column, click the first <b>ICMP</b> packet. This will
-open the <b>PDU Information at Device: Office-Admin</b> window.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Observe the information in the <b>OSI Model</b> tab. Notice that this is
-an outbound Layer 3 PDU and the source and destination IPv4 addresses are
-shown.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Outbound PDU Details</b> tab. Notice that this tab shows
-details of the protocol headers.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Close the <b>PDU Information at Device: Office-Admin</b> window.</p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Explore the contents of other PDUs that are listed in the <b>Simulation Panel</b>
-and review the information that is available in each.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Delete the simple PDU.</h3>
-
-<p class=BodyTextL25>Double click the <b>Delete</b> button in the <b>Event
-Simulation</b> pane at the bottom of the Packet Tracer window. Notice that this
-removes the simple PDU and clears out all PDUs from the <b>Event List</b> in
-the <b>Simulation Panel</b>.</p>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 3: Create a Complex PDU in
-Simulation Mode</h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Add a complex PDU to send
-pings from the PC to the laptop.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Add Complex PDU</b> in the top toolbar. It looks like an open
-envelope. </p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Office-Admin</b> first so that it will become the source of the
-ping. The <b>Create Complex PDU</b> window will display. Leave this window
-open.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Printer0</b> so that it will become the destination. Notice
-that the <b>Destination IP Address</b> field in the <b>Create Complex PDU</b>
-window is now set to the IPv4 address for <b>Printer0</b>. You can see the IPv4
-address for Printer0 by hovering the pointer over it.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Configure complex PDU
-settings to send the pings every 5 seconds.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Create Complex PDU</b> window, there are many settings which
-can be customized. Notice that <b>PING</b> is automatically selected as the
-application for this PDU. </p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>The <b>Sequence Number</b> field must be populated with a value. Enter <b>1234</b>.
-</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Simulation Settings</b> section, click <b>Periodic</b>, and then
-set the <b>Interval</b> to <b>5</b> seconds.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Create PDU</b>. The first ICMP packet is now shown in the <b>Event
-List</b> and a packet icon is shown over <b>Office-Admin</b>.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 3: Observe traffic moving
-through the network.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Play</b> in the <b>Simulation Panel</b> and watch the traffic
-move through the network. Notice the PDUs populating the <b>Event List</b>. in
-the <b>Simulation Panel</b>. A new PDU is created every 5 seconds. </p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Directly below the <b>Play</b> button is a slider. You can drag this
-right to speed up the animation or left to slow it down.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Play</b> at any time to stop the simulation.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>To delete the complex PDU, double click <b>Delete</b> in the <b>Event
-Simulation</b> pane at the bottom of the Packet Tracer window.</p>
-
-<div id="footerDIV"><span><br><hr><span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span><br></span></div>
-
-</div>
+    <div id="footerDIV">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

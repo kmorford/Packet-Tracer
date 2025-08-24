@@ -1,542 +1,156 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="style.css">
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Packet Tracer – Modify an Existing Script for an IoT Thing</title>
-<style>
-
- /* Font Definitions */
- @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
-@font-face
-	{font-family:SimSun;
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-@font-face
-	{font-family:Webdings;
-	panose-1:5 3 1 2 1 5 9 6 7 3;}
-@font-face
-	{font-family:Tahoma;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
-@font-face
-	{font-family:"\@SimSun";
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
- /* Style Definitions */
- h1
-	{mso-style-link:"Heading 1 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	text-indent:-.25in;
-	page-break-after:avoid;
-	font-size:13.0pt;
-	font-family:"Arial",sans-serif;}
-h2
-	{mso-style-link:"Heading 2 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
-h3
-	{mso-style-link:"Heading 3 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoTitle, li.MsoTitle, div.MsoTitle
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading1Char
-	{mso-style-name:"Heading 1 Char";
-	mso-style-link:"Heading 1";
-	font-weight:bold;}
-span.Heading2Char
-	{mso-style-name:"Heading 2 Char";
-	mso-style-link:"Heading 2";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-p.Bulletlevel2, li.Bulletlevel2, div.Bulletlevel2
-	{mso-style-name:"Bullet level 2";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.75in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.ConfigWindow, li.ConfigWindow, div.ConfigWindow
-	{mso-style-name:"Config Window";
-	margin:0in;
-	font-size:3.0pt;
-	font-family:"Arial",sans-serif;
-	color:white;
-	font-style:italic;}
-p.SubStepAlpha, li.SubStepAlpha, div.SubStepAlpha
-	{mso-style-name:"SubStep Alpha";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25, li.BodyTextL25, div.BodyTextL25
-	{mso-style-name:"Body Text L25";
-	mso-style-link:"Body Text L25 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.DevConfigs, li.DevConfigs, div.DevConfigs
-	{mso-style-name:DevConfigs;
-	mso-style-link:"DevConfigs Char";
-	margin:0in;
-	line-height:115%;
-	font-size:10.0pt;
-	font-family:"Courier New";}
-p.SubStepNum, li.SubStepNum, div.SubStepNum
-	{mso-style-name:"SubStep Num";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.75in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25Bold, li.BodyTextL25Bold, div.BodyTextL25Bold
-	{mso-style-name:"Body Text L25 Bold";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading3Char
-	{mso-style-name:"Heading 3 Char";
-	mso-style-link:"Heading 3";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-span.TitleChar
-	{mso-style-name:"Title Char";
-	mso-style-link:Title;
-	font-family:SimSun;
-	font-weight:bold;}
-span.BodyTextL25Char
-	{mso-style-name:"Body Text L25 Char";
-	mso-style-link:"Body Text L25";}
-span.DevConfigsChar
-	{mso-style-name:"DevConfigs Char";
-	mso-style-link:DevConfigs;
-	font-family:"Courier New";}
-.MsoChpDefault
-	{font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
- /* Page Definitions */
- @page WordSection1
-	{size:8.5in 11.0in;
-	margin:76.3pt .75in .9in .75in;}
-div.WordSection1
-	{page:WordSection1;}
- /* List Definitions */
- ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
-	.dark-theme {
-    color: #fff;
-  }
-  .dark-theme .dark-color {
-    color: #fff !important;
-  }
-  .dark-theme p.ConfigWindow,
-  .dark-theme li.ConfigWindow,
-  .dark-theme div.ConfigWindow {
-    mso-style-name: "Config Window";
-    color: #212328;
-  }
-  .dark-theme h4 {
-    color: #212328;
-  }
-  .dark-theme .MsoTitle span {
-    color: #fff !important;
-  }
-  .dark-theme textarea {
-    background-color: #212328;
-    color: #fff;
-  }
-  .dark-theme .BodyTextL25Answer {
-    background-color: #000;
-    color: #fff;
-  }
-  .dark-theme .BodyTextL25Answer > span {
-    padding: 4px;
-  }
-  .dark-theme .BodyTextL25Answer span {
-    color: #fff;
-  }
-  .dark-theme table tbody tr td {
-    color: #fff !important;
-  }
-  .dark-theme table .TableHeading {
-    color: #000;
-  }
-
-</style>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>Packet Tracer – Modify an Existing Script for an IoT Thing</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Packet Tracer lab: modify an existing script for an IoT Thing (Security Camera) and test it.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --header-bg:#0b0f10cc;
+      --accent:#00ff88;
+      --border:#d9e1e6;
+      --answer-bg:#d9d9d9;
+      --font:Arial,Helvetica,sans-serif;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font:14px/1.5 var(--font);
+      color:#222;
+      background:#f7f9fa;
+      -webkit-font-smoothing:antialiased;
+    }
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:var(--header-bg);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid #16332a;
+      padding:.7rem 1rem .85rem;
+      display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;
+    }
+    header h1{margin:0;font-size:1.25rem;font-weight:600;line-height:1.1;}
+    header nav a{
+      color:var(--accent);
+      text-decoration:none;
+      margin:0 .45rem;
+      font-weight:500;
+      white-space:nowrap;
+    }
+    header nav a:hover{text-shadow:0 0 6px rgba(0,255,136,.45);}
+    main{max-width:960px;margin:0 auto;padding:1.4rem 1rem 3rem;}
+    h1,h2,h3{font-weight:600;line-height:1.25;margin:1.18rem 0 .55rem;}
+    h1{font-size:1.38rem;}
+    h2{font-size:1.18rem;}
+    h3{font-size:1.05rem;}
+    p{margin:.6rem 0;}
+    /* Indentation / legacy semantics */
+    .BodyTextL25,.BodyTextL25Bold{margin-left:.25in;font-size:.9rem;}
+    .BodyTextL25Bold{font-weight:700;}
+    .SubStepAlpha{margin-left:.5in;text-indent:-.25in;font-size:.9rem;}
+    .Bulletlevel2{margin-left:.75in;text-indent:-.25in;font-size:.9rem;}
+    .DevConfigs{margin-left:.5in;font:12px/1.4 "Courier New",monospace;background:#212328;color:#fff;padding:.4rem .6rem;border-radius:4px;white-space:pre;}
+    img.inline-icon{max-width:40px;height:auto;vertical-align:middle;}
+    #footerDIV{font:12px var(--font);margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--border);}
+    .ConfigWindow{font-size:.65rem;color:#555;margin-top:2rem;font-style:italic;margin-left:.25in;}
+    @media (prefers-color-scheme: dark){
+      body{background:#121416;color:#e4e8ea;}
+      header{background:#0b0f10f2;}
+      .DevConfigs{background:#101417;}
+      #footerDIV{border-color:#2d3338;}
+    }
+  </style>
 </head>
-
-<body lang=EN-US style='word-wrap:break-word'>
-	<!-- home-snippet.html -->
-<style>
-  .homebar{position:sticky;top:0;z-index:9999;background:#0b0f10cc;border-bottom:1px solid #16332a;padding:.5rem .75rem;font:600 14px ui-monospace,Menlo,Consolas,monospace;color:#8ff0c9}
-  .homebar a{color:#00ff88;text-decoration:none}
-  .homebar a:hover{text-shadow:0 0 6px rgba(0,255,136,.45)}
-</style>
-<div class="homebar">← <a href="index.html">Home</a></div>
-
-<!-- NAVBAR-INJECT START 
-<!-- Injected by inject_nav.py 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{base}/index.html">Packet Tracer Labs</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="{base}/index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Cisco-Packet-Tracer/index.html">Cisco Labs</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Networking/index.html">Networking</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/IoT/index.html">IoT</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- NAVBAR-INJECT END -->
-
-
-<div class=WordSection1>
-
-<p class=MsoTitle><span style='color:#EE0000;font-weight:normal'><b><span
-style='color:windowtext'>Packet Tracer – Modify an Existing Script for an IoT
-Thing</span></b></span> </p>
-
-<h1>Objectives</h1>
-
-<p class=BodyTextL25Bold>Part 1: Modify Your Thing </p>
-
-<p class=BodyTextL25Bold>Part 2: Test Your Modified Thing</p>
-
-<h1>Background / Scenario</h1>
-
-<p class=BodyTextL25>In this activity, you will modify the security camera IoT
-device created in the previous activity.</p>
-
-<h1>Instructions</h1>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 1: Modify Your Thing</h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Save the device icon from
-the instructions file.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Open the HTML instructions file for this activity if it is not already
-open.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Right-click the image below and select the option to save the image as a
-file on your computer. This must be done from the instructions document; it cannot
-be done from the Packet Tracer instructions window.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Save the image in a folder where you can find it easily.</p>
-
-<p class=BodyTextL25><img width="27" height="24" id="Picture 1" src="image002.png"></p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Add an additional device
-icon.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the Packet Tracer file for this activity, click the <b>Security
-Camera</b> in the Packet Tracer workspace, and click the <b>Config</b> tab.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Advanced</b> button in the bottom right of the device
-configuration window, then click the <b>Thing Editor</b> tab. Be sure that the <b>Properties</b>
-tab is open. You will see the icon for the security camera that you worked with
-in the last activity. </p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>New</b> button. This will allow you to add a second graphic
-for the security camera. Locate the file that you saved to your computer in
-Step 1 and click <b>Open</b> to insert the image. This image will represent the
-security camera when it is activated by motion, as indicated by the red light.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Next, click the <b>Rules</b> tab.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Then, click the <b>Add</b> button.</p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click in the <b>Sub Component</b> column and select <b>Security Camera</b>
-in the drop down menu.</p>
-
-<p class=SubStepAlpha>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>The <b>Slot Value</b> should change to LOW and the <b>Image</b> should
-show the security camera image that will be used as the icon when the camera is
-not active (the camera without the red dot).</p>
-
-<p class=SubStepAlpha>h.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Add</b> button again.</p>
-
-<p class=SubStepAlpha>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click in the <b>Sub Component</b> column and select Security Camera in
-the drop down menu again.</p>
-
-<p class=SubStepAlpha>j.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click in the <b>Slot Value</b> column and select <b>HIGH</b> and click
-in the <b>Image</b> column and select the security camera image that will be
-used as the activated icon (the camera with the red dot). This is the file that
-you saved in Step 1.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 3: Copy programming code from
-an existing IoT device.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>View the existing programming code by clicking the <b>Programming </b>tab<b>.
-</b>Notice that there is minimal code for the device.</p>
-
-<p class=SubStepAlpha style='text-indent:0in'><b>Note: </b>You may need to
-double-click <b>Blink (JavaScript)</b> and double-click <b>main.js</b> to view
-the code.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Minimize the <b>Security Camera</b> configuration window.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>To copy code from an existing Packet Tracer IoT device, add the <b>Motion
-Detector</b> IoT device to the Packet Tracer workspace. You can find it under <b>End
-Devices &gt; Home</b> in the device selection box. You will be adding motion
-detector functionality to the security camera by copying the code from the
-motion detector to the security camera.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Motion Detector</b> and click the <b>Config</b> tab, click
-the <b>Advanced</b> button, then click the <b>Programming</b> tab.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Programming</b> tab, click <b>* </b><b>Motion Detector (JavaScript)</b>
-in the left pane and click <b>Open</b>. </p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>main.js</b> in the left pane and click <b>Open</b>. This opens
-the code that is associated with the Motion Detector in the code edit pane to
-the right.</p>
-
-<p class=SubStepAlpha>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>You will need to copy the entire script. To select all of the
-programming script, click in the code edit pane and press <b>Ctrl+A </b>on the
-keyboard. With all of the script selected, click <b>Copy</b> in the code edit
-pane menu.</p>
-
-<p class=SubStepAlpha>h.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Close the <b>Motion Detector</b> configuration window and delete the
-motion detector device.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 4: Create a new script in the
-security camera.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>To paste the copied code to the security camera IoT device, re-open the <b>Security
-Camera</b> window and select the <b>Programming </b>tab if not already
-selected.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>..</b>  (two dots) in the left pane and click <b>Open</b>
-to return the window to display <b>Blink (JavaScript)</b>.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>New</b> project button above the left pane. This opens the <b>Create
-File</b> window.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Create File</b> window, create a new programming project by
-typing <b>Security Camera</b> in the <b>Name</b> box and then clicking <b>Create</b>.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>To view the new project just created, click the <b>..</b>  (two dots) in
-the left pane and click <b>Open</b>.</p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Notice there is now a <b>Security Camera (JavaScript)</b> project in the
-left pane. Click the <b>Security Camera</b> project and click <b>Open</b>.</p>
-
-<p class=SubStepAlpha>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>main.js</b> and click <b>Open</b>. </p>
-
-<p class=SubStepAlpha>h.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>You can now paste the copied code from the Motion Detector into the code
-edit pane on the right. Click in the code edit pane and click the <b>Paste</b>
-button to paste in the copied code.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 5: Edit the security camera
-programming code.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>The code that you copied from the <b>Motion Detector</b> needs to be
-edited to change the type value from <b>Motion Detector</b> to <b>Security
-Camera</b>. To do this, click the line that says <span class=DevConfigsChar>type:
-“Motion Detector” </span>in the code edit pane. In this instance, it is line 8.</p>
-
-<p class=SubStepAlpha><span class=DevConfigsChar><span style='font-family:"Arial",sans-serif'>b.<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>Change
-the line from <span class=DevConfigsChar>type: “Motion Detector”,</span> to <span
-class=DevConfigsChar>type: “Security Camera” </span></p>
-
-<p class=SubStepAlpha style='text-indent:0in'>Note that the quotation marks and
-comma at the end of the statement are required.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Run the program by clicking the <b>Run</b> button.</p>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 2: Test Your Modified Thing</h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Register the security
-camera thing with the IoT Registration Server.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the security camera configuration window, click the <b>Config</b>
-tab.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>IoT Server</b> section of the pane on the right, click the <b>Remote
-Server</b> radio button. The IoT Registration Server is remote because it is connected
-to a network that is outside of the home network.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Enter the <b>Server Address</b> as <b>203.0.0.3</b>.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Enter the <b>User Name</b> as <b>home</b> and the <b>Password</b> as <b>home</b>.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Connect</b> or <b>Refresh</b> button to initiate the
-connection.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Monitor and test the thing
-from the IoT Server.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Access the IoT Registration Server from the <b>Tablet</b>. To do so, click
-the <b>Tablet</b> to open the configuration window. Click the <b>Desktop</b> tab
-and select the <b>Web Browser </b>icon. In the web browser window, enter the
-URL of the IoT Registration Server, <b>home.com,</b> and click <b>Go</b>. </p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Registration Server Login</b> pane type in the following
-credentials and click <b>Connect</b>.</p>
-
-<p class=Bulletlevel2><span style='font-family:"Courier New"'>o<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span>Username:
-<b>home</b> </p>
-
-<p class=Bulletlevel2><span style='font-family:"Courier New"'>o<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span>Password:
-<b>home</b></p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>IoTServer - Devices</b> pane, click the <b>Security Camera</b>
-to expand the device information. Notice the <b>Security Camera</b> is <b>On</b>
-but not activated, as indicated by the red dot.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Move the <b>Tablet</b> configuration window out of the way. It should be
-visible next to the PT workspace.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Hold down the <b>Alt </b>key on the keyboard and move the mouse pointer
-over the <b>Security Camera</b> icon. This signifies motion that should be
-detected by the camera.</p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Notice that the icon will change to the image with the red dot. In the
-Tablet browser window, the Security Camera status changes to activated as indicated
-by the green dot in Security Camera display. If no additional motion is
-detected, the security camera will switch back to deactivated after a brief
-delay. You will see the green dot turn red and the deactivated camera icon
-display in the workspace.</p>
-
-<p class=SubStepAlpha>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>You can also control the other devices that are registered with the
-server. The registration server provides a way that the home IoT network can be
-controlled from any end device that is connected to the internet. Try
-controlling the other devices and observe the results in the registration
-server interface and the workspace.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 3: Experiment</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Experiment by adding other types of IoT devices and editing the
-programming of those devices to perform different functions.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Close Packet Tracer.</p>
-
-<p class=ConfigWindow>End of document</p>
-<div id="footerDIV"><span><br><hr><span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span><br></span></div>
-
-</div>
+<body>
+  <header>
+    <h1><a href="/Packet-Tracer/index.html" style="color:white; text-decoration:none;">🏠 Packet Tracer</a></h1>
+    <nav>
+      <a href="/Packet-Tracer/index.html">Home</a> |
+      <a href="/Packet-Tracer/Cisco%20Packet%20Tracer/index.html">Cisco Labs</a> |
+      <a href="/Packet-Tracer/Networking/index.html">Networking</a> |
+      <a href="/Packet-Tracer/IoT/index.html">IoT</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="BodyTextL25Bold" style="margin-left:0;font-size:1.55rem;">Packet Tracer – Modify an Existing Script for an IoT Thing</p>
+
+    <h1>Objectives</h1>
+    <p class="BodyTextL25Bold">Part 1: Modify Your Thing</p>
+    <p class="BodyTextL25Bold">Part 2: Test Your Modified Thing</p>
+
+    <h1>Background / Scenario</h1>
+    <p class="BodyTextL25">You will modify the previously created Security Camera IoT device by adding a second icon state and custom JavaScript (copied and adapted from an existing Motion Detector device).</p>
+
+    <h1>Instructions</h1>
+
+    <h2>Part 1: Modify Your Thing</h2>
+
+    <h3>Step 1: Save the device icon.</h3>
+    <p class="SubStepAlpha">a. Open this HTML instructions file if not already open.</p>
+    <p class="SubStepAlpha">b. Right‑click the image below and save it locally.</p>
+    <p class="SubStepAlpha">c. Store it where you can easily locate it.</p>
+    <p class="BodyTextL25"><img class="inline-icon" src="image002.png" alt="Security Camera icon"></p>
+
+    <h3>Step 2: Add an additional device icon.</h3>
+    <p class="SubStepAlpha">a. Click <b>Security Camera</b> (workspace) &gt; <b>Config</b>.</p>
+    <p class="SubStepAlpha">b. Click <b>Advanced</b> &gt; <b>Thing Editor</b> &gt; <b>Properties</b>.</p>
+    <p class="SubStepAlpha">c. Click <b>New</b>, select saved image (activated icon with red dot).</p>
+    <p class="SubStepAlpha">d. Open <b>Rules</b> tab.</p>
+    <p class="SubStepAlpha">e. Click <b>Add</b>. For first rule choose Sub Component: <b>Security Camera</b> (Slot Value LOW = non‑active image).</p>
+    <p class="SubStepAlpha">f. Click <b>Add</b> again; set Slot Value <b>HIGH</b> with activated image (red dot).</p>
+
+    <h3>Step 3: Copy programming code from Motion Detector.</h3>
+    <p class="SubStepAlpha">a. In Security Camera window open <b>Programming</b> (note minimal code).</p>
+    <p class="SubStepAlpha">b. Minimize Security Camera window.</p>
+    <p class="SubStepAlpha">c. Add <b>Motion Detector</b> (End Devices &gt; Home).</p>
+    <p class="SubStepAlpha">d. Open its <b>Config &gt; Advanced &gt; Programming</b>.</p>
+    <p class="SubStepAlpha">e. Select <b>* Motion Detector (JavaScript)</b> &gt; <b>Open</b>.</p>
+    <p class="SubStepAlpha">f. Open <b>main.js</b>.</p>
+    <p class="SubStepAlpha">g. Ctrl+A then <b>Copy</b>.</p>
+    <p class="SubStepAlpha">h. Close Motion Detector window and delete device.</p>
+
+    <h3>Step 4: Create a new script in the Security Camera.</h3>
+    <p class="SubStepAlpha">a. Re-open Security Camera &gt; <b>Programming</b>.</p>
+    <p class="SubStepAlpha">b. Click <b>..</b> &gt; <b>Open</b> (to view project list).</p>
+    <p class="SubStepAlpha">c. Click <b>New</b> project.</p>
+    <p class="SubStepAlpha">d. Name: <b>Security Camera</b> &gt; <b>Create</b>.</p>
+    <p class="SubStepAlpha">e. Click <b>..</b> &gt; <b>Open</b> again, open new project.</p>
+    <p class="SubStepAlpha">f. Open <b>Security Camera (JavaScript)</b> &gt; <b>Open</b>.</p>
+    <p class="SubStepAlpha">g. Open <b>main.js</b>.</p>
+    <p class="SubStepAlpha">h. Paste copied code.</p>
+
+    <h3>Step 5: Edit the programming code.</h3>
+    <p class="SubStepAlpha">a. Locate line with <code>type: "Motion Detector"</code>.</p>
+    <p class="SubStepAlpha">b. Change to <code>type: "Security Camera"</code> (keep quotes and comma if present).</p>
+    <p class="SubStepAlpha">c. Click <b>Run</b>.</p>
+
+    <h2>Part 2: Test Your Modified Thing</h2>
+
+    <h3>Step 1: Register with IoT Registration Server.</h3>
+    <p class="SubStepAlpha">a. Security Camera &gt; <b>Config</b>.</p>
+    <p class="SubStepAlpha">b. IoT Server: choose <b>Remote Server</b>.</p>
+    <p class="SubStepAlpha">c. Server Address: <b>203.0.0.3</b>.</p>
+    <p class="SubStepAlpha">d. User/Password: <b>home / home</b>.</p>
+    <p class="SubStepAlpha">e. Click <b>Connect</b> (or <b>Refresh</b>).</p>
+
+    <h3>Step 2: Monitor and test.</h3>
+    <p class="SubStepAlpha">a. On Tablet: Desktop &gt; Web Browser &gt; URL: <b>home.com</b>.</p>
+    <p class="SubStepAlpha">b. Login (home / home).</p>
+    <p class="SubStepAlpha">c. Expand <b>Security Camera</b> (shows On, inactive).</p>
+    <p class="SubStepAlpha">d. Alt + hover over camera icon to simulate motion.</p>
+    <p class="SubStepAlpha">e. Icon switches to activated (red dot), server view shows green (active) indicator; reverts after delay.</p>
+    <p class="SubStepAlpha">f. Experiment controlling other registered devices.</p>
+
+    <h3>Step 3: Experiment further.</h3>
+    <p class="SubStepAlpha">a. Add more IoT devices; adapt their scripts (change type, behaviors).</p>
+    <p class="SubStepAlpha">b. Save your work and close Packet Tracer.</p>
+
+    <p class="ConfigWindow">End of document</p>
+    <div id="footerDIV">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

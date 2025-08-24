@@ -1,566 +1,180 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="style.css">
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Packet Tracer - Edit Topologies</title>
-<style>
- /* Font Definitions */
- @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
-@font-face
-	{font-family:SimSun;
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-@font-face
-	{font-family:Webdings;
-	panose-1:5 3 1 2 1 5 9 6 7 3;}
-@font-face
-	{font-family:Tahoma;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
-@font-face
-	{font-family:"\@SimSun";
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-h1
-	{mso-style-link:"Heading 1 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	text-indent:-.25in;
-	page-break-after:avoid;
-	font-size:13.0pt;
-	font-family:"Arial",sans-serif;}
-h2
-	{mso-style-link:"Heading 2 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
-h3
-	{mso-style-link:"Heading 3 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoFooter, li.MsoFooter, div.MsoFooter
-	{mso-style-link:"Footer Char";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:0in;
-	font-size:8.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoTitle, li.MsoTitle, div.MsoTitle
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading1Char
-	{mso-style-name:"Heading 1 Char";
-	mso-style-link:"Heading 1";
-	font-weight:bold;}
-span.Heading2Char
-	{mso-style-name:"Heading 2 Char";
-	mso-style-link:"Heading 2";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-p.PageHead, li.PageHead, div.PageHead
-	{mso-style-name:"Page Head";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	border:none;
-	padding:0in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.FooterChar
-	{mso-style-name:"Footer Char";
-	mso-style-link:Footer;}
-p.Bulletlevel1, li.Bulletlevel1, div.Bulletlevel1
-	{mso-style-name:"Bullet level 1";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.ConfigWindow, li.ConfigWindow, div.ConfigWindow
-	{mso-style-name:"Config Window";
-	margin:0in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	color:white;
-	font-style:italic;}
-p.SubStepAlpha, li.SubStepAlpha, div.SubStepAlpha
-	{mso-style-name:"SubStep Alpha";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.CMD, li.CMD, div.CMD
-	{mso-style-name:CMD;
-	mso-style-link:"CMD Char";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:.5in;
-	font-size:10.0pt;
-	font-family:"Courier New";}
-p.BodyTextL50, li.BodyTextL50, div.BodyTextL50
-	{mso-style-name:"Body Text L50";
-	mso-style-link:"Body Text L50 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25, li.BodyTextL25, div.BodyTextL25
-	{mso-style-name:"Body Text L25";
-	mso-style-link:"Body Text L25 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-span.LabTitleInstVersred
-	{mso-style-name:"Lab Title Inst Vers \(red\)";
-	font-family:"Arial",sans-serif;
-	color:#EE0000;
-	font-weight:bold;}
-p.SubStepNum, li.SubStepNum, div.SubStepNum
-	{mso-style-name:"SubStep Num";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.75in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25Bold, li.BodyTextL25Bold, div.BodyTextL25Bold
-	{mso-style-name:"Body Text L25 Bold";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading3Char
-	{mso-style-name:"Heading 3 Char";
-	mso-style-link:"Heading 3";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-span.CMDChar
-	{mso-style-name:"CMD Char";
-	mso-style-link:CMD;
-	font-family:"Courier New";}
-span.TitleChar
-	{mso-style-name:"Title Char";
-	mso-style-link:Title;
-	font-family:SimSun;
-	font-weight:bold;}
-span.BodyTextL25Char
-	{mso-style-name:"Body Text L25 Char";
-	mso-style-link:"Body Text L25";}
-span.BodyTextL50Char
-	{mso-style-name:"Body Text L50 Char";
-	mso-style-link:"Body Text L50";}
-.MsoChpDefault
-	{font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
- /* Page Definitions */
- @page WordSection1
-	{size:8.5in 11.0in;
-	margin:76.3pt .75in .9in .75in;}
-div.WordSection1
-	{page:WordSection1;}
- /* List Definitions */
- ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
-
-	.dark-theme {
-        color: #fff;
-      }
-      .dark-theme .dark-color {
-        color: #fff !important;
-      }
-      .dark-theme p.ConfigWindow,
-      .dark-theme li.ConfigWindow,
-      .dark-theme div.ConfigWindow {
-        mso-style-name: "Config Window";
-        color: #212328;
-      }
-      .dark-theme h4 {
-        color: #212328;
-      }
-      .dark-theme .MsoTitle span {
-        color: #fff !important;
-      }
-      .dark-theme textarea {
-        background-color: #212328;
-        color: #fff;
-      }
-      .dark-theme .BodyTextL25Answer {
-        background-color: #000;
-        color: #fff;
-      }
-      .dark-theme .BodyTextL25Answer > span {
-        padding: 4px;
-      }
-      .dark-theme .BodyTextL25Answer span {
-        color: #fff;
-      }
-      .dark-theme table tbody tr td {
-        color: #fff !important;
-      }
-      .dark-theme table .TableHeading {
-        color: #000;
-      }
-	  
-</style>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>Packet Tracer - Edit Topologies</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Packet Tracer lab: edit topologies, add switches, connect PCs, work with clusters.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --header-bg:#0b0f10cc;
+      --accent:#00ff88;
+      --font:Arial,Helvetica,sans-serif;
+      --border:#d9e1e6;
+      --panel:#ffffff;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font:14px/1.5 var(--font);
+      color:#222;
+      background:#f7f9fa;
+      -webkit-font-smoothing:antialiased;
+    }
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:var(--header-bg);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid #16332a;
+      padding:.7rem 1rem .85rem;
+      display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;
+    }
+    header h1{margin:0;font-size:1.25rem;font-weight:600;line-height:1.1;}
+    header nav a{
+      color:var(--accent);
+      text-decoration:none;
+      margin:0 .45rem;
+      font-weight:500;
+      white-space:nowrap;
+    }
+    header nav a:hover{text-shadow:0 0 6px rgba(0,255,136,.45);}
+    main{
+      max-width:900px;
+      margin:0 auto;
+      padding:1.4rem 1rem 3rem;
+    }
+    h1{font-size:1.45rem;margin:1.2rem 0 .7rem;font-weight:600;}
+    h2{font-size:1.2rem;margin:1.1rem 0 .55rem;font-weight:600;}
+    h3{font-size:1.05rem;margin:1rem 0 .5rem;font-weight:600;}
+    p{margin:.6rem 0;}
+    /* Indentation styles retained from original */
+    .BodyTextL25,.BodyTextL25Bold{margin-left:.25in;font-size:.9rem;}
+    .BodyTextL25Bold{font-weight:700;}
+    .BodyTextL50{margin-left:.5in;font-size:.9rem;}
+    .SubStepAlpha{margin-left:.5in;text-indent:-.25in;font-size:.9rem;}
+    .CMD{margin-left:.5in;font-family:"Courier New",monospace;font-size:.85rem;background:#212328;color:#fff;padding:.4rem .55rem;border-radius:4px;}
+    .ConfigWindow{font-size:.65rem;color:#555;margin-top:2rem;font-style:italic;margin-left:.25in;}
+    ul,ol{padding-left:1.2rem;}
+    hr{margin:2rem 0;border:0;border-top:1px solid var(--border);}
+    #footerDIV{
+      font:12px var(--font);
+      margin-top:2.5rem;
+      padding-top:1rem;
+      border-top:1px solid var(--border);
+    }
+    @media (prefers-color-scheme: dark){
+      body{background:#121416;color:#e4e8ea;}
+      header{background:#0b0f10f2;}
+      .CMD{background:#101417;}
+      #footerDIV{border-color:#2d3338;}
+    }
+  </style>
 </head>
-
-<body lang=EN-US style='word-wrap:break-word'>
-	<!-- home-snippet.html -->
-<style>
-  .homebar{position:sticky;top:0;z-index:9999;background:#0b0f10cc;border-bottom:1px solid #16332a;padding:.5rem .75rem;font:600 14px ui-monospace,Menlo,Consolas,monospace;color:#8ff0c9}
-  .homebar a{color:#00ff88;text-decoration:none}
-  .homebar a:hover{text-shadow:0 0 6px rgba(0,255,136,.45)}
-</style>
-<div class="homebar">← <a href="index.html">Home</a></div>
-
-<!-- NAVBAR-INJECT START 
-<!-- Injected by inject_nav.py 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{base}/index.html">Packet Tracer Labs</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="{base}/index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Cisco-Packet-Tracer/index.html">Cisco Labs</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Networking/index.html">Networking</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/IoT/index.html">IoT</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- NAVBAR-INJECT END -->
-
-
-<div class=WordSection1>
-
-<p class=MsoTitle><span style='color:#EE0000;font-weight:normal'><b><span
-style='color:windowtext'>Packet Tracer - Edit Topologies</span></b></span></p>
-
-<h1>Objectives</h1>
-
-<p class=BodyTextL25>In this activity, you will install a patch panel and a
-wall mount. You will then use these to connect network devices in the office to
-the equipment in the wiring closet.</p>
-
-<p class=BodyTextL25Bold>Part 1: Add an Additional Switch to the Rack in the
-Office Network</p>
-
-<p class=BodyTextL25Bold>Part 2: Connect a PC to the Office Network</p>
-
-<p class=BodyTextL25Bold>Part 3: Work with Clusters</p>
-
-<p class=BodyTextL25Bold>Part 4: Add a Second Home Cluster to the Network</p>
-
-<h1>Required Resources</h1>
-
-<p class=Bulletlevel1><span style='font-size:7.0pt;font-family:Webdings'>=<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span>Latest Packet
-Tracer version</p>
-
-<h1>Instructions</h1>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 1: Add an Additional Switch to
-the Rack in the Office Network</h2>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Wiring Closet</b>, click and drag switch <b>Office-SW2</b> from
-the <b>Shelf</b> on the right to the <b>Rack</b> on the left. It can be placed
-on any open space on the <b>Rack</b>.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Select a copper straight-through cable from the <b>Cable Pegboard</b>.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Connect the cable to switchport <b>FastEthernet 0/1</b> on switch <b>Office-SW2</b>
-and connect the other end to <b>Jack 1</b> on the <b>Patch Panel</b>. </p>
-
-<p class=SubStepAlpha><b>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span></b>Select another copper straight-through cable from the <b>Cable
-Pegboard</b>.</p>
-
-<p class=SubStepAlpha><b>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span></b>Connect the cable to <b>Switchport GigabitEthernet 0/1</b> on switch
-<b>Office-SW2</b> and connect the other end to switchport<b>
-GigabitEthernet1/1/1</b> on <b>Office-SW1</b>.</p>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 2: Connect a PC to the Office
-Network</h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Connect PC to wall mount.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Return to the Office topology using the <b>Alt-Left Arrow </b>key.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Add a straight-through cable from the <b>Office-User</b> to the copper
-wall mount.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Connections</b> icon (i.e., orange lightning bolt) in the
-bottom left-hand corner.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Select a copper straight-through cable.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Connect the cable to the <b>Copper Wall Mount1 </b>and select <b>Jack1</b>.
-Connect the other end of the cable to <b>FastEthernet0</b> on <b>Office-User</b>.</p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Select another copper straight-through cable</p>
-
-<p class=SubStepAlpha>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Copper Wall Mount1 </b>and select <b>Punch Down1</b>. </p>
-
-<p class=SubStepAlpha>h.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Connect the other end of the cable to <b>PunchDown1</b> on the <b>Patch
-Panel</b> in the Equipment Cabinet. Click the <b>Equipment Cabinet</b> label in
-the lower right corner of the office. </p>
-
-<p class=SubStepAlpha>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Rack</b>, then <b>Patch Panel</b>, then <b>PunchDown1</b>.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Test network connectivity
-from PC-PT.</h3>
-
-<p class=BodyTextL25>From <b>Office-User</b>, ping the <b>Office-Admin</b> PC
-at 192.168.20.5.</p>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Select the <b>Office-User</b> and click the <b>Desktop</b> tab.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Command Prompt</b>.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the Command Prompt, <b>ping</b> the Office-Admin PC. The pings should
-be successful.</p>
-
-<p class=CMD>C:\&gt; <b>ping 192.168.20.5</b></p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Exit the Command Prompt. Open a Web Browser and navigate to <b>office.srv</b>.
-It should be successful.</p>
-
-<p class=BodyTextL50>If it is not successful, verify that the cables are
-connected correctly.</p>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 3: Work with Clusters </h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: View the city in logical
-mode.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>While still in the <b>Office</b>, click <b>Back Level</b>.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Change the Packet Tracer workspace to <b>Logical</b> mode.</p>
-
-<h3 style='margin-left:.5in;text-indent:-.5in'>Step 2: Un-cluster and
-re-cluster the devices in an existing cluster.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click anywhere in the workspace, hold the mouse button down and drag a
-rectangle around the<b> Library</b> cluster to select it.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>With the <b>Library</b> cluster selected, press <b>delete</b> on the
-keyboard.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>You will be prompted to confirm the delete. Click <b>Uncluster</b> in
-the Confirm Delete dialog box.</p>
-
-<p class=BodyTextL50><b>Note</b>: If the Library cluster is deleted, instead of
-unclustered, click undo (<b>Ctrl + Z</b>), or reset the activity. (Click <b>File</b>
-&gt; <b>Reset Activity</b> or <b>Alt + N</b>)</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>All the devices in the Library should now be un-clustered on the
-workspace. Click <b>Select</b> or <b>Esc </b>to change the cursor from an X to
-a pointer.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 3: Re-cluster the devices in the
-Library cluster.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click anywhere in the workspace, hold the mouse button down and drag a
-rectangle around all the un-clustered<b> </b>library devices to select them.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>With all the library devices selected, click the <b>Create New Cluster</b>
-(Shift + U) in the top-right corner of the workspace.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>If you missed a device during the re-cluster process, click <b>Move
-Object</b> (Shift + M) and click the object to be moved. Select the desired
-location. In this example, it will be <b>Cluster1</b> &gt; <b>Move to Cluster1</b>.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>When the devices are re-clustered, click the cluster name and change it
-back to <b>Library</b>.</p>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 4: Add a Second Home Cluster
-to the Network</h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Add devices to the
-workspace.</h3>
-
-<p class=BodyTextL25>Add a PC, Home Gateway, and a Cable Modem to the workspace.</p>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>From the <b>End Devices Selection Box</b>, select <b>PC</b> from the End
-Devices and add it to the workspace.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>From the <b>Network Devices Selection Box</b>, place a <b>Home Gateway</b>
-from the Wireless Devices and <b>cable</b> <b>modem</b> from WAN Emulation
-Devices onto the workspace.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Connect the devices in the
-Second Home cluster.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Select a copper straight-through cable and connect the <b>FastEthernet0</b>
-port of <b>PC0 </b>to the <b>Ethernet 1</b> port of the <b>Home Gateway1</b>.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Select another copper straight-through cable and connect the <b>Internet</b>
-port of the <b>Home Gateway1</b> to <b>Port 1</b> of the <b>Cable Modem0</b>.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 3: Cluster the devices.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click anywhere in the workspace, hold the mouse button down and drag a
-rectangle around all the un-clustered devices for the Second Home to select
-them.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>With all the devices selected, click the <b>Create New Cluster</b> icon in
-the top right corner of the workspace.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>When the devices are clustered, click the cluster name and change it to <b>Second
-Home</b>.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 4: Connect the Second Home to
-the ISP.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Select the blue Coaxial cable. Click the <b>Second Home</b> cluster. </p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the device list for the Second Home, select the <b>Cable Modem0 </b>and
-connect the cable to <b>Port 0</b> which is a coaxial port on the modem. </p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>ISP</b> cluster and select the <b>Cloud0 </b>device and <b>Coaxial9</b>.
-</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>The Second Home cluster is now connected to the ISP.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 5: Use a Note to document the
-devices added to the Second Home cluster</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Document which items were added to the second home cluster. Click the <b>Place
-Note</b> icon in the tool bar then click the workspace next to the Second Home
-cluster to add a note.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the note, type the devices that were added to the Second Home
-cluster.</p>
-
-<p class=ConfigWindow><span style='font-size:3.0pt;'>End of document</span></p>
-
-<div id="footerDIV"><span><br><hr><span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span><br></span></div>
-
-</div>
+<body>
+
+  <header>
+    <h1><a href="/Packet-Tracer/index.html" style="color:white; text-decoration:none;">🏠 Packet Tracer</a></h1>
+    <nav>
+      <a href="/Packet-Tracer/index.html">Home</a> |
+      <a href="/Packet-Tracer/Cisco%20Packet%20Tracer/index.html">Cisco Labs</a> |
+      <a href="/Packet-Tracer/Networking/index.html">Networking</a> |
+      <a href="/Packet-Tracer/IoT/index.html">IoT</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Packet Tracer - Edit Topologies</h1>
+
+    <h2>Objectives</h2>
+    <p class="BodyTextL25">In this activity, you will install a patch panel and a wall mount. You will then use these to connect network devices in the office to the equipment in the wiring closet.</p>
+    <p class="BodyTextL25Bold">Part 1: Add an Additional Switch to the Rack in the Office Network</p>
+    <p class="BodyTextL25Bold">Part 2: Connect a PC to the Office Network</p>
+    <p class="BodyTextL25Bold">Part 3: Work with Clusters</p>
+    <p class="BodyTextL25Bold">Part 4: Add a Second Home Cluster to the Network</p>
+
+    <h2>Required Resources</h2>
+    <p class="BodyTextL25">Latest Packet Tracer version</p>
+
+    <h2>Instructions</h2>
+
+    <h2>Part 1: Add an Additional Switch to the Rack in the Office Network</h2>
+    <h3>Step 1: Install and connect switch Office-SW2.</h3>
+    <p class="SubStepAlpha">a. In the <b>Wiring Closet</b>, drag <b>Office-SW2</b> from the <b>Shelf</b> to any open Rack space.</p>
+    <p class="SubStepAlpha">b. Select a copper straight-through cable from the <b>Cable Pegboard</b>.</p>
+    <p class="SubStepAlpha">c. Connect <b>Office-SW2 FastEthernet0/1</b> to <b>Patch Panel Jack1</b>.</p>
+    <p class="SubStepAlpha">d. Select another copper straight-through cable.</p>
+    <p class="SubStepAlpha">e. Connect <b>Office-SW2 GigabitEthernet0/1</b> to <b>Office-SW1 GigabitEthernet1/1/1</b>.</p>
+
+    <h2>Part 2: Connect a PC to the Office Network</h2>
+    <h3>Step 1: Connect PC to wall mount.</h3>
+    <p class="SubStepAlpha">a. Return to the Office (Alt + Left Arrow).</p>
+    <p class="SubStepAlpha">b. Add a straight-through cable from <b>Office-User</b> to the copper wall mount.</p>
+    <p class="SubStepAlpha">c. Click <b>Connections</b> (orange lightning bolt).</p>
+    <p class="SubStepAlpha">d. Select a copper straight-through cable.</p>
+    <p class="SubStepAlpha">e. Connect <b>Copper Wall Mount1 Jack1</b> to <b>Office-User FastEthernet0</b>.</p>
+    <p class="SubStepAlpha">f. Select another copper straight-through cable.</p>
+    <p class="SubStepAlpha">g. Click <b>Copper Wall Mount1 Punch Down1</b>.</p>
+    <p class="SubStepAlpha">h. Connect to <b>Patch Panel PunchDown1</b> (enter Equipment Cabinet &gt; Rack).</p>
+    <p class="SubStepAlpha">i. Navigate: <b>Rack</b> &gt; <b>Patch Panel</b> &gt; <b>PunchDown1</b>.</p>
+
+    <h3>Step 2: Test network connectivity from Office-User.</h3>
+    <p class="BodyTextL25">From <b>Office-User</b>, ping the <b>Office-Admin</b> PC (192.168.20.5).</p>
+    <p class="SubStepAlpha">a. Open <b>Office-User</b> &gt; <b>Desktop</b>.</p>
+    <p class="SubStepAlpha">b. Open <b>Command Prompt</b>.</p>
+    <p class="SubStepAlpha">c. Ping the Office-Admin PC; replies should succeed.</p>
+    <p class="CMD">C:\&gt; ping 192.168.20.5</p>
+    <p class="SubStepAlpha">d. Open <b>Web Browser</b> and browse to <b>office.srv</b>.</p>
+    <p class="BodyTextL50">If unsuccessful, verify cabling.</p>
+
+    <h2>Part 3: Work with Clusters</h2>
+    <h3>Step 1: View the city in logical mode.</h3>
+    <p class="SubStepAlpha">a. While in <b>Office</b>, click <b>Back Level</b>.</p>
+    <p class="SubStepAlpha">b. Switch to <b>Logical</b> workspace mode.</p>
+
+    <h3>Step 2: Un-cluster and re-cluster an existing cluster.</h3>
+    <p class="SubStepAlpha">a. Drag-select around the <b>Library</b> cluster.</p>
+    <p class="SubStepAlpha">b. Press <b>Delete</b>.</p>
+    <p class="SubStepAlpha">c. In confirmation, click <b>Uncluster</b>.</p>
+    <p class="BodyTextL50"><b>Note:</b> If deleted instead, Undo (Ctrl + Z) or reset the activity.</p>
+    <p class="SubStepAlpha">d. Devices appear un-clustered; press <b>Esc</b> to return pointer.</p>
+
+    <h3>Step 3: Re-cluster Library devices.</h3>
+    <p class="SubStepAlpha">a. Drag-select all former Library devices.</p>
+    <p class="SubStepAlpha">b. Click <b>Create New Cluster</b> (Shift + U).</p>
+    <p class="SubStepAlpha">c. If a device was missed, use <b>Move Object</b> (Shift + M) &gt; Move to cluster.</p>
+    <p class="SubStepAlpha">d. Rename cluster back to <b>Library</b>.</p>
+
+    <h2>Part 4: Add a Second Home Cluster to the Network</h2>
+    <h3>Step 1: Add devices.</h3>
+    <p class="BodyTextL25">Add a PC, Home Gateway, and Cable Modem.</p>
+    <p class="SubStepAlpha">a. From End Devices, add <b>PC</b>.</p>
+    <p class="SubStepAlpha">b. From Network Devices: add <b>Home Gateway</b> (Wireless Devices) and <b>Cable Modem</b> (WAN Emulation).</p>
+
+    <h3>Step 2: Connect devices.</h3>
+    <p class="SubStepAlpha">a. Copper straight-through: <b>PC0 FastEthernet0</b> to <b>Home Gateway1 Ethernet1</b>.</p>
+    <p class="SubStepAlpha">b. Copper straight-through: <b>Home Gateway1 Internet</b> to <b>Cable Modem0 Port1</b>.</p>
+
+    <h3>Step 3: Cluster the devices.</h3>
+    <p class="SubStepAlpha">a. Drag-select the three devices.</p>
+    <p class="SubStepAlpha">b. Click <b>Create New Cluster</b>.</p>
+    <p class="SubStepAlpha">c. Rename cluster to <b>Second Home</b>.</p>
+
+    <h3>Step 4: Connect Second Home to the ISP.</h3>
+    <p class="SubStepAlpha">a. Select blue Coaxial cable and click <b>Second Home</b>.</p>
+    <p class="SubStepAlpha">b. Choose <b>Cable Modem0 Port0</b> (coaxial).</p>
+    <p class="SubStepAlpha">c. Click <b>ISP</b> cluster &gt; <b>Cloud0 Coaxial9</b>.</p>
+    <p class="SubStepAlpha">d. Second Home cluster now connected to ISP.</p>
+
+    <h3>Step 5: Note devices added to Second Home.</h3>
+    <p class="SubStepAlpha">a. Use <b>Place Note</b> tool; click near cluster.</p>
+    <p class="SubStepAlpha">b. List added devices (PC, Home Gateway, Cable Modem).</p>
+
+    <p class="ConfigWindow">End of document</p>
+
+    <div id="footerDIV">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

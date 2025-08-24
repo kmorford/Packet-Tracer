@@ -1,479 +1,155 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="style.css">
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Packet Tracer - Create Your Own IoT Thing</title>
-<style>
-
- /* Font Definitions */
- @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
-@font-face
-	{font-family:SimSun;
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-@font-face
-	{font-family:Webdings;
-	panose-1:5 3 1 2 1 5 9 6 7 3;}
-@font-face
-	{font-family:Tahoma;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
-@font-face
-	{font-family:"\@SimSun";
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-h1
-	{mso-style-link:"Heading 1 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	text-indent:-.25in;
-	page-break-after:avoid;
-	font-size:13.0pt;
-	font-family:"Arial",sans-serif;}
-h2
-	{mso-style-link:"Heading 2 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
-h3
-	{mso-style-link:"Heading 3 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoFooter, li.MsoFooter, div.MsoFooter
-	{mso-style-link:"Footer Char";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:0in;
-	font-size:8.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoTitle, li.MsoTitle, div.MsoTitle
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading1Char
-	{mso-style-name:"Heading 1 Char";
-	mso-style-link:"Heading 1";
-	font-weight:bold;}
-span.Heading2Char
-	{mso-style-name:"Heading 2 Char";
-	mso-style-link:"Heading 2";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-p.PageHead, li.PageHead, div.PageHead
-	{mso-style-name:"Page Head";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	border:none;
-	padding:0in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.FooterChar
-	{mso-style-name:"Footer Char";
-	mso-style-link:Footer;}
-p.ConfigWindow, li.ConfigWindow, div.ConfigWindow
-	{mso-style-name:"Config Window";
-	margin:0in;
-	font-size:3.0pt;
-	font-family:"Arial",sans-serif;
-	color:white;
-	font-style:italic;}
-p.SubStepAlpha, li.SubStepAlpha, div.SubStepAlpha
-	{mso-style-name:"SubStep Alpha";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25, li.BodyTextL25, div.BodyTextL25
-	{mso-style-name:"Body Text L25";
-	mso-style-link:"Body Text L25 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.Visual, li.Visual, div.Visual
-	{mso-style-name:Visual;
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:12.0pt;
-	margin-left:0in;
-	text-align:center;
-	line-height:115%;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-p.SubStepNum, li.SubStepNum, div.SubStepNum
-	{mso-style-name:"SubStep Num";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.75in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25Bold, li.BodyTextL25Bold, div.BodyTextL25Bold
-	{mso-style-name:"Body Text L25 Bold";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading3Char
-	{mso-style-name:"Heading 3 Char";
-	mso-style-link:"Heading 3";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-span.TitleChar
-	{mso-style-name:"Title Char";
-	mso-style-link:Title;
-	font-family:SimSun;
-	font-weight:bold;}
-span.BodyTextL25Char
-	{mso-style-name:"Body Text L25 Char";
-	mso-style-link:"Body Text L25";}
-.MsoChpDefault
-	{font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
- /* Page Definitions */
- @page WordSection1
-	{size:8.5in 11.0in;
-	margin:76.3pt .75in .9in .75in;}
-div.WordSection1
-	{page:WordSection1;}
- /* List Definitions */
- ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
-
-	.dark-theme {
-    color: #fff;
-  }
-  .dark-theme .dark-color {
-    color: #fff !important;
-  }
-  .dark-theme p.ConfigWindow,
-  .dark-theme li.ConfigWindow,
-  .dark-theme div.ConfigWindow {
-    mso-style-name: "Config Window";
-    color: #212328;
-  }
-  .dark-theme h4 {
-    color: #212328;
-  }
-  .dark-theme .MsoTitle span {
-    color: #fff !important;
-  }
-  .dark-theme textarea {
-    background-color: #212328;
-    color: #fff;
-  }
-  .dark-theme .BodyTextL25Answer {
-    background-color: #000;
-    color: #fff;
-  }
-  .dark-theme .BodyTextL25Answer > span {
-    padding: 4px;
-  }
-  .dark-theme .BodyTextL25Answer span {
-    color: #fff;
-  }
-  .dark-theme table tbody tr td {
-    color: #fff !important;
-  }
-  .dark-theme table .TableHeading {
-    color: #000;
-  }
-
-</style>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>Packet Tracer - Create Your Own IoT Thing</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Packet Tracer lab: create a custom IoT Thing (Security Camera) and save it as a template.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --header-bg:#0b0f10cc;
+      --accent:#00ff88;
+      --font:Arial,Helvetica,sans-serif;
+      --border:#d9e1e6;
+      --panel:#fff;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font:14px/1.5 var(--font);
+      color:#222;
+      background:#f7f9fa;
+      -webkit-font-smoothing:antialiased;
+    }
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:var(--header-bg);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid #16332a;
+      padding:.7rem 1rem .85rem;
+      display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;
+    }
+    header h1{margin:0;font-size:1.25rem;font-weight:600;line-height:1.1;}
+    header nav a{
+      color:var(--accent);
+      text-decoration:none;
+      margin:0 .45rem;
+      font-weight:500;
+      white-space:nowrap;
+    }
+    header nav a:hover{text-shadow:0 0 6px rgba(0,255,136,.45);}
+    main{
+      max-width:920px;
+      margin:0 auto;
+      padding:1.4rem 1rem 3rem;
+    }
+    h1{font-size:1.35rem;margin:1.25rem 0 .65rem;font-weight:600;}
+    h2{font-size:1.15rem;margin:1.15rem 0 .55rem;font-weight:600;}
+    h3{font-size:1.05rem;margin:1rem 0 .5rem;font-weight:600;}
+    p{margin:.6rem 0;}
+    /* Preserve Word-style indentation semantics */
+    .BodyTextL25,.BodyTextL25Bold{margin-left:.25in;font-size:.9rem;}
+    .BodyTextL25Bold{font-weight:700;}
+    .SubStepAlpha{margin-left:.5in;text-indent:-.25in;font-size:.9rem;}
+    .ConfigWindow{font-size:.7rem;color:#555;margin-top:2rem;font-style:italic;}
+    .Visual{margin:1rem 0;text-align:center;}
+    img.inline-icon{max-width:120px;height:auto;}
+    #footerDIV{
+      font:12px var(--font);
+      margin-top:2.5rem;
+      padding-top:1rem;
+      border-top:1px solid var(--border);
+    }
+    @media (prefers-color-scheme: dark){
+      body{background:#121416;color:#e4e8ea;}
+      main{color:#e4e8ea;}
+      header{background:#0b0f10f2;}
+      #footerDIV{border-color:#2d3338;}
+    }
+  </style>
 </head>
+<body>
+  <header>
+    <h1><a href="/Packet-Tracer/index.html" style="color:white; text-decoration:none;">🏠 Packet Tracer</a></h1>
+    <nav>
+      <a href="/Packet-Tracer/index.html">Home</a> |
+      <a href="/Packet-Tracer/Cisco%20Packet%20Tracer/index.html">Cisco Labs</a> |
+      <a href="/Packet-Tracer/Networking/index.html">Networking</a> |
+      <a href="/Packet-Tracer/IoT/index.html">IoT</a>
+    </nav>
+  </header>
 
-<body lang=EN-US style='word-wrap:break-word'>
-	<!-- home-snippet.html -->
-<style>
-  .homebar{position:sticky;top:0;z-index:9999;background:#0b0f10cc;border-bottom:1px solid #16332a;padding:.5rem .75rem;font:600 14px ui-monospace,Menlo,Consolas,monospace;color:#8ff0c9}
-  .homebar a{color:#00ff88;text-decoration:none}
-  .homebar a:hover{text-shadow:0 0 6px rgba(0,255,136,.45)}
-</style>
-<div class="homebar">← <a href="index.html">Home</a></div>
+  <main>
+    <p class="BodyTextL25Bold" style="margin-left:0;font-size:1.55rem;">Packet Tracer - Create Your Own IoT Thing</p>
 
-<!-- NAVBAR-INJECT START
-<!-- Injected by inject_nav.py 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{base}/index.html">Packet Tracer Labs</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="{base}/index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Cisco-Packet-Tracer/index.html">Cisco Labs</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Networking/index.html">Networking</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/IoT/index.html">IoT</a></li>
-      </ul>
+    <h1>Objectives</h1>
+    <p class="BodyTextL25Bold">Part 1: Create Your Own Thing</p>
+    <p class="BodyTextL25Bold">Part 2: Save Your New Thing</p>
+
+    <h1>Background / Scenario</h1>
+    <p class="BodyTextL25">In this activity, you will create a new IoT Thing (a Security Camera) and save it as a reusable template in Packet Tracer.</p>
+
+    <h1>Instructions</h1>
+
+    <h2>Part 1: Create Your Own Thing</h2>
+    <p class="BodyTextL25">Create and configure a new IoT Thing, change its icon, and connect it to the wireless network.</p>
+
+    <h3>Step 1: Add a new generic IoT device.</h3>
+    <p class="SubStepAlpha">a. Open the Packet Tracer file.</p>
+    <p class="SubStepAlpha">b. Add a new device by selecting <b>Thing</b> from the <b>Components</b> area of the Device Selection box.</p>
+    <p class="SubStepAlpha">c. Drag the <b>Thing</b> icon to the workspace.</p>
+
+    <h3>Step 2: Change the Display Name.</h3>
+    <p class="SubStepAlpha">a. Click the <b>Thing</b> to open its configuration.</p>
+    <p class="SubStepAlpha">b. Click the <b>Config</b> tab and change the <b>Display Name</b> to <b>Security Camera</b>.</p>
+
+    <h3>Step 3: Use the Thing Editor to change properties.</h3>
+    <p class="SubStepAlpha">a. Click the <b>Thing Editor</b> tab (Properties subtab opens by default).</p>
+    <p class="SubStepAlpha">b. Change the <b>Component Name</b> to <b>Security Camera</b>.</p>
+    <p class="SubStepAlpha">c. Choose the <b>Digital</b> radio button, then set <b>Slot Mapping</b> to <b>Slot 1</b>.</p>
+    <p class="BodyTextL25"><b>Note:</b> The next two substeps are done in this instructions file, not the embedded Packet Tracer instructions window.</p>
+    <p class="SubStepAlpha">d. Open this instructions file if it is not already open.</p>
+    <p class="SubStepAlpha">e. Right‑click the image below and select “Save image as…”. Store it for use as the device icon.</p>
+    <div class="Visual">
+      <img class="inline-icon" alt="Security Camera Icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAsCAYAAAAn4+taAAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AYht+mFotWROwg4pChOlkQFXGUKhbBQmkrtOpgcukfNGlIUlwcBdeCgz+LVQcXZ10dXAVB8AfEzc1J0UVK/C4ptIjxjuMe3vvel7vvAKFRYarZNQGommWk4jExm1sVu1/RiwGaAQQlZuqJ9GIGnuPrHj6+30V5lnfdn6NPyZsM8InEc0w3LOIN4plNS+e8TxxmJUkhPiceN+iCxI9cl11+41x0WOCZYSOTmicOE4vFDpY7mJUMlXiaOKKoGuULWZcVzluc1UqNte7JXxjKaytprtMaQRxLSCAJETJqKKMCC1HaNVJMpOg85uEfdvxJcsnkKoORYwFVqJAcP/gf/O6tWZiadJNCMSDwYtsfo0D3LtCs2/b3sW03TwD/M3Cltf3VBjD7SXq9rUWOgP5t4OK6rcl7wOUOMPSkS4bkSH5aQqEAvJ/RN+WAwVugZ83tW+scpw9Ahnq1fAMcHAJjRcpe93h3sLNv/9a0+vcDHhVyhTE4s2kAAAAGYktHRAD/AP8A/6C9p5MAAAAJcEhZcwAALiMAAC4jAXilP3YAAAAHdElNRQflCxIUGwXF7rotAAAAGXRFWHRDb21tZW50AENyZWF0ZWQgd2l0aCBHSU1QV4EOFwAAApdJREFUaN7V2U2ITXEYx/HPHWPG25DIy2RYINIsvEQ2ykaysZDyVoSljUKNvE4JCyxsKCkpIRtJSqHIZpCkbOQlohSG8TJeZsxY+N863a7pnHvvuXPmqV+nc2635/ne83/+/+d5Ltm0EdiLIwaoDcI6vEQvfmH2QINYiDsBIKrrqBkIAJNxBt1FIHrRg+VZBhiOXej4D0BUTzAkawA1WIXnMQCi2poliAW4HZZLb0K9x7j+BpiE0+gqASCq4/2ZBy34XCZAXj/RXO08WIlnFQKI6ipy1YCYh1sl5kEc/cGyNAEacQq/UwKI6jHqKw0wDDvwqQoAUW2pZB6swNMqA+T1DmPLhZiDGynmQVwdLRVgIk6GqrQ3A/qBmUkAhmIb2jMCENXlJNtxawYBotvxkrgg4/EhwzB3kiyvbRkE6MJZNOUwJrSYPZFGpti1HvcwLSOV9F1sR1v+wbGwC3UGfQvqCGoPeh92if5+Cy+xGrWFZBPwMcPrP68vYbLS0NdraskwQBfOYUrcOdKLjIKsj1svCTmxL3wxa/Y6CQicx4N+Drqz1B8zCtKNnWG7rbb9wQXMDTlRtuVwpco50IZFwX9dkYJ0cakwzaHJTxvgDTYUnAcVBYETKQJ8xwGMKuK34iCNKbSu3biIqX34rTgI7E4QZL60+d/n92MGlApIA17FBNmPPUWev8UmDI7pMxUQ2BgD4lmoDBoi1UEnDmJ0Qn+pgQzGwz4gesIkJW9rcQnTS/SXGggsDQdWMZBrBYdquaPMVEFyIeBiCT6rwid8qiD8+0OycBR6OIVSpWSQ2pgOHoXeeHO4f4VDVarD5ld6ztsUWt8erEkp6Loyhn+JrBU3w7BiQIOMxIwUl1HJIDnZsjp8DddE9hckjI1+pljYYAAAAABJRU5ErkJggg==" />
     </div>
-  </div>
-</nav>
-<!-- NAVBAR-INJECT END -->
+    <p class="SubStepAlpha">f. In <b>Properties</b> click <b>New</b>.</p>
+    <p class="SubStepAlpha">g. Choose the saved image and click <b>Open</b>. The icon updates.</p>
 
+    <h3>Step 4: Add the Security Camera to the network.</h3>
+    <p class="SubStepAlpha">a. In the device window, click <b>I/O Config</b>.</p>
+    <p class="SubStepAlpha">b. Set <b>Network Adapter</b> to <b>PT-IOT-NM-1W-AC</b> (Wi‑Fi).</p>
+    <p class="SubStepAlpha">c. Wait for it to associate to the wireless network.</p>
+    <p class="SubStepAlpha">d. Click <b>Config</b> &gt; <b>Wireless0</b>.</p>
+    <p class="SubStepAlpha">e. Confirm it received a 192.168.25.x IPv4 address (DHCP).</p>
 
-<div class=WordSection1>
+    <h3>Step 5: Test connectivity.</h3>
+    <p class="SubStepAlpha">a. On the <b>Tablet</b> open <b>Desktop &gt; Command Prompt</b>.</p>
+    <p class="SubStepAlpha">b. Ping the Security Camera’s IPv4 address. Successful replies confirm reachability.</p>
 
-<p class=MsoTitle><span style='color:#EE0000;font-weight:normal'><b><span
-style='color:windowtext'>Packet Tracer - Create Your Own IoT Thing</span></b></span>
-</p>
+    <h2>Part 2: Save the New Device</h2>
+    <p class="BodyTextL25">Save the configured device as a template for reuse.</p>
 
-<h1>Objectives</h1>
+    <h3>Step 1: Save with Device Template Manager.</h3>
+    <p class="SubStepAlpha">a. <b>Tools &gt; Custom Device Dialog</b> (Device Template Manager opens).</p>
+    <p class="SubStepAlpha">b. Click <b>Select</b>, then click the <b>Security Camera</b> in the workspace.</p>
+    <p class="SubStepAlpha">c. The template name shows as Security Camera.</p>
+    <p class="SubStepAlpha">d. Check <b>Home</b> (placement category).</p>
+    <p class="SubStepAlpha">e. Click <b>Add</b>, then <b>Save</b> (accept template folder).</p>
+    <p class="SubStepAlpha">f. In the Device Selection box (Home), scroll to find your <b>Security Camera</b>.</p>
 
-<p class=BodyTextL25Bold>Part 1:  Create Your Own Thing </p>
+    <h3>Step 2: Verify template availability.</h3>
+    <p class="SubStepAlpha">a. <b>File &gt; New</b> (save current when prompted).</p>
+    <p class="SubStepAlpha">b. In the blank file, confirm the Security Camera appears under Home devices.</p>
 
-<p class=BodyTextL25Bold>Part 2:  Save Your New Thing</p>
+    <p class="BodyTextL25">You created and connected a new IoT device and saved it as a template for future use.</p>
 
-<h1>Background / Scenario</h1>
+    <p class="ConfigWindow">End of document</p>
 
-<p class=BodyTextL25>In this activity, you will create a new IoT Thing, a
-security camera, and save the new Thing in Packet Tracer.</p>
-
-<h1>Instructions</h1>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 1: Create Your Own Thing</h2>
-
-<p class=BodyTextL25>In this part, you will create and configure a new IoT Thing,
-change its icon, and then connect it to the wireless network.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Add a new generic IoT
-device.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Open the Packet Tracer file.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Add a new device to the workspace by selecting the <b>Thing</b> item
-from the <b>Components</b> area of the <b>Device Selection box</b>.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Drag the <b>Thing</b> icon to the workspace.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Change the Display Name of
-the device.</h3>
-
-<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
-margin-left:.5in;text-indent:-.25in;line-height:normal'><span style='font-size:
-10.0pt'>a.</span><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>       </span><span
-style='font-size:10.0pt'>Click the <b>Thing </b>to open the configuration
-window.</span></p>
-
-<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
-margin-left:.5in;text-indent:-.25in;line-height:normal'><span style='font-size:
-10.0pt'>b.</span><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>      </span><span
-style='font-size:10.0pt'>Click the <b>Config</b> tab</span><span
-style='font-size:10.0pt'> and change</span><span style='font-size:10.0pt'> the <b>Display
-Name</b> of </span><span style='font-size:10.0pt'>the thing</span><u><span
-style='font-size:10.0pt;color:teal'> </span></u><span style='font-size:10.0pt'>to
-<b>Security Camera</b>.</span></p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 3: Use the Thing Editor to
-change the properties of the Thing.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Thing Editor</b> tab. The <b>Properties</b> subtab is
-selected by default.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Change the <b>Component Name</b> to <b>Security Camera</b>. This will
-identify the new Thing to the IoT network.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>To configure the Thing to have a digital interface, click the <b>Digital</b>
-radio button, and then click the <b>Slot Mapping</b> drop-down menu and choose <b>Slot
-1</b>.</p>
-
-<p class=BodyTextL25><b>Note</b>: The next two substeps MUST be done in the
-instructions file, not the Packet tracer instructions window that opened with
-the Packet Tracer activity.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Open the instructions file for this activity if it is not already open. </p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Right-click the image below and select “Save image as…”, or its
-equivalent, from the menu. Save the file in a location that you can access
-later.</p>
-
-<p class=SubStepAlpha><span style='font-family:Symbol'><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAsCAYAAAAn4+taAAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AYht+mFotWROwg4pChOlkQFXGUKhbBQmkrtOpgcukfNGlIUlwcBdeCgz+LVQcXZ10dXAVB8AfEzc1J0UVK/C4ptIjxjuMe3vvel7vvAKFRYarZNQGommWk4jExm1sVu1/RiwGaAQQlZuqJ9GIGnuPrHj6+30V5lnfdn6NPyZsM8InEc0w3LOIN4plNS+e8TxxmJUkhPiceN+iCxI9cl11+41x0WOCZYSOTmicOE4vFDpY7mJUMlXiaOKKoGuULWZcVzluc1UqNte7JXxjKaytprtMaQRxLSCAJETJqKKMCC1HaNVJMpOg85uEfdvxJcsnkKoORYwFVqJAcP/gf/O6tWZiadJNCMSDwYtsfo0D3LtCs2/b3sW03TwD/M3Cltf3VBjD7SXq9rUWOgP5t4OK6rcl7wOUOMPSkS4bkSH5aQqEAvJ/RN+WAwVugZ83tW+scpw9Ahnq1fAMcHAJjRcpe93h3sLNv/9a0+vcDHhVyhTE4s2kAAAAGYktHRAD/AP8A/6C9p5MAAAAJcEhZcwAALiMAAC4jAXilP3YAAAAHdElNRQflCxIUGwXF7rotAAAAGXRFWHRDb21tZW50AENyZWF0ZWQgd2l0aCBHSU1QV4EOFwAAApdJREFUaN7V2U2ITXEYx/HPHWPG25DIy2RYINIsvEQ2ykaysZDyVoSljUKNvE4JCyxsKCkpIRtJSqHIZpCkbOQlohSG8TJeZsxY+N863a7pnHvvuXPmqV+nc2635/ne83/+/+d5Ltm0EdiLIwaoDcI6vEQvfmH2QINYiDsBIKrrqBkIAJNxBt1FIHrRg+VZBhiOXej4D0BUTzAkawA1WIXnMQCi2poliAW4HZZLb0K9x7j+BpiE0+gqASCq4/2ZBy34XCZAXj/RXO08WIlnFQKI6ipy1YCYh1sl5kEc/cGyNAEacQq/UwKI6jHqKw0wDDvwqQoAUW2pZB6swNMqA+T1DmPLhZiDGynmQVwdLRVgIk6GqrQ3A/qBmUkAhmIb2jMCENXlJNtxawYBotvxkrgg4/EhwzB3kiyvbRkE6MJZNOUwJrSYPZFGpti1HvcwLSOV9F1sR1v+wbGwC3UGfQvqCGoPeh92if5+Cy+xGrWFZBPwMcPrP68vYbLS0NdraskwQBfOYUrcOdKLjIKsj1svCTmxL3wxa/Y6CQicx4N+Drqz1B8zCtKNnWG7rbb9wQXMDTlRtuVwpco50IZFwX9dkYJ0cakwzaHJTxvgDTYUnAcVBYETKQJ8xwGMKuK34iCNKbSu3biIqX34rTgI7E4QZL60+d/n92MGlApIA17FBNmPPUWev8UmDI7pMxUQ2BgD4lmoDBoi1UEnDmJ0Qn+pgQzGwz4gesIkJW9rcQnTS/SXGggsDQdWMZBrBYdquaPMVEFyIeBiCT6rwid8qiD8+0OycBR6OIVSpWSQ2pgOHoXeeHO4f4VDVarD5ld6ztsUWt8erEkp6Loyhn+JrBU3w7BiQIOMxIwUl1HJIDnZsjp8DddE9hckjI1+pljYYAAAAABJRU5ErkJggg==" /><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span>&nbsp;</p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Return to the <b>Properties</b> configuration for the <b>Security Camera</b>
-and click the <b>New</b> button.</p>
-
-<p class=SubStepAlpha>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Locate the file that you saved, select it in the <b>Choose Image</b>
-dialog box, and then click <b>Open</b> to import the image. The Thing icon has
-now changed to the security camera icon.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 4: Add the security camera to
-the network.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Security Camera</b> configuration window, click the <b>I/O
-Config</b> tab.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the drop-down menu for <b>Network Adapter</b> and select <b>PT-IOT-NM-1W-AC</b>
-to add a Wi-Fi network adapter.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>After a brief delay, you should observe the Security Camera connect to
-the wireless network.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Config</b> tab, and then click <b>Wireless0</b> interface
-on the left. You may need to click the <b>INTERFACE</b> label to reveal the
-adapter.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>IP Configuration</b> section of the dialog, notice the adapter
-has received an IPv4 address in the 192.168.25.0/24 network.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 5: Test connectivity to the
-Security Camera.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Tablet</b> &gt; <b>Desktop</b> tab &gt; <b>Command Prompt</b>.
-</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Enter the <b>ping</b> command followed by the IPv4 address of the
-Security Camera. Reply messages indicate that the camera can be reached by
-other devices on the network.</p>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 2: Save the New Device</h2>
-
-<p class=BodyTextL25>In this part, you will save the new device as a device
-template. The new device can then be added to your Packet Tracer networks in
-the future without the need to recreate it.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Save the security camera
-using the Device Template Manager.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Tools</b> menu &gt; <b>Custom Device Dialog</b>. The <b>Device
-Template Manager</b> window opens.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Select</b>. The <b>Device Template Manager</b> window minimizes
-so you can locate and click the device you want to use as a template. </p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Security Camera</b> in the workspace. The <b>Device
-Template Manager</b> window returns with the name Security Camera in the <b>Template</b>
-field.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Home </b>checkbox. This configures the location of the new
-device in the <b>Device Selection Box</b>.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Add </b>button, and then click <b>Save </b>in the<b> Save
-File in Template Folder</b> dialog box. The new template must be saved in this
-folder.</p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Device Selection</b> box, the <b>Home </b>is now selected.
-Scroll to the right to see your <b>Security Camera</b> has now been added.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Verify the Security Camera
-is saved as a Packet Tracer template.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>File</b> &gt; <b>New</b> to open a new Packet Tracer file. Save
-your existing file, when prompted.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the blank Packet Tracer file, notice that your Security Camera device
-is listed in the list of <b>Home</b> devices in the <b>Device Selection Box</b>.</p>
-
-<p class=BodyTextL25>You have created a new IoT device and connected it to the
-network. You have also saved the new device as a template so that it will be
-available to add to Packet Tracer networks in the future.</p>
-
-<p class=Visual>&nbsp;</p>
-
-<p class=ConfigWindow>End of document</p>
-<div id="footerDIV"><span><br><hr><span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span><br></span></div>
-
-</div>
+    <div id="footerDIV">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

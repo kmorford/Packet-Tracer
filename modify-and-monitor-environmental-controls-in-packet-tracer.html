@@ -1,428 +1,136 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="style.css">
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Packet Tracer - Modify and Monitor Environmental Controls in Packet
-Tracer</title>
-<style>
-
- /* Font Definitions */
- @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
-@font-face
-	{font-family:SimSun;
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-@font-face
-	{font-family:Webdings;
-	panose-1:5 3 1 2 1 5 9 6 7 3;}
-@font-face
-	{font-family:Tahoma;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
-@font-face
-	{font-family:"\@SimSun";
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-h1
-	{mso-style-link:"Heading 1 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	text-indent:-.25in;
-	page-break-after:avoid;
-	font-size:13.0pt;
-	font-family:"Arial",sans-serif;}
-h2
-	{mso-style-link:"Heading 2 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
-h3
-	{mso-style-link:"Heading 3 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoFooter, li.MsoFooter, div.MsoFooter
-	{mso-style-link:"Footer Char";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:0in;
-	font-size:8.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoTitle, li.MsoTitle, div.MsoTitle
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading1Char
-	{mso-style-name:"Heading 1 Char";
-	mso-style-link:"Heading 1";
-	font-weight:bold;}
-span.Heading2Char
-	{mso-style-name:"Heading 2 Char";
-	mso-style-link:"Heading 2";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-p.PageHead, li.PageHead, div.PageHead
-	{mso-style-name:"Page Head";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	border:none;
-	padding:0in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.FooterChar
-	{mso-style-name:"Footer Char";
-	mso-style-link:Footer;}
-p.ConfigWindow, li.ConfigWindow, div.ConfigWindow
-	{mso-style-name:"Config Window";
-	margin:0in;
-	font-size:3.0pt;
-	font-family:"Arial",sans-serif;
-	color:white;
-	font-style:italic;}
-p.SubStepAlpha, li.SubStepAlpha, div.SubStepAlpha
-	{mso-style-name:"SubStep Alpha";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL50, li.BodyTextL50, div.BodyTextL50
-	{mso-style-name:"Body Text L50";
-	mso-style-link:"Body Text L50 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25, li.BodyTextL25, div.BodyTextL25
-	{mso-style-name:"Body Text L25";
-	mso-style-link:"Body Text L25 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-span.LabTitleInstVersred
-	{mso-style-name:"Lab Title Inst Vers \(red\)";
-	font-family:"Arial",sans-serif;
-	color:#EE0000;
-	font-weight:bold;}
-p.SubStepNum, li.SubStepNum, div.SubStepNum
-	{mso-style-name:"SubStep Num";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.75in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25Bold, li.BodyTextL25Bold, div.BodyTextL25Bold
-	{mso-style-name:"Body Text L25 Bold";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading3Char
-	{mso-style-name:"Heading 3 Char";
-	mso-style-link:"Heading 3";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-span.TitleChar
-	{mso-style-name:"Title Char";
-	mso-style-link:Title;
-	font-family:SimSun;
-	font-weight:bold;}
-span.BodyTextL25Char
-	{mso-style-name:"Body Text L25 Char";
-	mso-style-link:"Body Text L25";}
-span.BodyTextL50Char
-	{mso-style-name:"Body Text L50 Char";
-	mso-style-link:"Body Text L50";}
-p.LabSection, li.LabSection, div.LabSection
-	{mso-style-name:"Lab Section";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	page-break-after:avoid;
-	font-size:12.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-.MsoChpDefault
-	{font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
- /* Page Definitions */
- @page WordSection1
-	{size:8.5in 11.0in;
-	margin:76.3pt .75in .9in .75in;}
-div.WordSection1
-	{page:WordSection1;}
- /* List Definitions */
- ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
-
-	.dark-theme {
-    color: #fff;
-  }
-  .dark-theme .dark-color {
-    color: #fff !important;
-  }
-  .dark-theme p.ConfigWindow,
-  .dark-theme li.ConfigWindow,
-  .dark-theme div.ConfigWindow {
-    mso-style-name: "Config Window";
-    color: #212328;
-  }
-  .dark-theme h4 {
-    color: #212328;
-  }
-  .dark-theme .MsoTitle span {
-    color: #fff !important;
-  }
-  .dark-theme textarea {
-    background-color: #212328;
-    color: #fff;
-  }
-  .dark-theme .BodyTextL25Answer {
-    background-color: #000;
-    color: #fff;
-  }
-  .dark-theme .BodyTextL25Answer > span {
-    padding: 4px;
-  }
-  .dark-theme .BodyTextL25Answer span {
-    color: #fff;
-  }
-  .dark-theme table tbody tr td {
-    color: #fff !important;
-  }
-  .dark-theme table .TableHeading {
-    color: #000;
-  }
-</style>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>Packet Tracer - Modify and Monitor Environmental Controls in Packet Tracer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Packet Tracer lab: modify and monitor environmental controls to influence IoT device behavior.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --header-bg:#0b0f10cc;
+      --accent:#00ff88;
+      --border:#d9e1e6;
+      --font:Arial,Helvetica,sans-serif;
+      --answer-bg:#f1f5f8;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font:14px/1.5 var(--font);
+      color:#222;
+      background:#f7f9fa;
+      -webkit-font-smoothing:antialiased;
+    }
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:var(--header-bg);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid #16332a;
+      padding:.7rem 1rem .85rem;
+      display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;
+    }
+    header h1{margin:0;font-size:1.25rem;font-weight:600;line-height:1.1;}
+    header nav a{
+      color:var(--accent);
+      text-decoration:none;
+      margin:0 .45rem;
+      font-weight:500;
+      white-space:nowrap;
+    }
+    header nav a:hover{text-shadow:0 0 6px rgba(0,255,136,.45);}
+    main{
+      max-width:960px;
+      margin:0 auto;
+      padding:1.4rem 1rem 3rem;
+    }
+    h1,h2,h3{font-weight:600;line-height:1.25;margin:1.15rem 0 .6rem;}
+    h1{font-size:1.35rem;}
+    h2{font-size:1.18rem;}
+    h3{font-size:1.05rem;}
+    p{margin:.6rem 0;}
+    /* Retained instructional indentation classes */
+    .BodyTextL25,.BodyTextL25Bold{margin-left:.25in;font-size:.9rem;}
+    .BodyTextL25Bold{font-weight:700;}
+    .BodyTextL50{margin-left:.5in;font-size:.9rem;}
+    .SubStepAlpha,.SubStepNum{
+      margin-left:.5in;
+      text-indent:-.25in;
+      font-size:.9rem;
+    }
+    .ConfigWindow{font-size:.65rem;color:#555;margin-top:2rem;font-style:italic;margin-left:.25in;}
+    #footerDIV{
+      font:12px var(--font);
+      margin-top:2.5rem;
+      padding-top:1rem;
+      border-top:1px solid var(--border);
+    }
+    @media (prefers-color-scheme: dark){
+      body{background:#121416;color:#e4e8ea;}
+      header{background:#0b0f10f2;}
+      #footerDIV{border-color:#2d3338;}
+    }
+  </style>
 </head>
+<body>
+  <header>
+    <h1><a href="/Packet-Tracer/index.html" style="color:white; text-decoration:none;">🏠 Packet Tracer</a></h1>
+    <nav>
+      <a href="/Packet-Tracer/index.html">Home</a> |
+      <a href="/Packet-Tracer/Cisco%20Packet%20Tracer/index.html">Cisco Labs</a> |
+      <a href="/Packet-Tracer/Networking/index.html">Networking</a> |
+      <a href="/Packet-Tracer/IoT/index.html">IoT</a>
+    </nav>
+  </header>
 
-<body lang=EN-US link=blue vlink=purple style='word-wrap:break-word'>
-	<!-- home-snippet.html -->
-<style>
-  .homebar{position:sticky;top:0;z-index:9999;background:#0b0f10cc;border-bottom:1px solid #16332a;padding:.5rem .75rem;font:600 14px ui-monospace,Menlo,Consolas,monospace;color:#8ff0c9}
-  .homebar a{color:#00ff88;text-decoration:none}
-  .homebar a:hover{text-shadow:0 0 6px rgba(0,255,136,.45)}
-</style>
-<div class="homebar">← <a href="index.html">Home</a></div>
+  <main>
+    <h1 style="margin-left:0;">Packet Tracer - Modify and Monitor Environmental Controls in Packet Tracer</h1>
 
-<!-- NAVBAR-INJECT START
-<!-- Injected by inject_nav.py 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{base}/index.html">Packet Tracer Labs</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="{base}/index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Cisco-Packet-Tracer/index.html">Cisco Labs</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Networking/index.html">Networking</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/IoT/index.html">IoT</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- NAVBAR-INJECT END -->
+    <h2>Objectives</h2>
+    <p class="BodyTextL25Bold">Part 1: Explore Environmental Controls</p>
+    <p class="BodyTextL25Bold">Part 2: Edit Environment Elements</p>
 
+    <h2>Background / Scenario</h2>
+    <p class="BodyTextL25">IoT devices frequently use sensors to monitor physical conditions and actuators to respond. Packet Tracer includes an interface for modifying environmental factors to test and activate IoT devices.</p>
+    <p class="BodyTextL25">In this activity, you will learn how to edit Packet Tracer environmental controls.</p>
 
-<div class=WordSection1>
+    <h2>Instructions</h2>
 
-<p class=MsoTitle><span style='font-weight:normal'><b>Packet Tracer - Modify
-and Monitor Environmental Controls in Packet Tracer</b></span> </p>
+    <h2>Part 1: Explore Environmental Controls</h2>
 
-<p class=LabSection>Objectives</p>
+    <h3>Step 1: Observe the Environmental Controls interface</h3>
+    <p class="BodyTextL25">To view current environment values:</p>
+    <p class="SubStepAlpha">a. Open the <b>Environments</b> window: click <b>Environment</b> (Shift+E) on the far right of the <b>Logical</b> toolbar (icon shows a simulated 24‑hour clock).</p>
+    <p class="SubStepAlpha">b. Explore the environmental elements in the <b>Intercity</b> location.</p>
+    <p class="SubStepAlpha">c. Locate <b>Ambient Temperature</b>; observe it changes over a simulated 24‑hour period.</p>
+    <p class="SubStepAlpha">d. Click <b>Ambient Temperature</b> to open its chart (scroll to top if needed).</p>
+    <p class="SubStepAlpha">e. Explore other elements by selecting them; observe their charts. Use <b>Hide Chart</b> to collapse.</p>
+    <p class="SubStepAlpha">f. Keep the window on top: scroll to bottom and enable <b>Always on Top</b>.</p>
 
-<p class=BodyTextL25Bold>Part 1: Explore Environmental Controls </p>
+    <h2>Part 2: Edit Environmental Elements</h2>
 
-<p class=BodyTextL25Bold>Part 2: Edit Environment Elements</p>
+    <h3>Step 1: Change to environment edit mode</h3>
+    <p class="BodyTextL25">With the <b>Ambient Temperature</b> chart open, click <b>Edit</b> next to the <b>Intercity</b> location.</p>
+    <p class="BodyTextL25"><b>Note:</b> Do not click the <b>Edit</b> beside <b>Current Time</b>.</p>
 
-<h1>Background / Scenario</h1>
+    <h3>Step 2: Investigate the Ambient Temperature Keyframe Graph</h3>
+    <p class="SubStepAlpha">a. Scroll down and toggle <b>Sunlight</b> to hide that element beneath the chart.</p>
+    <p class="BodyTextL50"><b>Note:</b> Expand the Environments window height if needed.</p>
+    <p class="SubStepAlpha">b. The Keyframe Graph shows Celsius values from 0° at midnight to 24° at midday. Five diamond keyframes appear at 00:00, 06:00, 12:00, 18:00, 23:59. Hover to view timestamps; these are editable keyframes.</p>
 
-<p class=BodyTextL25>IoT devices frequently use sensors to monitor the physical
-environment, and actuators to act in response to the conditions that are
-detected in the environment. Packet Tracer includes an interface for modifying
-environmental factors to test and activate IoT devices.</p>
+    <h3>Step 3: Change the ambient temperature for Intercity</h3>
+    <p class="BodyTextL25">Drag each keyframe (or enter values) to simulate a summer profile: set 00:00 and 23:59 to 20°, 06:00 and 18:00 to 28°, and 12:00 to 37°.</p>
 
-<p class=BodyTextL25>In this activity, you will learn how to edit Packet Tracer
-environmental controls.</p>
+    <h3>Step 4: Observe changes in the environment</h3>
+    <p class="SubStepAlpha">a. Click <b>View</b> for <b>Intercity</b> and confirm the chart reflects the updated profile.</p>
+    <p class="SubStepAlpha">b. Observe the live Ambient Temperature value; Packet Tracer interpolates between keyframes (range 20°–37°).</p>
 
-<h1>Instructions</h1>
+    <h3>Step 5: Close the Environments window and exit Packet Tracer</h3>
 
-<h2 style='margin-left:0in;text-indent:0in'>Part 1: Explore Environmental
-Controls </h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Observe the Environmental
-Controls interface</h3>
-
-<p class=BodyTextL25Bold><span style='font-weight:normal'>To view the current
-environment values, do the following:</span></p>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>To open the <b>Environments</b> window, click <b>Environment</b> <b>(Shift+E)</b>
-on the far right of the <b>Logical</b> toolbar. The button displays a simulated
-24-hour clock.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Explore the many environmental elements in the <b>Intercity</b>
-location.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Locate the <b>Ambient Temperature</b> element and notice that the temperature
-changes throughout the simulated 24-hour day period.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Ambient Temperature</b> to open the Ambient Temperature chart. If
-necessary, scroll to the top of the <b>Environments</b> window to see the
-temperature fluctuations over time.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Explore the other environmental elements by clicking in the list and observing
-the charts over time. Notice the <b>Hide Chart</b> button, which you can click,
-if you wish to hide the chart.</p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>You will continue using the <b>Environments</b> window in Part 2. To
-keep it open and on top, scroll to the bottom of the window and click <b>Always
-on Top</b>.</p>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 2: Edit Environmental Elements</h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Change to environment edit
-mode.</h3>
-
-<p class=BodyTextL25>With the <b>Ambient Temperature</b> chart open, click <b>Edit</b>
-next to the <b>Intercity</b> location. </p>
-
-<p class=BodyTextL25><b>Note</b>: Do not click the <b>Edit</b> button next to
-the <b>Current Time</b>.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Investigate the Ambient
-Temperature Keyframe Graph.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Scroll down and click the <b>Sunlight</b> entry below the chart to hide the
-Sunlight element.</p>
-
-<p class=BodyTextL50><b>Note</b>: You may need to expand the height of your <b>Environments</b>
-window to see all the elements.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>The environment <b>Keyframe Graph</b> tab for the ambient temperature
-shows degrees Celsius starting at a low of 0° at midnight and a high of 24° at
-midday. Notice the five small diamond handles at different times on the chart:
-00:00, 06:00, 12:00, 18:00, and 23:59. Hovering your mouse over the small
-diamond handles reveals those times. These are keyframes. </p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 3: Change the ambient
-temperature for Intercity.</h3>
-
-<p class=BodyTextL25>You can change the ambient temperature for the 24-hour day
-by clicking and dragging each keyframe to the desired temperature value. Alternatively,
-you can enter the value in the popup box and press Enter to change the value. To
-simulate a summer environment, make the following changes. Set the beginning
-and end temperatures to 20°, the 06:00 and 18:00 temperatures to 28° and the
-mid-day temperature to 37°.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 4: Observe changes in the
-environment.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>View</b> button for the <b>Intercity </b>location. Note that
-the <b>Ambient Temperature</b> chart is now showing the pattern of temperature
-changes that you configured in the previous step.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Look at the Ambient Temperature value in the table of environmental
-factors. Note that Packet Tracer interpolates between the key frame values to continuously
-vary the temperature. You should see the Ambient Temperature value vary from 20°
-to 37°.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 5: Close the Environments
-window and close Packet Tracer.</h3>
-
-<p class=ConfigWindow>End of document</p>
-<div id="footerDIV"><span><br><hr><span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span><br></span></div>
-
-</div>
+    <p class="ConfigWindow">End of document</p>
+    <div id="footerDIV">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

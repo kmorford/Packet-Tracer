@@ -1,502 +1,158 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="style.css">
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Packet Tracer - Connect IoT Devices to a Registration Server</title>
-<style>
-
- /* Font Definitions */
- @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
-@font-face
-	{font-family:SimSun;
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-@font-face
-	{font-family:Webdings;
-	panose-1:5 3 1 2 1 5 9 6 7 3;}
-@font-face
-	{font-family:Tahoma;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
-@font-face
-	{font-family:"\@SimSun";
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-h1
-	{mso-style-link:"Heading 1 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	text-indent:-.25in;
-	page-break-after:avoid;
-	font-size:13.0pt;
-	font-family:"Arial",sans-serif;}
-h2
-	{mso-style-link:"Heading 2 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
-h3
-	{mso-style-link:"Heading 3 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoFooter, li.MsoFooter, div.MsoFooter
-	{mso-style-link:"Footer Char";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:0in;
-	font-size:8.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoTitle, li.MsoTitle, div.MsoTitle
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading1Char
-	{mso-style-name:"Heading 1 Char";
-	mso-style-link:"Heading 1";
-	font-weight:bold;}
-span.Heading2Char
-	{mso-style-name:"Heading 2 Char";
-	mso-style-link:"Heading 2";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-p.PageHead, li.PageHead, div.PageHead
-	{mso-style-name:"Page Head";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	border:none;
-	padding:0in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.FooterChar
-	{mso-style-name:"Footer Char";
-	mso-style-link:Footer;}
-p.ConfigWindow, li.ConfigWindow, div.ConfigWindow
-	{mso-style-name:"Config Window";
-	margin:0in;
-	font-size:3.0pt;
-	font-family:"Arial",sans-serif;
-	color:white;
-	font-style:italic;}
-p.SubStepAlpha, li.SubStepAlpha, div.SubStepAlpha
-	{mso-style-name:"SubStep Alpha";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.CMD, li.CMD, div.CMD
-	{mso-style-name:CMD;
-	mso-style-link:"CMD Char";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:.5in;
-	font-size:10.0pt;
-	font-family:"Courier New";}
-p.BodyTextL50, li.BodyTextL50, div.BodyTextL50
-	{mso-style-name:"Body Text L50";
-	mso-style-link:"Body Text L50 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25, li.BodyTextL25, div.BodyTextL25
-	{mso-style-name:"Body Text L25";
-	mso-style-link:"Body Text L25 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-span.LabTitleInstVersred
-	{mso-style-name:"Lab Title Inst Vers \(red\)";
-	font-family:"Arial",sans-serif;
-	color:#EE0000;
-	font-weight:bold;}
-p.SubStepNum, li.SubStepNum, div.SubStepNum
-	{mso-style-name:"SubStep Num";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.75in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25Bold, li.BodyTextL25Bold, div.BodyTextL25Bold
-	{mso-style-name:"Body Text L25 Bold";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading3Char
-	{mso-style-name:"Heading 3 Char";
-	mso-style-link:"Heading 3";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-span.CMDChar
-	{mso-style-name:"CMD Char";
-	mso-style-link:CMD;
-	font-family:"Courier New";}
-span.TitleChar
-	{mso-style-name:"Title Char";
-	mso-style-link:Title;
-	font-family:SimSun;
-	font-weight:bold;}
-span.BodyTextL25Char
-	{mso-style-name:"Body Text L25 Char";
-	mso-style-link:"Body Text L25";}
-span.BodyTextL50Char
-	{mso-style-name:"Body Text L50 Char";
-	mso-style-link:"Body Text L50";}
-.MsoChpDefault
-	{font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
- /* Page Definitions */
- @page WordSection1
-	{size:8.5in 11.0in;
-	margin:76.3pt .75in .9in .75in;}
-div.WordSection1
-	{page:WordSection1;}
- /* List Definitions */
- ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
-	.dark-theme {
-    color: #fff;
-  }
-  .dark-theme .dark-color {
-    color: #fff !important;
-  }
-  .dark-theme p.ConfigWindow,
-  .dark-theme li.ConfigWindow,
-  .dark-theme div.ConfigWindow {
-    mso-style-name: "Config Window";
-    color: #212328;
-  }
-  .dark-theme h4 {
-    color: #212328;
-  }
-  .dark-theme .MsoTitle span {
-    color: #fff !important;
-  }
-  .dark-theme textarea {
-    background-color: #212328;
-    color: #fff;
-  }
-  .dark-theme .BodyTextL25Answer {
-    background-color: #000;
-    color: #fff;
-  }
-  .dark-theme .BodyTextL25Answer > span {
-    padding: 4px;
-  }
-  .dark-theme .BodyTextL25Answer span {
-    color: #fff;
-  }
-  .dark-theme table tbody tr td {
-    color: #fff !important;
-  }
-  .dark-theme table .TableHeading {
-    color: #000;
-  }
-</style>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>Packet Tracer - Connect IoT Devices to a Registration Server</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --header-bg:#0b0f10cc;
+      --accent:#00ff88;
+      --font:Arial, sans-serif;
+      --code-bg:#212328;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font:14px/1.45 var(--font);
+      color:#222;
+      background:#fff;
+      -webkit-font-smoothing:antialiased;
+    }
+    header.site-header{
+      position:sticky;top:0;z-index:1000;
+      background:var(--header-bg);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid #16332a;
+      padding:.65rem 1rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:1.75rem;
+      align-items:center;
+    }
+    header.site-header h1{margin:0;font-size:19px;font-weight:600;}
+    header.site-header a{color:#fff;text-decoration:none;}
+    header.site-header nav a{
+      color:var(--accent);
+      margin:0 .45rem;
+      text-decoration:none;
+      font-weight:500;
+    }
+    header.site-header nav a:hover{text-shadow:0 0 6px rgba(0,255,136,.45);}
+    main{max-width:960px;margin:0 auto;padding:1.35rem clamp(.75rem,2vw,2rem) 2.4rem;}
+    h1,h2,h3{line-height:1.25;font-weight:600;margin:1.05rem 0 .55rem;}
+    h1{font-size:1.32rem;}
+    h2{font-size:1.18rem;}
+    h3{font-size:1.05rem;}
+    p{margin:.6rem 0;}
+    .MsoTitle{font-size:1.55rem;font-weight:700;margin:0 0 1rem;}
+    /* Indentation styles mirroring original intent */
+    .BodyTextL25,
+    .BodyTextL25Bold{margin-left:.25in;font-size:.9rem;}
+    .BodyTextL50{margin-left:.5in;font-size:.9rem;}
+    .BodyTextL25Bold{font-weight:bold;}
+    .SubStepAlpha{margin-left:.75in;text-indent:-.25in;font-size:.9rem;}
+    .CMD{margin-left:.5in;font-family:"Courier New",monospace;font-size:.85rem;background:var(--code-bg);color:#fff;padding:.4rem .55rem;border-radius:4px;}
+    hr{margin:2rem 0;border:0;border-top:1px solid #cfcfcf;}
+    #footerDIV{
+      font:12px var(--font);
+      margin-top:2.5rem;
+      padding-top:1rem;
+      border-top:1px solid #cfcfcf;
+    }
+    /* Dark theme (optional) */
+    .dark-theme{background:#121416;color:#e6e6e6;}
+    .dark-theme header.site-header{background:#0b0f10f2;}
+    .dark-theme #footerDIV{border-color:#333;}
+    .dark-theme .CMD{background:#101417;color:#8ff0c9;}
+  </style>
 </head>
+<body>
+  <header class="site-header">
+    <h1><a href="/Packet-Tracer/index.html" style="color:white; text-decoration:none;">🏠 Packet Tracer</a></h1>
+    <nav>
+      <a href="/Packet-Tracer/index.html">Home</a> |
+      <a href="/Packet-Tracer/Cisco%20Packet%20Tracer/index.html">Cisco Labs</a> |
+      <a href="/Packet-Tracer/Networking/index.html">Networking</a> |
+      <a href="/Packet-Tracer/IoT/index.html">IoT</a>
+    </nav>
+  </header>
 
-<body lang=EN-US style='word-wrap:break-word'>
-	<!-- home-snippet.html -->
-<style>
-  .homebar{position:sticky;top:0;z-index:9999;background:#0b0f10cc;border-bottom:1px solid #16332a;padding:.5rem .75rem;font:600 14px ui-monospace,Menlo,Consolas,monospace;color:#8ff0c9}
-  .homebar a{color:#00ff88;text-decoration:none}
-  .homebar a:hover{text-shadow:0 0 6px rgba(0,255,136,.45)}
-</style>
-<div class="homebar">← <a href="index.html">Home</a></div>
+  <main>
+    <p class="MsoTitle">Packet Tracer - Connect IoT Devices to a Registration Server</p>
 
-<!-- NAVBAR-INJECT START 
-<!-- Injected by inject_nav.py 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{base}/index.html">Packet Tracer Labs</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="{base}/index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Cisco-Packet-Tracer/index.html">Cisco Labs</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Networking/index.html">Networking</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/IoT/index.html">IoT</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- NAVBAR-INJECT END -->
+    <h1>Objectives</h1>
+    <p class="BodyTextL25Bold">Part 1: Register IoT Devices to the Registration Server</p>
+    <p class="BodyTextL25Bold">Part 2: Connect a Smartphone to a Laptop Using Tethering</p>
 
+    <h1>Background / Scenario</h1>
+    <p class="BodyTextL25">In this activity you will register several IoT devices with the IoT server. You will monitor the IoT devices through the IoT server. You will also configure tethering between a smartphone and a laptop. Tethering permits the laptop to use the cellular data connection of a smartphone to access the internet.</p>
 
-<div class=WordSection1>
+    <h1>Instructions</h1>
 
-<p class=MsoTitle><span style='color:#EE0000;font-weight:normal'><b><span
-style='color:windowtext'>Packet Tracer - Connect IoT Devices to a Registration
-Server</span></b></span></p>
+    <h2>Part 1: Register Devices to the Registration Server</h2>
 
-<h1>Objectives</h1>
+    <h3>Step 1: Access the IoT devices at the Home Gateway server.</h3>
+    <p class="SubStepAlpha">a. Click the <b>Tablet</b> icon to open the <b>Tablet</b> configuration window.</p>
+    <p class="SubStepAlpha">b. Click the <b>IoT Monitor</b> in the <b>Desktop</b> tab.</p>
+    <p class="SubStepAlpha">c. Use the default settings and click <b>Login</b>. A list of IoT devices registered to the Home Gateway server is displayed.</p>
 
-<p class=BodyTextL25Bold>Part 1: Register IoT Devices to the Registration
-Server</p>
+    <h3>Step 2: Access the IoT Server at home.com.</h3>
+    <p class="BodyTextL25">In this step, you will register the existing IoT devices to a remote IoT server at <b>home.com</b>.</p>
+    <p class="SubStepAlpha">a. Click the <b>Web Browser</b> icon in the <b>Desktop</b> tab. Navigate to <b>home.com</b> in the URL box and then click <b>Go</b>.</p>
+    <p class="SubStepAlpha">b. Enter username <b>home</b> and password <b>home</b> when prompted.</p>
+    <p class="SubStepAlpha">c. Notice in the <b>IoT Server – Devices</b> window there are no IoT devices listed. This is because all the IoT devices are currently registered with Home Gateway as the IoT Server.</p>
+    <p class="SubStepAlpha">d. You can leave <b>Tablet</b> while the IoT devices populate in the next step.</p>
 
-<p class=BodyTextL25Bold>Part 2: Connect a Smartphone to a Laptop Using
-Tethering</p>
+    <h3>Step 3: Register IoT devices to the IoT Server at home.com.</h3>
+    <p class="SubStepAlpha">a. To configure the ceiling fan to register with the new registration server, click <b>Fan</b> to open the device configuration window.</p>
+    <p class="SubStepAlpha">b. Click the <b>Config</b> tab. Change the <b>IoT Server</b> type from <b>Home Gateway</b> to <b>Remote Server</b>. Enter <b>home.com</b> as the Server Address. Enter <b>home</b> as the username and <b>home</b> as the password. Click <b>Connect</b> to continue.</p>
+    <p class="SubStepAlpha">c. Close the <b>Fan</b> window.</p>
+    <p class="SubStepAlpha">d. Configure the <b>Lamp</b> and the <b>Door</b> to register with the IoT Server in the same way.</p>
 
-<h1>Background / Scenario</h1>
+    <h3>Step 4: Verify that the IoT devices are registered to the IoT server at home.com.</h3>
+    <p class="SubStepAlpha">a. Access the IoT Server through the web browser of the wireless <b>Tablet</b> using the <b>home.com</b> credentials.</p>
+    <p class="SubStepAlpha">b. The three IoT devices, <b>Fan</b>, <b>Lamp</b>, and <b>Door</b> should now be registered with the IoT server at home.com. All three should have entries in the IoT Server – Devices window.</p>
+    <p class="SubStepAlpha"><b>Note</b>: If any devices show an offline status, return to the device registration server configuration and click refresh.</p>
+    <p class="SubStepAlpha">c. Close <b>Tablet</b> window.</p>
 
-<p class=BodyTextL25>In this activity you will register several IoT devices with
-the IoT server. You will monitor the IoT devices through the IoT server. You
-will also configure tethering between a smartphone and a laptop. Tethering
-permits the laptop to use the cellular data connection of a smartphone to
-access the internet.</p>
+    <h2>Part 2: Connect a Smartphone to a Laptop Using Cellular Tethering</h2>
 
-<h1>Instructions</h1>
+    <h3>Step 1: Enable Bluetooth on the Laptop.</h3>
+    <p class="SubStepAlpha">a. Click the <b>Laptop</b> icon to open the configuration window.</p>
+    <p class="SubStepAlpha">b. Click the <b>Config</b> tab.</p>
+    <p class="SubStepAlpha">c. In the left pane, click <b>Bluetooth</b>.</p>
+    <p class="SubStepAlpha">d. Click <b>On</b> for the Port Status to enable Bluetooth.</p>
 
-<h2 style='margin-left:0in;text-indent:0in'>Part 1: Register Devices to the
-Registration Server</h2>
+    <h3>Step 2: Enable Bluetooth on the Smartphone.</h3>
+    <p class="SubStepAlpha">a. Click the <b>Smartphone</b> icon to open the configuration window.</p>
+    <p class="SubStepAlpha">b. Verify that the <b>Smartphone</b> is connected to the 3G/4G Cell1 network.</p>
+    <p class="SubStepAlpha">c. Click <b>DHCP Refresh</b> to ensure you have a valid IP address.</p>
+    <p class="SubStepAlpha">d. In the Global Settings, set Bluetooth to <b>On</b> to enable Cellular Tethering.</p>
+    <p class="SubStepAlpha">e. In the left pane, click <b>Bluetooth</b>.</p>
+    <p class="SubStepAlpha">f. Click <b>On</b> for the Port Status to enable Bluetooth.</p>
 
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Access the IoT devices at
-the Home Gateway server.</h3>
+    <h3>Step 3: Connect the Smartphone to the Laptop.</h3>
+    <p class="SubStepAlpha">a. In the <b>Smartphone</b>, click <b>Config</b>.</p>
+    <p class="SubStepAlpha">b. In the left pane, click <b>Bluetooth</b>.</p>
+    <p class="SubStepAlpha">c. Click <b>Discover</b>.</p>
+    <p class="SubStepAlpha">d. Select <b>Laptop</b> in the list of discoverable devices.</p>
+    <p class="SubStepAlpha">e. Click <b>Pair</b>. If a popup window appears that asks for permission to pair, approve the connection. The status should change to Paired, Connected.</p>
+    <p class="SubStepAlpha">f. Return to <b>Laptop</b> and open the configuration window for Bluetooth.</p>
+    <p class="SubStepAlpha">g. Select the <b>Smartphone</b> from the list of discovered devices and click <b>Tether</b>.</p>
 
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the<b> Tablet </b>icon to open the <b>Tablet </b>configuration
-window.</p>
+    <h3>Step 4: Verify connectivity through the cellular network.</h3>
+    <p class="SubStepAlpha">a. To test connectivity, open the Command Prompt from the <b>Laptop</b> desktop and ping <b>home.com</b>.</p>
+    <p class="CMD">C:\&gt; ping home.com</p>
+    <p class="BodyTextL50">Ping replies indicate that the laptop, which is only connected to the cellular data network through the Smartphone, can connect to internet destinations.</p>
+    <p class="SubStepAlpha">b. You can also navigate to <b>home.com</b> and log into the IoT server and view the list of registered IoT devices from <b>Home</b>.</p>
 
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>IoT Monitor </b>in the <b>Desktop </b>tab.</p>
+    <p class="BodyTextL25"><i>End of document</i></p>
 
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Use the default settings and click <b>Login</b>. A list of IoT devices
-registered to the Home Gateway server is displayed.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Access the IoT Server at
-home.com.</h3>
-
-<p class=BodyTextL25>In this step, you will register the existing IoT devices
-to a remote IoT server at <b>home.com</b>.</p>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Web Browser</b> icon in the <b>Desktop</b> tab. Navigate to
-<b>home.com</b> in the <b>URL</b> box and then click <b>Go</b>. </p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Enter username <b>home</b> and password <b>home</b> when prompted.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Notice in the <b>IoT Server – Devices</b> window there are no IoT
-devices listed. This is because all the IoT devices are currently registered
-with Home Gateway as the IoT Server.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>You can leave <b>Tablet</b> while the IoT devices populate in the next Step.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 3: Register IoT devices to the
-IoT Server at home.com</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>To configure the ceiling fan to register with the new registration
-server, click <b>Fan</b> to open the device configuration window.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Config</b> tab. Change the <b>IoT Server</b> type from <b>Home
-Gateway</b> to <b>Remote Server</b>. Enter <b>home.com</b> as the Server
-Address. Enter <b>home</b> as the username and <b>home</b> as the password. Click
-<b>Connect</b> to continue.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Close the <b>Fan</b> window.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Configure the <b>Lamp</b> and the <b>Door</b> to register with the IoT
-Server in the same way.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 4: Verify that the IoT devices
-are registered to the IoT server at home.com.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Access the IoT Server through the web browser of the wireless <b>Tablet </b>using
-the <b>home.com</b> credentials.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>The three IoT devices, <b>Fan</b>, <b>Lamp</b>, and <b>Door</b> should
-now be registered with the IoT server at home.com. All three should have
-entries in the IoT Server – Devices window.</p>
-
-<p class=SubStepAlpha style='text-indent:0in'><b>Note</b>: If any devices show
-an offline status, return to the device registration server configuration an
-click refresh.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Close <b>Tablet</b> window.</p>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 2: Connect a Smartphone to a
-Laptop Using Cellular Tethering</h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Enable Bluetooth on the Laptop.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Laptop </b>icon to open the configuration window.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Config </b>tab.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the left pane, click <b>Bluetooth</b>.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>On</b> for the Port Status to enable Bluetooth.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Enable Bluetooth on the
-Smartphone.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Smartphone</b> icon to open the configuration window.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Verify that the <b>Smartphone</b> is connected to the 3G/4G Cell1
-network.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>DHCP Refresh</b> to ensure you have a valid IP address.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the Global Settings, set Bluetooth to <b>On</b> to enable Cellular
-Tethering.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the left pane, click <b>Bluetooth</b>.</p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>On</b> for the Port Status to enable Bluetooth.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 3: Connect the Smartphone to
-the Laptop.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Smartphone</b>, click <b>Config</b>.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the left pane, click Bluetooth.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Discover</b>.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Select <b>Laptop</b> in the list of Discoverable devices.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Pair</b>. If a popup window appears that asks for permission to
-pair, approve the connection. Now the status of the connection should have changed
-to Paired, Connected.</p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Return to <b>Laptop</b> and open the configuration window for Bluetooth.</p>
-
-<p class=SubStepAlpha>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Select the <b>Smartphone</b> from the list of discovered devices and
-click <b>Tether</b>.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 4: Verify connectivity through
-the cellular network.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>To test connectivity, open the Command Prompt from the <b>Laptop</b>
-desktop and ping <b>home.com</b>.</p>
-
-<p class=CMD>C:\&gt; <b>ping home.com</b></p>
-
-<p class=BodyTextL50>Ping replies indicate that the laptop, which is only
-connected to the cellular data network through the Smartphone, can connect to
-internet destinations.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>You can also navigate <b>home.com</b> and log into the IoT server and view
-the list of registered IoT devices from <b>Home</b>.</p>
-
-<p class=ConfigWindow>End of document</p>
-
-
-<p class=ConfigWindow>&nbsp;</p>
-<div id="footerDIV"><span><br><hr><span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span><br></span></div>
-
-</div>
+    <div id="footerDIV">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

@@ -1,771 +1,232 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="style.css">
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Packet Tracer - Create Realistic Structured Cabling in the Physical
-Workspace and Cabling Devices in a Rack</title>
-<style>
-<!--
- /* Font Definitions */
- @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
-@font-face
-	{font-family:SimSun;
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-@font-face
-	{font-family:Webdings;
-	panose-1:5 3 1 2 1 5 9 6 7 3;}
-@font-face
-	{font-family:Tahoma;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
-@font-face
-	{font-family:"\@SimSun";
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-h1
-	{mso-style-link:"Heading 1 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	text-indent:-.25in;
-	page-break-after:avoid;
-	font-size:13.0pt;
-	font-family:"Arial",sans-serif;}
-h2
-	{mso-style-link:"Heading 2 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
-h3
-	{mso-style-link:"Heading 3 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoFooter, li.MsoFooter, div.MsoFooter
-	{mso-style-link:"Footer Char";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:0in;
-	font-size:8.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoTitle, li.MsoTitle, div.MsoTitle
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading1Char
-	{mso-style-name:"Heading 1 Char";
-	mso-style-link:"Heading 1";
-	font-weight:bold;}
-span.Heading2Char
-	{mso-style-name:"Heading 2 Char";
-	mso-style-link:"Heading 2";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-p.PageHead, li.PageHead, div.PageHead
-	{mso-style-name:"Page Head";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	border:none;
-	padding:0in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.FooterChar
-	{mso-style-name:"Footer Char";
-	mso-style-link:Footer;}
-p.TableHeading, li.TableHeading, div.TableHeading
-	{mso-style-name:"Table Heading";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-align:center;
-	line-height:115%;
-	page-break-after:avoid;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.Bulletlevel1, li.Bulletlevel1, div.Bulletlevel1
-	{mso-style-name:"Bullet level 1";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.ConfigWindow, li.ConfigWindow, div.ConfigWindow
-	{mso-style-name:"Config Window";
-	margin:0in;
-	font-size:3.0pt;
-	font-family:"Arial",sans-serif;
-	color:white;
-	font-style:italic;}
-p.SubStepAlpha, li.SubStepAlpha, div.SubStepAlpha
-	{mso-style-name:"SubStep Alpha";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL50, li.BodyTextL50, div.BodyTextL50
-	{mso-style-name:"Body Text L50";
-	mso-style-link:"Body Text L50 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25, li.BodyTextL25, div.BodyTextL25
-	{mso-style-name:"Body Text L25";
-	mso-style-link:"Body Text L25 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.SubStepNum, li.SubStepNum, div.SubStepNum
-	{mso-style-name:"SubStep Num";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.75in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25Bold, li.BodyTextL25Bold, div.BodyTextL25Bold
-	{mso-style-name:"Body Text L25 Bold";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading3Char
-	{mso-style-name:"Heading 3 Char";
-	mso-style-link:"Heading 3";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-span.TitleChar
-	{mso-style-name:"Title Char";
-	mso-style-link:Title;
-	font-family:SimSun;
-	font-weight:bold;}
-span.BodyTextL25Char
-	{mso-style-name:"Body Text L25 Char";
-	mso-style-link:"Body Text L25";}
-span.BodyTextL50Char
-	{mso-style-name:"Body Text L50 Char";
-	mso-style-link:"Body Text L50";}
-.MsoChpDefault
-	{font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
- /* Page Definitions */
- @page WordSection1
-	{size:8.5in 11.0in;
-	margin:76.3pt .75in .9in .75in;}
-div.WordSection1
-	{page:WordSection1;}
- /* List Definitions */
- ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
-    .dark-theme {
-        color: #fff;
-      }
-      .dark-theme .dark-color {
-        color: #fff !important;
-      }
-      .dark-theme p.ConfigWindow,
-      .dark-theme li.ConfigWindow,
-      .dark-theme div.ConfigWindow {
-        mso-style-name: "Config Window";
-        color: #212328;
-      }
-      .dark-theme h4 {
-        color: #212328;
-      }
-      .dark-theme .MsoTitle span {
-        color: #fff !important;
-      }
-      .dark-theme textarea {
-        background-color: #212328;
-        color: #fff;
-      }
-      .dark-theme .BodyTextL25Answer {
-        background-color: #000;
-        color: #fff;
-      }
-      .dark-theme .BodyTextL25Answer > span {
-        padding: 4px;
-      }
-      .dark-theme .BodyTextL25Answer span {
-        color: #fff;
-      }
-      .dark-theme table tbody tr td {
-        color: #fff !important;
-      }
-      .dark-theme table .TableHeading {
-        color: #000;
-      }
-</style>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>Packet Tracer - Create Realistic Structured Cabling in the Physical Workspace and Cabling Devices in a Rack</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Packet Tracer lab: structured cabling in the Physical Workspace and cabling devices in a rack.">
+ <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --header-bg:#0b0f10cc;
+      --accent:#00ff88;
+      --panel:#ffffff;
+      --border:#d9e1e6;
+      --answer-bg:#d9d9d9;
+      --font:Arial,Helvetica,sans-serif;
+      --table-head:#dbe5f1;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font:14px/1.45 var(--font);
+      color:#222;
+      background:#f7f9fa;
+      -webkit-font-smoothing:antialiased;
+    }
+    header.site-header{
+      position:sticky;top:0;z-index:1000;
+      background:var(--header-bg);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid #16332a;
+      padding:.65rem 1rem;
+      display:flex;flex-wrap:wrap;gap:1.6rem;align-items:center;
+    }
+    header.site-header h1{margin:0;font-size:1.2rem;font-weight:600;line-height:1.1;}
+    header.site-header a{color:#fff;text-decoration:none;}
+    header.site-header nav a{
+      color:var(--accent);
+      margin:0 .45rem;
+      text-decoration:none;
+      font-weight:500;
+      white-space:nowrap;
+    }
+    header.site-header nav a:hover{text-shadow:0 0 6px rgba(0,255,136,.45);}
+    main{
+      max-width:960px;
+      margin:0 auto;
+      padding:1.4rem 1rem 3rem;
+    }
+    h1{font-size:1.35rem;margin:1.2rem 0 .6rem;font-weight:600;line-height:1.25;}
+    h2{font-size:1.15rem;margin:1.15rem 0 .55rem;font-weight:600;line-height:1.25;}
+    h3{font-size:1.05rem;margin:1rem 0 .5rem;font-weight:600;line-height:1.25;}
+    p{margin:.6rem 0;}
+    /* Preserve original indentation feel */
+    .BodyTextL25,.BodyTextL25Bold{margin-left:.25in;font-size:.9rem;}
+    .BodyTextL50{margin-left:.5in;font-size:.9rem;}
+    .BodyTextL25Bold{font-weight:700;}
+    .SubStepAlpha{margin-left:.5in;text-indent:-.25in;font-size:.9rem;}
+    .ConfigWindow{font-size:.7rem;color:#555;margin-top:2rem;font-style:italic;}
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:1rem 0;
+      font-size:.85rem;
+      background:var(--panel);
+    }
+    caption{caption-side:top;text-align:left;font-weight:600;margin-bottom:.4rem;font-size:.9rem;}
+    th,td{
+      border:1px solid var(--border);
+      padding:.45rem .55rem;
+      vertical-align:top;
+      text-align:left;
+    }
+    thead th{background:var(--table-head);}
+    #footerDIV{
+      font:12px var(--font);
+      margin-top:2.5rem;
+      padding-top:1rem;
+      border-top:1px solid var(--border);
+      text-align:left;
+    }
+    /* Dark theme (optional) */
+    .dark-theme{background:#121416;color:#e6e6e6;}
+    .dark-theme header.site-header{background:#0b0f10f2;}
+    .dark-theme table{background:#182025;}
+    .dark-theme th, .dark-theme td{border-color:#2d3338;}
+    .dark-theme thead th{background:#253038;color:#eef;}
+    .dark-theme #footerDIV{border-color:#2d3338;}
+  </style>
 </head>
-
-<body lang=EN-US style='word-wrap:break-word'>
-	<!-- home-snippet.html -->
-<style>
-  .homebar{position:sticky;top:0;z-index:9999;background:#0b0f10cc;border-bottom:1px solid #16332a;padding:.5rem .75rem;font:600 14px ui-monospace,Menlo,Consolas,monospace;color:#8ff0c9}
-  .homebar a{color:#00ff88;text-decoration:none}
-  .homebar a:hover{text-shadow:0 0 6px rgba(0,255,136,.45)}
-</style>
-<div class="homebar">← <a href="index.html">Home</a></div>
-
-<!-- NAVBAR-INJECT START
-<!-- Injected by inject_nav.py 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{base}/index.html">Packet Tracer Labs</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="{base}/index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Cisco-Packet-Tracer/index.html">Cisco Labs</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Networking/index.html">Networking</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/IoT/index.html">IoT</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- NAVBAR-INJECT END -->
-
-
-<div class=WordSection1>
-
-<p class=MsoTitle>Packet Tracer - Create Realistic Structured Cabling in the
-Physical Workspace and Cabling Devices in a Rack </p>
-
-<h1>Objectives</h1>
-
-<p class=BodyTextL25>In this activity, you will install a patch panel and a wall
-mount. You will then use these to connect network devices in the office to the
-equipment in the wiring closet.</p>
-
-<p class=BodyTextL25Bold>Part 1: Install a Patch Panel in the Wiring Closet</p>
-
-<p class=BodyTextL25Bold>Part 2: Attach a Wall Mount in the Office</p>
-
-<p class=BodyTextL25Bold>Part 3: Connect an Additional Wall Mount and Cables</p>
-
-<h1>Required Resources</h1>
-
-<p class=Bulletlevel1><span style='font-size:7.0pt;font-family:Webdings'>=<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span>Latest Packet Tracer
-version</p>
-
-<h1>Instructions</h1>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 1: Install a Patch Panel in
-the Wiring Closet</h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Install a patch panel in
-the Rack</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the <b>Equipment Cabinet</b> to access a simulated <b>Wiring
-Closet</b>.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>To install a patch panel, click <b>Connections</b> in the <strong><span
-style='font-family:"Arial",sans-serif'>Device-Type Selection Box</span></strong><strong><span
-style='font-family:"Arial",sans-serif;font-weight:normal'>, and then click </span></strong><strong><span
-style='font-family:"Arial",sans-serif'>Structured Cabling</span></strong><strong><span
-style='font-family:"Arial",sans-serif;font-weight:normal'>.</span></strong></p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <strong><span style='font-family:"Arial",sans-serif'>Device-Specific
-Selection Box</span></strong><strong><span style='font-family:"Arial",sans-serif;
-font-weight:normal'>, click the first option, which is </span></strong><b>Copper
-Patch Panel</b>.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click a desired location in the <b>Rack</b> to install the patch panel
-in the rack.</p>
-
-<p class=BodyTextL50><b>Note</b>: For accurate grading, make sure the name of
-the patch panel is <b>Patch Panel0</b>.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Connect the Office-SW1 to
-the patch panel.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>From the <b>Cable Pegboard</b>, select a <b>Copper Straight-Through</b>
-cable.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>On the switch <b>Office-SW1</b>, click the <b>GigabitEthernet 1/0/13</b>
-port. Now locate and click <b>Jack13</b> on the <b>Patch Panel0</b>. </p>
-
-<p class=BodyTextL50><b>Note</b>: Recall that you can right click the switch
-and the patch panel, select <b>Inspect Front</b>, and then zoom in to better
-locate the desired ports. You can also use the global <b>Zoom In</b> tool on
-the tool bar.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Use the following table to finish the connections between the <b>Patch
-Panel0</b> and <b>Office-SW-1</b>.</p>
-
-<div align=center>
-
-<table class=LabTableStyle border=1 cellspacing=0 cellpadding=0
- summary="Office-SW1 to Patch Panel Connections" width=672 style='width:7.0in;
- border-collapse:collapse;border:none'>
- <thead>
-  <tr style='page-break-inside:avoid'>
-   <td width=224 valign=bottom style='width:167.85pt;border:solid windowtext 1.0pt;
-   background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
-   <p class=TableHeading>Office-SW1</p>
-   </td>
-   <td width=224 valign=bottom style='width:167.85pt;border:solid windowtext 1.0pt;
-   border-left:none;background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
-   <p class=TableHeading><span style='color:black'>Patch Panel0</span></p>
-   </td>
-  </tr>
- </thead>
- <tr style='page-break-inside:avoid'>
-  <td width=224 valign=bottom style='width:167.85pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>G1/0/13</p>
-  </td>
-  <td width=224 valign=bottom style='width:167.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Jack13</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td width=224 valign=bottom style='width:167.85pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>G1/0/14</p>
-  </td>
-  <td width=224 valign=bottom style='width:167.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Jack14</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td width=224 valign=bottom style='width:167.85pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>G10/15</p>
-  </td>
-  <td width=224 valign=bottom style='width:167.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Jack15</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td width=224 valign=bottom style='width:167.85pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>G1/0/16</p>
-  </td>
-  <td width=224 valign=bottom style='width:167.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Jack16</p>
-  </td>
- </tr>
-</table>
-
-</div>
-
-<p class=ConfigWindow>Blank Line, No additional information</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>If desired, you could also color code the cables in the rack.
-Right-click the desired cable, select <b>Color Cable</b>. Select or create the
-desired color, and click <b>OK</b>.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>If you do not like the cables dangling, you can organize them. Right-click
-any white space in the rack and select <b>Manage All Cables on Rack</b>. Now
-all your cables are organized on the rack.</p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Back level</b> (Alt-Left) to return to the <b>Office</b>.</p>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 2: Attach a Wall Mount in the
-Office</h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Install a wall mount.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>To install a wall mount, click <b>Connections</b> in the <strong><span
-style='font-family:"Arial",sans-serif'>Device-Type Selection Box</span></strong><strong><span
-style='font-family:"Arial",sans-serif;font-weight:normal'>, and then click </span></strong><strong><span
-style='font-family:"Arial",sans-serif'>Structured Cabling</span></strong><strong><span
-style='font-family:"Arial",sans-serif;font-weight:normal'>.</span></strong></p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <strong><span style='font-family:"Arial",sans-serif'>Device-Specific
-Selection Box</span></strong><strong><span style='font-family:"Arial",sans-serif;
-font-weight:normal'>, click </span></strong><b>Copper Wall Mount</b>.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click the desired location on the wall next to the <b>Equipment Cabinet</b>.</p>
-
-<p class=BodyTextL50><b>Note</b>: For accurate grading, make sure the name of
-the wall mount is <b>Wall Mount0</b>.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Device-Type Selection Box</b>, click <b>Connections</b>, and
-then click <b>Copper Straight-Through</b> cable.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Wall Mount0</b> and select <b>PunchDown1</b>. Then click the <b>Equipment
-Cabinet</b> (Wiring Closet) and select <b>Rack</b> &gt; <b>Patch Panel0</b>
-&gt; <b>Punchdown13</b>.</p>
-
-<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Repeat for the rest of the available punchdowns on <b>Wall Mount0</b>.</p>
-
-<div align=center>
-
-<table class=LabTableStyle border=1 cellspacing=0 cellpadding=0
- summary="Wall Mount to Patch Panel connections" width=672 style='width:7.0in;
- border-collapse:collapse;border:none'>
- <thead>
-  <tr style='page-break-inside:avoid'>
-   <td width=350 valign=bottom style='width:262.5pt;border:solid windowtext 1.0pt;
-   background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
-   <p class=TableHeading>Wall Mount (Next to Equipment Cabinet)</p>
-   </td>
-   <td width=224 valign=bottom style='width:167.85pt;border:solid windowtext 1.0pt;
-   border-left:none;background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
-   <p class=TableHeading><span style='color:black'>Patch Panel</span></p>
-   </td>
-  </tr>
- </thead>
- <tr style='page-break-inside:avoid'>
-  <td width=350 valign=bottom style='width:262.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown1</p>
-  </td>
-  <td width=224 valign=bottom style='width:167.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown13</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td width=350 valign=bottom style='width:262.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown2</p>
-  </td>
-  <td width=224 valign=bottom style='width:167.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown14</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td width=350 valign=bottom style='width:262.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown3</p>
-  </td>
-  <td width=224 valign=bottom style='width:167.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown15</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td width=350 valign=bottom style='width:262.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown4</p>
-  </td>
-  <td width=224 valign=bottom style='width:167.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown16</p>
-  </td>
- </tr>
-</table>
-
-</div>
-
-<p class=ConfigWindow>Blank Line, No additional information</p>
-
-<p class=SubStepAlpha>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Connect the PC <b>Office-Admin</b> and <b>Printer0</b> to any available
-jacks in the wall mount using <b>Copper Straight-Through</b> cables. After a
-minute or two, both devices will receive IP addressing information from the
-DHCP service running on the <b>Office-Server</b> inside the <b>Equipment Closet</b>.</p>
-
-<p class=SubStepAlpha>h.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Verify connectivity by navigating to the web site http://office.srv.
-Click <b>Office-Admin</b> &gt; <b>Desktop</b> &gt; <b>Web Browser</b>. Enter<b>
-office.srv</b> in the URL field. This may take up to a minute. You can click <b>Go</b>
-to refresh the web page request.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Organize the cables.</h3>
-
-<p class=BodyTextL25>In the Physical mode, you can organize the cables so that they
-are spanning across the entire room.</p>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Right-click the desired cable, select <b>Create BendPoint</b>.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Drag the black square to the wall. Continue to create bendpoints and
-drag the bend points into the walls or floor until the cable no longer goes
-across the middle of the room</p>
-
-<p class=BodyTextL50>Using the bendpoints has the same effects as running the
-cables into the walls in an office.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Repeat the steps until you are satisfied with the results.</p>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 3: Connect an Additional Wall
-Mount and Cables</h2>
-
-<p class=BodyTextL25>Now that you have connected <b>AdminOffice</b> and <b>Printer0</b>
-to the network, connect more cables to the patch panel, add another wall mount,
-and connect the <b>Office-User</b> <b>PC</b>.</p>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Return to the <b>Equipment Closet</b> and make the following
-connections:</p>
-
-<div align=center>
-
-<table class=LabTableStyle border=1 cellspacing=0 cellpadding=0
- summary="Office-SW1 to Patch Panel Connections" width=672 style='width:7.0in;
- border-collapse:collapse;border:none'>
- <thead>
-  <tr style='page-break-inside:avoid'>
-   <td width=345 valign=bottom style='width:258.55pt;border:solid windowtext 1.0pt;
-   background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
-   <p class=TableHeading>Office-SW1</p>
-   </td>
-   <td width=327 valign=bottom style='width:245.45pt;border:solid windowtext 1.0pt;
-   border-left:none;background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
-   <p class=TableHeading><span style='color:black'>Patch Panel0</span></p>
-   </td>
-  </tr>
- </thead>
- <tr style='page-break-inside:avoid'>
-  <td width=345 valign=bottom style='width:258.55pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>G1/0/21</p>
-  </td>
-  <td width=327 valign=bottom style='width:245.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Jack21</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td width=345 valign=bottom style='width:258.55pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>G1/0/22</p>
-  </td>
-  <td width=327 valign=bottom style='width:245.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Jack22</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td width=345 valign=bottom style='width:258.55pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>G1/0/23</p>
-  </td>
-  <td width=327 valign=bottom style='width:245.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Jack23</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td width=345 valign=bottom style='width:258.55pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>G1/0/24</p>
-  </td>
-  <td width=327 valign=bottom style='width:245.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Jack24</p>
-  </td>
- </tr>
-</table>
-
-</div>
-
-<p class=ConfigWindow>Blank Line, No additional information</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the <b>Office</b>, add another <b>Wall Mount</b> next to the window
-and connect the wall mount to the patch panel using the following connections.</p>
-
-<p class=BodyTextL50><b>Note</b>: For accurate grading, make sure the name of
-the wall mount is <b>Wall Mount1</b>.</p>
-
-<div align=center>
-
-<table class=LabTableStyle border=1 cellspacing=0 cellpadding=0
- summary="Wall Mount to Patch Panel connections" width=672 style='width:7.0in;
- border-collapse:collapse;border:none'>
- <thead>
-  <tr style='page-break-inside:avoid'>
-   <td width=350 valign=bottom style='width:262.5pt;border:solid windowtext 1.0pt;
-   background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
-   <p class=TableHeading>N<span style='color:black'>ew Wall Mount (Next to
-   Window)</span></p>
-   </td>
-   <td width=224 valign=bottom style='width:167.85pt;border:solid windowtext 1.0pt;
-   border-left:none;background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
-   <p class=TableHeading><span style='color:black'>Patch Panel0</span></p>
-   </td>
-  </tr>
- </thead>
- <tr style='page-break-inside:avoid'>
-  <td width=350 valign=bottom style='width:262.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown1</p>
-  </td>
-  <td width=224 valign=bottom style='width:167.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown21</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td width=350 valign=bottom style='width:262.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown2</p>
-  </td>
-  <td width=224 valign=bottom style='width:167.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown22</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td width=350 valign=bottom style='width:262.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown3</p>
-  </td>
-  <td width=224 valign=bottom style='width:167.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown23</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td width=350 valign=bottom style='width:262.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown4</p>
-  </td>
-  <td width=224 valign=bottom style='width:167.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=BodyTextL25 style='margin-left:0in'>Punchdown24</p>
-  </td>
- </tr>
-</table>
-
-</div>
-
-<p class=ConfigWindow>Blank Line, No additional information</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Connect the <b>Office-User PC</b> to your new wall mount.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>After a minute or two, verify the <b>Office-User</b> PC received IP
-addressing information and then verify connectivity to the web site <b>office.srv</b>.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>If desired, create bend points in the cables and organize them.</p>
-
-<p class=ConfigWindow>End of document</p>
-
-
-<div id="footerDIV"><span><br><hr><span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span><br></span></div>
-
-</div>
+<body>
+  <header class="site-header">
+    <h1><a href="/Packet-Tracer/index.html" style="color:white; text-decoration:none;">🏠 Packet Tracer</a></h1>
+    <nav>
+      <a href="/Packet-Tracer/index.html">Home</a> |
+      <a href="/Packet-Tracer/Cisco%20Packet%20Tracer/index.html">Cisco Labs</a> |
+      <a href="/Packet-Tracer/Networking/index.html">Networking</a> |
+      <a href="/Packet-Tracer/IoT/index.html">IoT</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 style="margin-left:0;">Packet Tracer - Create Realistic Structured Cabling in the Physical Workspace and Cabling Devices in a Rack</h1>
+
+    <h2>Objectives</h2>
+    <p class="BodyTextL25">In this activity, you will install a patch panel and a wall mount. You will then use these to connect network devices in the office to the equipment in the wiring closet.</p>
+    <p class="BodyTextL25Bold">Part 1: Install a Patch Panel in the Wiring Closet</p>
+    <p class="BodyTextL25Bold">Part 2: Attach a Wall Mount in the Office</p>
+    <p class="BodyTextL25Bold">Part 3: Connect an Additional Wall Mount and Cables</p>
+
+    <h2>Required Resources</h2>
+    <p class="BodyTextL25">Latest Packet Tracer version</p>
+
+    <h2>Instructions</h2>
+
+    <h3>Part 1: Install a Patch Panel in the Wiring Closet</h3>
+    <h3>Step 1: Install a patch panel in the rack</h3>
+    <p class="SubStepAlpha">a. Click the <b>Equipment Cabinet</b> to access a simulated <b>Wiring Closet</b>.</p>
+    <p class="SubStepAlpha">b. To install a patch panel, click <b>Connections &gt; Structured Cabling</b> in the Device-Type Selection Box.</p>
+    <p class="SubStepAlpha">c. In the Device-Specific Selection Box, click <b>Copper Patch Panel</b>.</p>
+    <p class="SubStepAlpha">d. Click a location in the <b>Rack</b> to install the patch panel.</p>
+    <p class="BodyTextL50"><b>Note:</b> For accurate grading, ensure the patch panel name is <b>Patch Panel0</b>.</p>
+
+    <h3>Step 2: Connect the Office-SW1 to the patch panel</h3>
+    <p class="SubStepAlpha">a. From the <b>Cable Pegboard</b>, select a <b>Copper Straight-Through</b> cable.</p>
+    <p class="SubStepAlpha">b. On <b>Office-SW1</b>, click port <b>GigabitEthernet 1/0/13</b>, then click <b>Jack13</b> on <b>Patch Panel0</b>.</p>
+    <p class="BodyTextL50"><b>Note:</b> You can right-click devices, choose <b>Inspect Front</b>, and zoom for easier port selection.</p>
+    <p class="SubStepAlpha">c. Use the table to finish connections between <b>Patch Panel0</b> and <b>Office-SW1</b>.</p>
+
+    <table aria-label="Office-SW1 to Patch Panel initial connections">
+      <thead>
+        <tr>
+          <th scope="col">Office-SW1</th>
+          <th scope="col">Patch Panel0</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>G1/0/13</td><td>Jack13</td></tr>
+        <tr><td>G1/0/14</td><td>Jack14</td></tr>
+        <tr><td>G1/0/15</td><td>Jack15</td></tr>
+        <tr><td>G1/0/16</td><td>Jack16</td></tr>
+      </tbody>
+    </table>
+
+    <p class="SubStepAlpha">d. (Optional) Color code rack cables: right-click cable &gt; <b>Color Cable</b>.</p>
+    <p class="SubStepAlpha">e. Organize cables: right-click rack white space &gt; <b>Manage All Cables on Rack</b>.</p>
+    <p class="SubStepAlpha">f. Click <b>Back level</b> (Alt+Left) to return to the Office.</p>
+
+    <h3>Part 2: Attach a Wall Mount in the Office</h3>
+    <h3>Step 1: Install a wall mount</h3>
+    <p class="SubStepAlpha">a. Click <b>Connections &gt; Structured Cabling</b>.</p>
+    <p class="SubStepAlpha">b. Select <b>Copper Wall Mount</b>.</p>
+    <p class="SubStepAlpha">c. Click a location on the wall next to the <b>Equipment Cabinet</b>.</p>
+    <p class="BodyTextL50"><b>Note:</b> Wall mount name must be <b>Wall Mount0</b>.</p>
+    <p class="SubStepAlpha">d. Select <b>Connections &gt; Copper Straight-Through</b>.</p>
+    <p class="SubStepAlpha">e. Connect <b>Wall Mount0 PunchDown1</b> to <b>Patch Panel0 Punchdown13</b> (Rack path).</p>
+    <p class="SubStepAlpha">f. Repeat for remaining punchdowns:</p>
+
+    <table aria-label="Wall Mount0 to Patch Panel connections">
+      <thead>
+        <tr>
+          <th scope="col">Wall Mount0 (Next to Equipment Cabinet)</th>
+          <th scope="col">Patch Panel0</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Punchdown1</td><td>Punchdown13</td></tr>
+        <tr><td>Punchdown2</td><td>Punchdown14</td></tr>
+        <tr><td>Punchdown3</td><td>Punchdown15</td></tr>
+        <tr><td>Punchdown4</td><td>Punchdown16</td></tr>
+      </tbody>
+    </table>
+
+    <p class="SubStepAlpha">g. Connect <b>Office-Admin</b> PC and <b>Printer0</b> to any available wall mount jacks with Copper Straight-Through cables. DHCP (Office-Server) will assign addresses.</p>
+    <p class="SubStepAlpha">h. Verify connectivity: <b>Office-Admin &gt; Desktop &gt; Web Browser</b> and browse to <b>office.srv</b> (may take a minute; click Go to refresh).</p>
+
+    <h3>Step 2: Organize the cables</h3>
+    <p class="BodyTextL25">In Physical mode you can route cables along walls.</p>
+    <p class="SubStepAlpha">a. Right-click a cable &gt; <b>Create BendPoint</b>.</p>
+    <p class="SubStepAlpha">b. Drag bend points to walls/floor until cable is neat.</p>
+    <p class="BodyTextL50">Bend points simulate in‑wall routing.</p>
+    <p class="SubStepAlpha">c. Repeat as needed.</p>
+
+    <h3>Part 3: Connect an Additional Wall Mount and Cables</h3>
+    <p class="BodyTextL25">Connect more patch panel cables, add another wall mount, and connect the <b>Office-User PC</b>.</p>
+    <p class="SubStepAlpha">a. In the <b>Equipment Closet</b>, add these connections:</p>
+
+    <table aria-label="Additional Office-SW1 to Patch Panel connections">
+      <thead>
+        <tr>
+          <th scope="col">Office-SW1</th>
+          <th scope="col">Patch Panel0</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>G1/0/21</td><td>Jack21</td></tr>
+        <tr><td>G1/0/22</td><td>Jack22</td></tr>
+        <tr><td>G1/0/23</td><td>Jack23</td></tr>
+        <tr><td>G1/0/24</td><td>Jack24</td></tr>
+      </tbody>
+    </table>
+
+    <p class="SubStepAlpha">b. In the Office, add another <b>Wall Mount</b> near the window and connect it:</p>
+    <p class="BodyTextL50"><b>Note:</b> Name must be <b>Wall Mount1</b>.</p>
+
+    <table aria-label="New Wall Mount to Patch Panel connections">
+      <thead>
+        <tr>
+          <th scope="col">Wall Mount1 (Window)</th>
+          <th scope="col">Patch Panel0</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Punchdown1</td><td>Punchdown21</td></tr>
+        <tr><td>Punchdown2</td><td>Punchdown22</td></tr>
+        <tr><td>Punchdown3</td><td>Punchdown23</td></tr>
+        <tr><td>Punchdown4</td><td>Punchdown24</td></tr>
+      </tbody>
+    </table>
+
+    <p class="SubStepAlpha">c. Connect the <b>Office-User PC</b> to the new wall mount.</p>
+    <p class="SubStepAlpha">d. After DHCP assignment, verify connectivity to <b>office.srv</b>.</p>
+    <p class="SubStepAlpha">e. (Optional) Create bend points and organize new cables.</p>
+
+    <p class="ConfigWindow">End of document</p>
+
+    <div id="footerDIV">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

@@ -1,748 +1,247 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="style.css">
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Packet Tracer - Monitor Your Network Using a Network Controller</title>
-<style>
-
- /* Font Definitions */
- @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
-@font-face
-	{font-family:SimSun;
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-@font-face
-	{font-family:Webdings;
-	panose-1:5 3 1 2 1 5 9 6 7 3;}
-@font-face
-	{font-family:Tahoma;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
-@font-face
-	{font-family:"\@SimSun";
-	panose-1:2 1 6 0 3 1 1 1 1 1;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;}
-h1
-	{mso-style-link:"Heading 1 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	text-indent:-.25in;
-	page-break-after:avoid;
-	font-size:13.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-h2
-	{mso-style-link:"Heading 2 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:12.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-h3
-	{mso-style-link:"Heading 3 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-indent:0in;
-	page-break-after:avoid;
-	font-size:11.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-h4
-	{mso-style-link:"Heading 4 Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:.5in;
-	page-break-after:avoid;
-	font-size:3.0pt;
-	font-family:"Arial",sans-serif;
-	color:white;
-	font-weight:normal;}
-p.MsoFooter, li.MsoFooter, div.MsoFooter
-	{mso-style-link:"Footer Char";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:0in;
-	font-size:8.0pt;
-	font-family:"Arial",sans-serif;}
-p.MsoTitle, li.MsoTitle, div.MsoTitle
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
-	{mso-style-link:"Title Char";
-	margin:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
-	{mso-style-link:"Title Char";
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	font-size:16.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading1Char
-	{mso-style-name:"Heading 1 Char";
-	mso-style-link:"Heading 1";
-	font-weight:bold;}
-span.Heading2Char
-	{mso-style-name:"Heading 2 Char";
-	mso-style-link:"Heading 2";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-p.PageHead, li.PageHead, div.PageHead
-	{mso-style-name:"Page Head";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:0in;
-	line-height:115%;
-	border:none;
-	padding:0in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-p.AnswerLineL50, li.AnswerLineL50, div.AnswerLineL50
-	{mso-style-name:"Answer Line L50";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	color:white;
-	font-weight:bold;
-	font-style:italic;}
-span.FooterChar
-	{mso-style-name:"Footer Char";
-	mso-style-link:Footer;}
-p.Bulletlevel1, li.Bulletlevel1, div.Bulletlevel1
-	{mso-style-name:"Bullet level 1";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.ConfigWindow, li.ConfigWindow, div.ConfigWindow
-	{mso-style-name:"Config Window";
-	margin:0in;
-	font-size:3.0pt;
-	font-family:"Arial",sans-serif;
-	color:white;
-	font-style:italic;}
-p.SubStepAlpha, li.SubStepAlpha, div.SubStepAlpha
-	{mso-style-name:"SubStep Alpha";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.CMD, li.CMD, div.CMD
-	{mso-style-name:CMD;
-	mso-style-link:"CMD Char";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:.5in;
-	font-size:10.0pt;
-	font-family:"Courier New";}
-p.BodyTextL50, li.BodyTextL50, div.BodyTextL50
-	{mso-style-name:"Body Text L50";
-	mso-style-link:"Body Text L50 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.5in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.BodyTextL25, li.BodyTextL25, div.BodyTextL25
-	{mso-style-name:"Body Text L25";
-	mso-style-link:"Body Text L25 Char";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-span.LabTitleInstVersred
-	{mso-style-name:"Lab Title Inst Vers \(red\)";
-	font-family:"Arial",sans-serif;
-	color:#EE0000;
-	font-weight:bold;}
-p.SubStepNum, li.SubStepNum, div.SubStepNum
-	{mso-style-name:"SubStep Num";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.75in;
-	text-indent:-.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
-p.CMDOutput, li.CMDOutput, div.CMDOutput
-	{mso-style-name:"CMD Output";
-	mso-style-link:"CMD Output Char";
-	margin-top:3.0pt;
-	margin-right:0in;
-	margin-bottom:3.0pt;
-	margin-left:.5in;
-	font-size:9.0pt;
-	font-family:"Courier New";}
-p.BodyTextL25Bold, li.BodyTextL25Bold, div.BodyTextL25Bold
-	{mso-style-name:"Body Text L25 Bold";
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:.25in;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	font-weight:bold;}
-span.Heading4Char
-	{mso-style-name:"Heading 4 Char";
-	mso-style-link:"Heading 4";
-	font-family:"Times New Roman",serif;
-	color:white;}
-span.Heading3Char
-	{mso-style-name:"Heading 3 Char";
-	mso-style-link:"Heading 3";
-	font-family:"Times New Roman",serif;
-	font-weight:bold;}
-span.CMDChar
-	{mso-style-name:"CMD Char";
-	mso-style-link:CMD;
-	font-family:"Courier New";}
-span.TitleChar
-	{mso-style-name:"Title Char";
-	mso-style-link:Title;
-	font-family:SimSun;
-	font-weight:bold;}
-span.BodyTextL25Char
-	{mso-style-name:"Body Text L25 Char";
-	mso-style-link:"Body Text L25";}
-span.CMDOutputChar
-	{mso-style-name:"CMD Output Char";
-	mso-style-link:"CMD Output";
-	font-family:"Courier New";}
-span.BodyTextL50Char
-	{mso-style-name:"Body Text L50 Char";
-	mso-style-link:"Body Text L50";}
-span.AnswerGray
-	{mso-style-name:"Answer Gray";
-	font-family:"Arial",sans-serif;
-	/* color:windowtext; */
-	border:none;
-	/* background:#D9D9D9; */
-	font-weight:bold;}
-.MsoChpDefault
-	{font-size:10.0pt;
-	font-family:"Arial",sans-serif;}
- /* Page Definitions */
- @page WordSection1
-	{size:8.5in 11.0in;
-	margin:76.3pt .75in .9in .75in;}
-div.WordSection1
-	{page:WordSection1;}
- /* List Definitions */
- ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
-
-
-	.AnswerGray{
-	padding: 0.2rem;
-}
-
-.question-action-container{
-	margin-top: 6pt;
-    margin-right: 0in;
-    margin-bottom: 6pt;
-    margin-left: 0.5in;
-}
-
-.show-answer, .hide-answer {
-    padding: 0.5rem 1rem;
-    background-color: #00bceb;
-    color: #fff;
-	border: 0px;
-	cursor: pointer;
-}
-
-.global-action-container {
-	display: flex;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-}
-.global-action-container .btn__action {
-	margin: 10px;
-}
-.btn__container button.btn__action:not(.is-full-width) {
-	width: calc(50% - .5%);
-}
-.btn-text {
-	border: 0px;
-	padding: 0.5rem 1rem;
-	background-color: #6abf4b;
-	color: #fff;
-	border-radius: 0;
-	cursor: pointer;
-}
-
-.hidden{
-	display: none;
-}
-
-.dark-theme {
-        color: #fff;
-      }
-      .dark-theme .dark-color {
-        color: #fff !important;
-      }
-      .dark-theme p.ConfigWindow,
-      .dark-theme li.ConfigWindow,
-      .dark-theme div.ConfigWindow {
-        mso-style-name: "Config Window";
-        color: #212328;
-      }
-      .dark-theme h4 {
-        color: #212328;
-      }
-      .dark-theme .MsoTitle span {
-        color: #fff !important;
-      }
-      .dark-theme textarea {
-        background-color: #212328;
-        color: #fff;
-      }
-      .dark-theme .BodyTextL25Answer {
-        background-color: #000;
-        color: #fff;
-      }
-      .dark-theme .BodyTextL25Answer > span {
-        padding: 4px;
-      }
-      .dark-theme .BodyTextL25Answer span {
-        color: #fff;
-      }
-      .dark-theme table tbody tr td {
-        color: #fff !important;
-      }
-      .dark-theme table .TableHeading {
-        color: #000;
-      }
-	  .dark-theme .BodyTextL50Answer {
-        background-color: #000;
-        color: #fff;
+  <meta charset="utf-8">
+  <title>Packet Tracer - Monitor Your Network Using a Network Controller</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Packet Tracer lab: monitor your network using a Network Controller (implement, verify, discover, and document).">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --header-bg:#0b0f10cc;
+      --accent:#00ff88;
+      --font:Arial,Helvetica,sans-serif;
+      --border:#d9e1e6;
+      --answer-bg:#d9d9d9;
+      --code-bg:#212328;
     }
-	p.BodyTextL50Answer,
-	li.BodyTextL50Answer,
-	div.BodyTextL50Answer {
-		mso-style-name: "Body Text L50 Answer";
-		mso-style-link: "Body Text L50 Answer Char";
-		margin-top: 6.0pt;
-		margin-right: 0in;
-		margin-bottom: 6.0pt;
-		margin-left: .5in;
-		background: #D9D9D9;
-		font-size: 10.0pt;
-		font-family: "Arial", sans-serif;
-		font-weight: bold;
-	}
-</style>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font:14px/1.5 var(--font);
+      color:#222;
+      background:#f7f9fa;
+      -webkit-font-smoothing:antialiased;
+    }
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:var(--header-bg);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid #16332a;
+      padding:.7rem 1rem .85rem;
+      display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;
+    }
+    header h1{margin:0;font-size:1.1rem;font-weight:600;line-height:1.1;}
+    header nav a{
+      color:var(--accent);
+      text-decoration:none;
+      margin:0 .45rem;
+      font-weight:500;
+      white-space:nowrap;
+    }
+    header nav a:hover{text-shadow:0 0 6px rgba(0,255,136,.45);}
+    main{max-width:960px;margin:0 auto;padding:1.5rem 1rem 3rem;}
+    h1{font-size:1.45rem;margin:0 0 1rem;font-weight:650;line-height:1.2;}
+    h2{font-size:1.2rem;margin:1.2rem 0 .65rem;font-weight:600;}
+    h3{font-size:1.05rem;margin:1rem 0 .5rem;font-weight:600;}
+    h4{font-size:.9rem;margin:.8rem 0 .35rem;font-weight:600;margin-left:.5in;}
+    p{margin:.6rem 0;}
+    /* Retained instructional indentation classes */
+    .BodyTextL25,.BodyTextL25Bold{margin-left:.25in;font-size:.9rem;}
+    .BodyTextL25Bold{font-weight:700;}
+    .BodyTextL50{margin-left:.5in;font-size:.9rem;}
+    .SubStepAlpha{margin-left:.5in;text-indent:-.25in;font-size:.9rem;}
+    .SubStepNum{margin-left:.75in;text-indent:-.25in;font-size:.9rem;}
+    .CMD,.CMDOutput{
+      margin-left:.5in;
+      font-family:"Courier New",monospace;
+      font-size:.8rem;
+      background:var(--code-bg);
+      color:#fff;
+      padding:.4rem .55rem;
+      border-radius:4px;
+      white-space:pre;
+    }
+    .CMDOutput{background:#2a2d33;}
+    .BodyTextL50Answer{
+      margin:6pt .5in;
+      background:var(--answer-bg);
+      font:700 10pt/1.35 var(--font);
+      padding:.45rem .6rem;
+      border-radius:4px;
+    }
+    fieldset{border:1px solid var(--border);padding:.55rem .7rem .75rem;margin:.3rem .5in .6rem;background:#fff;min-width:240px;}
+    fieldset legend{padding:0 .4rem;font-size:.65rem;letter-spacing:.5px;text-transform:uppercase;font-weight:600;color:#444;}
+    textarea{width:100%;min-height:70px;resize:vertical;font:13px/1.35 var(--font);border:1px solid var(--border);padding:.5rem .6rem;background:#fff;}
+    .question-container{margin:.75rem 0 1.25rem;}
+    .question-action-container{display:flex;gap:.55rem;flex-wrap:wrap;margin:.35rem .5in 0 .5in;}
+    .show-answer,.hide-answer{background:#00bceb;color:#fff;border:0;padding:.48rem .95rem;font:500 13px/1 var(--font);cursor:pointer;}
+    .hide-answer{background:#0091b3;}
+    .show-answer:hover,.hide-answer:hover{filter:brightness(1.08);}
+    .global-action-container{display:flex;flex-wrap:wrap;gap:.65rem;margin:2rem 0 1.25rem;}
+    .btn__action{background:#6abf4b;color:#fff;border:0;padding:.6rem 1.05rem;font:500 13px/1 var(--font);cursor:pointer;}
+    .btn__action:hover{filter:brightness(1.08);}
+    .hidden{display:none!important;}
+    #footerDIV{font:12px var(--font);margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--border);}
+    .ConfigWindow{font-size:.65rem;color:#555;margin-top:2rem;font-style:italic;margin-left:.25in;}
+    @media (prefers-color-scheme: dark){
+      body{background:#121416;color:#e4e8ea;}
+      header{background:#0b0f10f2;}
+      fieldset,textarea{background:#1d2327;border-color:#364147;color:#fff;}
+      .BodyTextL50Answer{background:#1d2327;color:#fff;}
+      #footerDIV{border-color:#2d3338;}
+      .CMD,.CMDOutput{background:#101417;}
+    }
+  </style>
 </head>
+<body>
+  <header>
+    <h1><a href="/Packet-Tracer/index.html" style="color:white; text-decoration:none;">🏠 Packet Tracer</a></h1>
+    <nav>
+      <a href="/Packet-Tracer/index.html">Home</a> |
+      <a href="/Packet-Tracer/Cisco%20Packet%20Tracer/index.html">Cisco Labs</a> |
+      <a href="/Packet-Tracer/Networking/index.html">Networking</a> |
+      <a href="/Packet-Tracer/IoT/index.html">IoT</a>
+    </nav>
+  </header>
 
-<body lang=EN-US style='word-wrap:break-word'>
-	<!-- home-snippet.html -->
-<style>
-  .homebar{position:sticky;top:0;z-index:9999;background:#0b0f10cc;border-bottom:1px solid #16332a;padding:.5rem .75rem;font:600 14px ui-monospace,Menlo,Consolas,monospace;color:#8ff0c9}
-  .homebar a{color:#00ff88;text-decoration:none}
-  .homebar a:hover{text-shadow:0 0 6px rgba(0,255,136,.45)}
-</style>
-<div class="homebar">← <a href="index.html">Home</a></div>
+  <main>
+    <h1>Packet Tracer - Monitor Your Network Using a Network Controller</h1>
 
-<!-- NAVBAR-INJECT START 
-<!-- Injected by inject_nav.py
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{base}/index.html">Packet Tracer Labs</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="{base}/index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Cisco-Packet-Tracer/index.html">Cisco Labs</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/Networking/index.html">Networking</a></li>
-        <li class="nav-item"><a class="nav-link" href="{base}/IoT/index.html">IoT</a></li>
-      </ul>
+    <h2>Objectives</h2>
+    <p class="BodyTextL25">A network controller allows you to manage, monitor, and configure supported network devices via a GUI and APIs.</p>
+    <p class="BodyTextL25"><b>Note:</b> API usage is beyond this activity.</p>
+    <p class="BodyTextL25">You will set up a network controller and monitor a configured network.</p>
+    <p class="BodyTextL25Bold">Part 1: Implement a Network Controller</p>
+    <p class="BodyTextL25Bold">Part 2: Monitor the Network</p>
+
+    <h2>Required Resources</h2>
+    <p class="BodyTextL50">Latest Packet Tracer version</p>
+
+    <h2>Part 1: Implement a Network Controller</h2>
+
+    <h3>Step 1: Connect a Network Controller to Office-SW1.</h3>
+    <p class="SubStepAlpha">a. In the Wiring Closet move the preconfigured Network Controller from the Shelf to the Rack and power it on.</p>
+    <p class="SubStepAlpha">b. Inspect Rear; connect Network Controller <b>GigabitEthernet0</b> to <b>Office-SW1 GigabitEthernet1/0/19</b> (Copper Straight-Through).</p>
+    <p class="BodyTextL50">The controller IP is <b>192.168.20.5</b>.</p>
+
+    <h3>Step 2: Verify connectivity.</h3>
+    <p class="SubStepAlpha">a. Exit Closet (Back level / Alt+Left).</p>
+    <p class="SubStepAlpha">b. From <b>Office-Admin</b> open Desktop &gt; Command Prompt.</p>
+    <p class="SubStepNum">1) Run <b>ipconfig</b> (expect 192.168.20.x /25).</p>
+    <div class="CMD">C:\&gt; ipconfig</div>
+    <div class="CMDOutput">FastEthernet0 Connection
+ IPv4 Address....................: 192.168.20.10
+ Subnet Mask.....................: 255.255.255.128
+ Default Gateway.................: 192.168.20.1</div>
+    <p class="BodyTextL50"><b>Note:</b> If no address, ensure DHCP selected.</p>
+    <p class="SubStepNum">2) Ping controller (192.168.20.5) — should succeed.</p>
+    <div class="CMD">C:\&gt; ping 192.168.20.5</div>
+    <div class="CMDOutput">Reply from 192.168.20.5: bytes=32 time&lt;1ms TTL=128 (x4)</div>
+    <p class="BodyTextL50">If failed, verify cabling and power.</p>
+    <p class="SubStepAlpha">c. Close Command Prompt.</p>
+
+    <h2>Part 2: Monitor the Network</h2>
+
+    <h3>Step 1: Access the Network Controller GUI.</h3>
+    <p class="SubStepAlpha">a. Office-Admin &gt; Web Browser &gt; browse to <b>192.168.20.5</b>.</p>
+    <p class="SubStepAlpha">b. Login: <b>admin / Cisco123</b>.</p>
+    <p class="SubStepAlpha">c. Review Dashboard (refresh updates status).</p>
+
+    <h4>Question:</h4>
+    <p class="BodyTextL50" style="margin-top:0">What menu items are listed?</p>
+    <div class="question-container">
+      <fieldset><legend>Answer Area</legend><textarea placeholder="Type your answer here."></textarea></fieldset>
+      <p class="BodyTextL50Answer">Dashboard, Provisioning, Assurance, Policy, API Docs.</p>
+      <div class="question-action-container">
+        <button type="button" class="show-answer">Show Answer</button>
+        <button type="button" class="hide-answer">Hide Answer</button>
+      </div>
     </div>
-  </div>
-</nav>
-<!-- NAVBAR-INJECT END -->
 
-
-<div class=WordSection1>
-
-<p class=MsoTitle><span style='color:#EE0000;font-weight:normal'><b><span
-style='color:windowtext'>Packet Tracer - Monitor Your Network Using a Network
-Controller</span></b></span></p>
-
-<h1>Objectives</h1>
-
-<p class=BodyTextL25>A network controller allows you to manage, monitor, and
-configure supported network devices via a graphical user interface (GUI) and
-APIs. </p>
-
-<p class=BodyTextL25><b>Note</b>: The use of APIs is beyond the scope of this
-activity. For more information, review the API documents using the Help menu in
-Packet Tracer.</p>
-
-<p class=BodyTextL25>In this activity, you will set up a network controller to
-monitor a configured network via the GUI.</p>
-
-<p class=BodyTextL25Bold>Part 1: Implement a Network Controller</p>
-
-<p class=BodyTextL25Bold>Part 2: Monitor the Network</p>
-
-<h1>Required Resources</h1>
-
-<p class=Bulletlevel1><span style='font-size:7.0pt;font-family:Webdings'>=<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span>Latest Packet
-Tracer version</p>
-
-<h1>Instructions</h1>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 1: Implement a Network
-Controller</h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Connect a Network
-Controller to Office-SW1.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>While in the Wiring Closet, a previously configured Network Controller is
-located on the Shelf for your use. Move the Network Controller from the Shelf
-to the Rack and power on the Network Controller as necessary.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Right-click the Network Controller and click <b>Inspect Rear</b> to
-locate the GigabitEthernet0 port. Connect the GigabitEthernet0 port on the Network
-Controller to the GigabitEthernet 1/0/19 port on Office-SW1 via a Copper
-Straight-Through cable. </p>
-
-<p class=BodyTextL50>The Network Controller has been previously assigned <b>192.168.20.5</b>
-as the IP address.</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Verify connectivity.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>To exit the Wiring Closet, click <b>Back level</b> (Alt-Left).</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>From <b>Office-Admin</b>, ping the <b>Network Controller</b>. </p>
-
-<p class=SubStepNum>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span>Click <b>Office-Admin</b> and select <b>Desktop</b> &gt; <b>Command
-Prompt</b>.</p>
-
-<p class=SubStepNum>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span>At the prompt, enter <b>ipconfig</b> to verify that <b>Office-Admin</b>
-has received an IP address from the DHCP server. The IP address should be in
-the form of 192.168.20.x, where x can range from 10 to 20.</p>
-
-<p class=CMD>C:\&gt; <b>ipconfig</b></p>
-
-<p class=CMDOutput>&nbsp;</p>
-
-<p class=CMDOutput>FastEthernet0 Connection:(default port)</p>
-
-<p class=CMDOutput>&nbsp;</p>
-
-<p class=CMDOutput>   Connection-specific DNS Suffix..: </p>
-
-<p class=CMDOutput>   Link-local IPv6 Address.........:
-FE80::20C:CFFF:FE46:E938</p>
-
-<p class=CMDOutput>   IPv6 Address....................: ::</p>
-
-<p class=CMDOutput>   IPv4 Address....................: <span style='background:
-yellow;color: #000;'>192.168.20.10</span></p>
-
-<p class=CMDOutput>   Subnet Mask.....................: 255.255.255.128</p>
-
-<p class=CMDOutput>   Default Gateway.................: ::</p>
-
-<p class=CMDOutput>                                     192.168.20.1</p>
-
-<p class=BodyTextL50><b>Note</b>: If you did not receive an IP address, exit
-the <b>Command Prompt</b> and click <b>IP Configuration</b>. Verify that the PC
-is set to receive addressing information from DHCP. </p>
-
-<p class=SubStepNum>3)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span>At the prompt, enter <b>ping 192.168.20.5</b>. The pings should be
-successful.</p>
-
-<p class=CMD>C:\&gt; <b>ping 192.168.20.5</b></p>
-
-<p class=CMDOutput>&nbsp;</p>
-
-<p class=CMDOutput>Pinging 192.168.20.5 with 32 bytes of data:</p>
-
-<p class=CMDOutput>&nbsp;</p>
-
-<p class=CMDOutput>Reply from 192.168.20.5: bytes=32 time&lt;1ms TTL=128</p>
-
-<p class=CMDOutput>Reply from 192.168.20.5: bytes=32 time&lt;1ms TTL=128</p>
-
-<p class=CMDOutput>Reply from 192.168.20.5: bytes=32 time&lt;1ms TTL=128</p>
-
-<p class=CMDOutput>Reply from 192.168.20.5: bytes=32 time&lt;1ms TTL=128</p>
-
-<p class=CMDOutput>&nbsp;</p>
-
-<p class=CMDOutput>Ping statistics for 192.168.20.5:</p>
-
-<p class=CMDOutput>Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),</p>
-
-<p class=CMDOutput>Approximate round trip times in milli-seconds:</p>
-
-<p class=CMDOutput>Minimum = 0ms, Maximum = 0ms, Average = 0ms</p>
-
-<p class=BodyTextL50>If the pings are not successful, verify that the correct
-ports are used for the connection, and the Network Controller is powered on.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Exit the Command Prompt when finished.</p>
-
-<h2 style='margin-left:0in;text-indent:0in'>Part 2: Monitor the Network</h2>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 1: Access the Network
-Controller via the GUI.</h3>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>From <b>Office-Admin</b>, open a web browser (click <b>Desktop</b> &gt; <b>Web
-Browser</b>) and navigate to <b>192.168.20.5</b>.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>When prompted to login, enter <b>admin</b> as the username and <b>Cisco123</b>
-as the password.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>After you have logged in, you will be presented with the Dashboard view.
-When the Dashboard is refreshed, you will be provided information regarding the
-current state of the network. Explore the Dashboard menu located to the left of
-the Cisco logo.</p>
-
-<h4>Question:</h4>
-
-<p class=BodyTextL50 style='margin-top:0in'>What menu items do you see?</p>
-
-<div class="question-container">
-<div class=AnswerLineL50>
-	<fieldset style="width:50%;font-size:10px;font-style:normal;color:gray;"><legend>Answer Area</legend><textarea rows="3" name="answerArea" placeholder="Type your answer here." style="border:none;width:100%;"></textarea></fieldset>
-</div>
-
-<p class=BodyTextL50Answer><span class=AnswerGray><span style='
-border:none'><span style='border:none'>Dashboard, Provisioning, Assurance,
-Policy, and API Docs.</span></span></span></p>
-
-<div class="question-action-container">
-	<button class="MetroBtn show-answer">Show Answer</button>
-	<button class="MetroBtn hide-answer">Hide Answer</button>
-</div>
-</div>
-
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 2: Document the network.</h3>
-
-<p class=BodyTextL25>Now that you have explored some of the features of the
-Network Controller, you will use the <b>Note</b> feature in Packet Tracer to
-document the network devices in the Office network.</p>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>In the Network Controller, navigate to the <b>NETWORK DEVICE</b> screen.
-(Click <b>Dashboard menu</b> &gt; <b>Provisioning</b> &gt; <b>NETWORK DEVICE</b>)</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Click <b>Place Note</b> to document the network devices listed from the <b>NETWORK
-DEVICE</b> screen. Place the note in the white space next to the Office
-background. For example, this info should be part of the note: </p>
-
-<p class=BodyTextL50>Office-SW1: 192.168.20.4</p>
-
-<h3 style='margin-left:0in;text-indent:0in'>Step 3: Discover new devices in the
-Office network.</h3>
-
-<p class=BodyTextL25>In this step, you will connect a wireless devices to the
-Office wireless network and observe the changes in the hosts listing.</p>
-
-<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>From the web browser for <b>Office-Admin</b>, navigate to the <b>Network
-Controller</b> if necessary.</p>
-
-<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Navigate to the <b>HOSTS</b> screen. (Click <b>Dashboard menu</b> &gt; <b>Assurance</b>
-&gt; <b>HOSTS</b>). Note the host list.</p>
-
-<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Connect the <b>Office Tablet</b> and <b>Smartphone</b> to the wireless
-network. For each device, click the <b>Config</b> tab, select Wireless0 in the
-left pane, and select <b>ON</b> for the Port Status. Verify the devices receive
-an IP address from the DHCP server. The IP addresses will be from the 192.168.2.x
-/24 network, where x is ranged between 11 to 254. You can click <b>Fast Forward
-Time</b> (<b>Alt + D</b>) to speed up the process.</p>
-
-<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>On the Network Controller, navigate to the <b>DISCOVERY</b> screen.
-(Click <b>Dashboard menu</b> &gt; <b>Provisioning</b> &gt; <b>DISCOVERY</b>)
-Select the already configured Discovery process named <b>Office LAN</b>. Click <b>START</b>
-to run the discovery process. When the discovery process is finished, the newly
-connected <b>Office-Tablet</b> and <b>Smartphone</b> are displayed in the
-Discovered Devices list.</p>
-
-<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Return to the <b>HOSTS</b> screen. Note the newly discovered hosts.</p>
-
-<h4>Question:</h4>
-
-<p class=BodyTextL50 style='margin-top:0in'>What IP addresses are assigned to <b>Office-Tablet</b>
-and <b>Smartphone</b>?</p>
-
-<div class="question-container">
-	<div class=AnswerLineL50>
-		<fieldset style="width:50%;font-size:10px;font-style:normal;color:gray;"><legend>Answer Area</legend><textarea rows="3" name="answerArea" placeholder="Type your answer here." style="border:none;width:100%;"></textarea></fieldset>
-	</div>
-	
-	<p class=BodyTextL50Answer><span class=AnswerGray><span style='
-	border:none'><span style='border:none'>The IP addresses can be in range of
-192.168.2.11 – 192.168.2.</span></span></span></p>
-	
-	<div class="question-action-container">
-		<button class="MetroBtn show-answer">Show Answer</button>
-		<button class="MetroBtn hide-answer">Hide Answer</button>
-	</div>
-	</div>
-
-
-<p class=ConfigWindow>End of document</p>
-
-<div class="global-action-container btn__container">
-	<button class="show-all-answers btn-text btn__action">Show All Answers</button>
-	<button class="hide-all-answers btn-text btn__action hidden">Hide All Answers</button>
-	<button class="clear-all-responces btn-text btn__action">Clear My Responses</button>
-</div>
-
-<div id="footerDIV"><span><br><hr><span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span><br></span></div>
-
-</div>
-
+    <h3>Step 2: Document the network.</h3>
+    <p class="BodyTextL25">Use Notes in Packet Tracer to record discovered device names and IPs.</p>
+    <p class="SubStepAlpha">a. Controller: Dashboard Menu &gt; Provisioning &gt; <b>NETWORK DEVICE</b>.</p>
+    <p class="SubStepAlpha">b. Place a note listing each device (e.g. Office-SW1: 192.168.20.4).</p>
+
+    <h3>Step 3: Discover new wireless hosts.</h3>
+    <p class="BodyTextL25">Connect wireless endpoints and rediscover.</p>
+    <p class="SubStepAlpha">a. Reopen controller if needed.</p>
+    <p class="SubStepAlpha">b. Dashboard Menu &gt; Assurance &gt; <b>HOSTS</b> (observe list).</p>
+    <p class="SubStepAlpha">c. Enable Wireless0 on <b>Office-Tablet</b> and <b>Smartphone</b>; wait for DHCP (192.168.2.x /24). Use Fast Forward Time if required.</p>
+    <p class="SubStepAlpha">d. Provisioning &gt; <b>DISCOVERY</b> &gt; select <b>Office LAN</b> &gt; <b>START</b>.</p>
+    <p class="SubStepAlpha">e. Return to HOSTS; verify new hosts appear.</p>
+
+    <h4>Question:</h4>
+    <p class="BodyTextL50" style="margin-top:0">What IPs were assigned to Office-Tablet and Smartphone?</p>
+    <div class="question-container">
+      <fieldset><legend>Answer Area</legend><textarea placeholder="Type your answer here."></textarea></fieldset>
+      <p class="BodyTextL50Answer">Any addresses in 192.168.2.11 – 192.168.2.254 (unique per host).</p>
+      <div class="question-action-container">
+        <button type="button" class="show-answer">Show Answer</button>
+        <button type="button" class="hide-answer">Hide Answer</button>
+      </div>
+    </div>
+
+    <p class="ConfigWindow">End of document</p>
+
+    <div class="global-action-container btn__container">
+      <button type="button" class="show-all-answers btn__action">Show All Answers</button>
+      <button type="button" class="hide-all-answers btn__action hidden">Hide All Answers</button>
+      <button type="button" class="clear-all-responses btn__action">Clear My Responses</button>
+    </div>
+
+    <div id="footerDIV">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</div>
+  </main>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const answers = document.querySelectorAll('.BodyTextL50Answer');
+      const showBtns = document.querySelectorAll('.show-answer');
+      const hideBtns = document.querySelectorAll('.hide-answer');
+      const showAll = document.querySelector('.show-all-answers');
+      const hideAll = document.querySelector('.hide-all-answers');
+      const clearBtn = document.querySelector('.clear-all-responses');
+
+      // init
+      answers.forEach(a => a.classList.add('hidden'));
+      hideBtns.forEach(b => b.classList.add('hidden'));
+
+      showBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const qc = btn.closest('.question-container');
+            qc.querySelector('.BodyTextL50Answer').classList.remove('hidden');
+            btn.classList.add('hidden');
+            qc.querySelector('.hide-answer').classList.remove('hidden');
+        });
+      });
+      hideBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const qc = btn.closest('.question-container');
+            qc.querySelector('.BodyTextL50Answer').classList.add('hidden');
+            btn.classList.add('hidden');
+            qc.querySelector('.show-answer').classList.remove('hidden');
+        });
+      });
+      showAll.addEventListener('click', () => {
+        answers.forEach(a => a.classList.remove('hidden'));
+        showBtns.forEach(s => s.classList.add('hidden'));
+        hideBtns.forEach(h => h.classList.remove('hidden'));
+        showAll.classList.add('hidden');
+        hideAll.classList.remove('hidden');
+      });
+      hideAll.addEventListener('click', () => {
+        answers.forEach(a => a.classList.add('hidden'));
+        hideBtns.forEach(h => h.classList.add('hidden'));
+        showBtns.forEach(s => s.classList.remove('hidden'));
+        hideAll.classList.add('hidden');
+        showAll.classList.remove('hidden');
+      });
+      clearBtn.addEventListener('click', () => {
+        document.querySelectorAll('textarea').forEach(t => t.value = '');
+      });
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script>
-
-	window.addEventListener('load',function(){
-		console.log('loaded');
-		document.querySelectorAll(".AnswerGray").forEach(function(ele){
-			ele.classList.add("hidden");
-		})
-		document.querySelectorAll(".hide-answer").forEach(function(ele){
-			ele.classList.add("hidden");
-		})
-		document.querySelectorAll(".show-answer").forEach(function(ele){
-			ele.addEventListener("click",function(e){
-				e.currentTarget.nextElementSibling.classList.remove("hidden");
-				e.currentTarget.closest('.question-container').querySelectorAll(".AnswerGray").forEach(function(ele){
-					ele.classList.remove("hidden");
-				})
-				ele.classList.add("hidden");
-			})
-		})
-		document.querySelectorAll(".hide-answer").forEach(function(ele){	
-			ele.addEventListener("click",function(e){
-				e.currentTarget.previousElementSibling.classList.remove("hidden");
-				e.currentTarget.closest('.question-container').querySelectorAll(".AnswerGray").forEach(function(ele){
-					ele.classList.add("hidden");
-				})
-				ele.classList.add("hidden");
-			})
-		})
-		var event = new Event('click', {
-			bubbles: true,
-			cancelable: true,
-		});
-		document.querySelectorAll(".show-all-answers").forEach(function(ele){	
-			ele.addEventListener("click",function(e){
-				e.currentTarget.nextElementSibling.classList.remove("hidden");
-				 ele.classList.add('hidden');
-				document.querySelectorAll(".show-answer").forEach(function(ele){
-					ele.dispatchEvent(event);
-				})
-			})
-		})
-
-		document.querySelectorAll(".hide-all-answers").forEach(function(ele){	
-			ele.addEventListener("click",function(e){
-				e.currentTarget.previousElementSibling.classList.remove("hidden");
-				 ele.classList.add('hidden');
-				document.querySelectorAll(".hide-answer").forEach(function(ele){
-					ele.dispatchEvent(event);
-				})
-			})
-		})
-
-		document.querySelectorAll(".clear-all-responces").forEach(function(ele){	
-			ele.addEventListener("click",function(e){
-				document.querySelectorAll("textArea").forEach(function(ele){
-					ele.value = "";
-				})
-			})
-		})
-
-		
-		
-	})
-	</script>
 </html>
